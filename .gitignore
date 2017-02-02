@@ -35,3 +35,14 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# node / npm
+node_modules
+*.log
+
+# phenomic build
+dist
+
+# IDEs
+.vscode/
+.idea/
