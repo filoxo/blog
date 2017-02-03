@@ -1,19 +1,5 @@
-# [Phenomic](https://github.com/MoOx/phenomic) phenomic-theme-base
+# Filoblog
 
-## Install dependencies
+This is my personal development blog. Based on [Phenomic](https://github.com/MoOx/phenomic).
 
-```sh
-npm install
-```
-
-## Run development server
-
-```sh
-npm start
-```
-
-## Build for production
-
-```sh
-npm run build
-```
+Visit my website here: [filoxo.github.io](https://filoxo.github.io/)
