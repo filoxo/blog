@@ -1,9 +1,8 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
 import warning from "warning"
-import { BodyContainer, joinUri, Link } from "phenomic"
+import { BodyContainer, joinUri } from "phenomic"
 
-import Button from "../../components/Button"
 import Loading from "../../components/Loading"
 import ButtonLink from "../../components/ButtonLink"
 
@@ -67,12 +66,6 @@ const Page = (
           <div className={ styles.header }>
             <div className={ styles.wrapper }>
               <h1 className={ styles.heading }>{ head.title }</h1>
-              {
-                head.cta &&
-                <div>
-                  <ButtonLink to={ head.cta.link } text={ head.cta.label } />
-                </div>              
-              }
             </div>
           </div>
         </div>
