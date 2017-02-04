@@ -5,6 +5,7 @@ import { BodyContainer, joinUri, Link } from "phenomic"
 
 import Button from "../../components/Button"
 import Loading from "../../components/Loading"
+import ButtonLink from "../../components/ButtonLink"
 
 import styles from "./index.css"
 
@@ -68,11 +69,9 @@ const Page = (
               <h1 className={ styles.heading }>{ head.title }</h1>
               {
                 head.cta &&
-                <Link to={ head.cta.link }>
-                  <Button className={ styles.cta } light { ...head.cta.props }>
-                    { head.cta.label }
-                  </Button>
-                </Link>
+                <div>
+                  <ButtonLink to={ head.cta.link } text={ head.cta.label } />
+                </div>              
               }
             </div>
           </div>
@@ -84,7 +83,7 @@ const Page = (
           {
             isLoading
             ? <Loading />
-            : <BodyContainer>{ body }</BodyContainer>
+            : <BodyContainer>{ body || "" }</BodyContainer>
           }
         </div>
         { children }
