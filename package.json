@@ -11,10 +11,9 @@
     "start": "phenomic start",
     "build": "phenomic build",
     "pretest": "npm run lint",
-    "test": "npm run build"
-  },
-  "phenomic": {
-    "CNAME": true
+    "test": "npm run build",
+    "gh-pages": "gh-pages",
+    "deploy": "npm run build && gh-pages -d ./dist -r https://github.com/filoxo/filoxo.github.io.git -b master"
   },
   "#babel": "webpack-(development|production) are useful for webpack 2, otherwise use development|production",
   "babel": {
@@ -107,9 +106,11 @@
     "eslint-plugin-react": "^6.4.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "gh-pages": "^0.12.0",
     "history": "^2.0.0",
     "json-loader": "^0.5.2",
     "npm-run-all": "^1.7.0",
+    "phenomic": "^0.20.3",
     "postcss-browser-reporter": "^0.4.0",
     "postcss-cssnext": "^2.4.0",
     "postcss-loader": "^0.13.0",
@@ -128,7 +129,6 @@
     "stylelint": "^7.2.0",
     "warning": "^3.0.0",
     "webpack": "^1.11.0",
-    "whatwg-fetch": "^0.11.0",
-    "phenomic": "^0.20.3"
+    "whatwg-fetch": "^0.11.0"
   }
 }
