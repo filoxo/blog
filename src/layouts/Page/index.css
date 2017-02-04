@@ -32,8 +32,8 @@
   text-align: center;
   background: linear-gradient(
     to bottom,
-    var(--colorPrimaryDark),
-    color(var(--colorPrimary) a(0.2))
+    var(--colorPrimaryDark) 10%,
+    transparent
   );
 }
 
