@@ -3,12 +3,8 @@
 }
 
 .header {
-  position: absolute;
-  /* stretch */
-  left: 0;
-  right: 0;
-
-  color: var(--colorNeutralLight);
+  background-color: var(--colorNeutralLight);
+  color: var(--colorText);
 }
 
 .nav {
@@ -35,13 +31,13 @@
   text-decoration: none !important;
   opacity: 0.6;
   transition: 0.4s all;
-  border-bottom: 1px solid transparent;
+  border-bottom: 3px solid transparent;
 
   &:hover,
   &:focus {
     color: inherit;
     opacity: 1;
-    border-bottom-color: var(--colorNeutralLight);
+    border-bottom-color: var(--colorText);
   }
 }
 
