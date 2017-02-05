@@ -4,7 +4,6 @@ import warning from "warning"
 import { BodyContainer, joinUri } from "phenomic"
 
 import Loading from "../../components/Loading"
-import ButtonLink from "../../components/ButtonLink"
 
 import styles from "./index.css"
 
@@ -60,7 +59,7 @@ const Page = (
         <div
           className={ styles.hero }
           style={ head.hero && {
-            background: `#111 url(${ head.hero }) 50% 50% / cover`,
+            background: `#111 url(${ head.hero }) 50% 0% / cover`,
           } }
         >
           <div className={ styles.header }>
