@@ -43,7 +43,7 @@
 
 .link svg {
   fill: currentColor;
-  margin-right: 0.5rem;
+  margin: 0 0.5rem;
   width: 14px;
   height: 14px;
   vertical-align: middle;
