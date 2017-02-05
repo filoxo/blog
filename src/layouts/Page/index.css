@@ -32,7 +32,8 @@
   text-align: center;
   background: linear-gradient(
     to bottom,
-    var(--colorPrimaryDark) 10%,
+    color(var(--colorNeutralDark) a(0.2)),
+    transparent 50%,
     transparent
   );
 }
