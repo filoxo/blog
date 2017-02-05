@@ -3,6 +3,8 @@
   "name": "filoblog",
   "homepage": "https://filoxo.github.io",
   "twitter": "c_filoteo",
+  "github": "https://github.com/filoxo/",
+  "linkedin": "https://www.linkedin.com/in/carlosfiloteo",
   "repository": "https://github.com/filoxo/filoblog.git",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
