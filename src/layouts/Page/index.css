@@ -27,8 +27,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  padding: 5rem 0;
-  padding: 10vh 0;
+  padding: 2.5rem 0;
   text-align: center;
   background: linear-gradient(
     to bottom,
@@ -46,6 +45,7 @@
     0 0 3px var(--colorNeutralDark)
   ;
   letter-spacing: 1px;
+  line-height: 2.5rem;
 }
 
 .cta {
