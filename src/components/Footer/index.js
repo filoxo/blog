@@ -5,7 +5,7 @@ import styles from "./index.css"
 const Footer = () => (
   <footer className={ styles.footer }>
     <p className={ styles.phenomicReference }>
-      { "Website generated with " }
+      &copy; { new Date().getFullYear() } | { "Made with " }
       <a href={ process.env.PHENOMIC_HOMEPAGE }>
         <span className={ styles.phenomicReferenceName }>
           { `<${ process.env.PHENOMIC_NAME} />` }
