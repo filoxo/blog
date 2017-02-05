@@ -1,7 +1,7 @@
 ---
 title: Filoblog
 layout: Homepage
-hero: '../assets/mainbg.jpg'
+hero: '../assets/main.jpg'
 # hero credit: https://www.flickr.com/photos/pslee999/15589950511/
 ---
 
