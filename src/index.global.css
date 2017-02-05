@@ -100,3 +100,8 @@ hr {
     position: absolute;
     width: 1px;
 }
+
+blockquote {
+  border-left: 3px solid #eee;
+  padding-left: .5rem;
+}
