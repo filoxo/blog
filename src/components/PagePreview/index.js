@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import { Link } from "phenomic"
 
-import Button from "../../components/Button"
+import ButtonLink from "../../components/ButtonLink"
 
 import styles from "./index.css"
 
@@ -9,7 +9,7 @@ const PagePreview = ({ __url, title, date, description }) => {
   const pageDate = date ? new Date(date) : null
 
   return (
-    <div className={ styles.wrapper }>
+    <article className={ styles.wrapper }>
       <Link to={ __url } className={ styles.title }>
         { title }
       </Link>
@@ -21,14 +21,14 @@ const PagePreview = ({ __url, title, date, description }) => {
             </time>
         }
       </div>
-      <div className={ styles.description }>
+      <p className={ styles.description }>
         { description }
         { " " }
-      </div>
-      <Link to={ __url } className={ styles.readMore }>
-        <Button secondary>{ "Read More →" }</Button>
-      </Link>
-    </div>
+      </p>
+      <div>
+        <ButtonLink to={ __url } className={ styles.readMore } text={ "Read More →" }/>
+      </div>      
+    </article>
   )
 }
 
