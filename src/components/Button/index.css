@@ -12,6 +12,7 @@
   background: var(--colorNeutralLight);
 
   &:hover {
+    color: var(--colorPrimaryDark);
     text-decoration: none;
   }
 }
