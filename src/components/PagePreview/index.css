@@ -22,9 +22,7 @@
 }
 
 .readMore {
-  /* align-self: center; */
   display: inline-flex;
-  margin-top: 1rem;
   border-radius: 3px;
   font-size: 0.8rem;
   text-align: center;
