@@ -19,6 +19,8 @@ Here are our initial development dependencies:
 - `postcss-import`: used to pull in a css file that wasn't being preprocessed
 - `cssnano`: minify and optimize output
 
+Install using yarn (or the npm equivalent)
+
     yarn add -D normalize.css postcss-cli postcss-cssnext postcss-import cssnano
 
 ### PostCSS config
@@ -45,7 +47,7 @@ Create a json file that contains the config for PostCSS. The docs named it **opt
         }
     }
 
-### CSS-time
+### CSS time
 
 Go ahead and create **main.css** at the project root. The above config will output to **dist/**. Here's a quick sample.
 
@@ -121,4 +123,4 @@ This basic setup offers:
 - optimizations
 - a quick and easy development setup to reflect changes on-the-fly
 
-Feel free to improve upon this as needed! 
+Use `yarn start` to develop, and `yarn run build` to output the final CSS file, ready to use. Improve upon this as needed! 
