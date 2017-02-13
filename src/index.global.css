@@ -105,3 +105,12 @@ blockquote {
   border-left: 3px solid #eee;
   padding-left: .5rem;
 }
+
+pre, :not(pre) > code {
+  background-color: #F5F5F5;
+  border-radius: 3px;
+  padding: .25em;
+}
+code {
+  white-space: pre-wrap;
+}
