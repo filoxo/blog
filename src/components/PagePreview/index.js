@@ -17,7 +17,7 @@ const PagePreview = ({ __url, title, date, description }) => {
         {
           pageDate &&
             <time key={ pageDate.toISOString() }>
-              { pageDate.toDateString() }
+              { pageDate.toUTCString().slice(0, 16) }
             </time>
         }
       </div>
@@ -27,7 +27,7 @@ const PagePreview = ({ __url, title, date, description }) => {
       </p>
       <div>
         <ButtonLink to={ __url } className={ styles.readMore } text={ "Read More →" }/>
-      </div>      
+      </div>
     </article>
   )
 }

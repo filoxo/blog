@@ -18,7 +18,7 @@ const Post = (props) => {
             {
               pageDate &&
               <time key={ pageDate.toISOString() }>
-                { pageDate.toDateString() }
+                { pageDate.toUTCString().slice(0, 16) }
               </time>
             }
           </header>
