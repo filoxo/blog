@@ -9,13 +9,13 @@ I sometimes see developers ask "Should I use React, or Angular, or Vue.js, or _\
 
 ### Complexity
 
-Frameworks are abstractions to help reduce the complexity of building an application. Frameworks in turn introduce their own complexity. First, let's establish that each framework falls somewhere on a complexity spectrum. [&sup1;](#vuejsTalk)
+Frameworks are abstractions to help reduce the complexity of building an application. Frameworks in turn introduce their own complexity. First, let's establish that each framework falls somewhere on a complexity spectrum.[&sup1;](#vuejsTalk)
 
 ![Framework Complexity Spectrum](/assets/framework-spectrum.jpg)
 
 This is the first problem: **React and Angular are at different points of the complexity spectrum**. They're solving problems in different ways, and will never be equal to each other in scope. Using another analogy, they're different tools for different and various jobs; some of those jobs overlap, others don't.
 
-For the most part, choosing between them based on this alone is **moot**. Why? Because React is "unopinionated" so you bring your own solution to solve problem X. Inversely, Angular provides many tools together into the framework. This cannot be an apples-to-apples comparison. I'll dive into each below.
+For the most part, choosing between them based on this alone is **moot**. Why? Because React is "unopinionated" so you bring your own solution to solve problem X. Inversely, Angular provides many tools together into one framework. It is not an apples-to-apples comparison.
 
 #### Complexity: React
 
@@ -33,11 +33,11 @@ A personal experience of this I had is choosing an HTTP library. There are so ma
 
 The company I work for is slowly coming around to adopting React but what's there to stop each team from choosing a different lib from of the above? Allowing this sort of fragmentation makes it that much harder to share code and contribute to other teams. Furthermore, making a decision to standardize one requires intimate knowledge of the features, benefits, and disadvantages of each.
 
-Now, *this isn't bad*! It would GREAT to make a thorough and informed decision but not every developer or team is equipped to make this kind of analysis for every dependency. If this isn't something that you or your team can or want to do, then consider a full framework like Angular. Conversely, if developers are passionate about jumping in and learning each lib quickly then this isn't a problem.
+Now, *this evaluation process isn't bad*! It would GREAT to make a thorough and informed decision but not every developer or team is equipped to make this kind of analysis for every dependency. If this isn't something that you or your team can or want to do, then consider a full framework like Angular. Conversely, if developers are passionate about jumping in and learning each lib quickly then this isn't a problem.
 
 #### Complexity: Angular
 
-With Angular you're getting many of these libraries together from a single source, compatible and tested. The advantages I see here are:
+With Angular you're getting many of libraries together from a single source, compatible and tested. Angular is an abstraction built on top of a component model, TypeScript, RxJS, Webpack, to name a few. The advantages I see here are:
 
 <ul>
     <li>Documentation exists showing how to use each lib within context of the framework</li>
@@ -60,8 +60,8 @@ There are some disadvantages:
 
 ### Framework
 
-React's model of a single component drives to you really want to keep your components tiny, and import the rest. On average, my React components stay at about 50 lines. Keeping components tiny really helps with composability.
-Angular uses a similar component model, but requires at least 10+ lines just to declare, along 2 accompanying files (component.html and component.scss). Keeping the template separate has had an unforeseen consequence: templates get *huge* and end up more bloated than needed. Because of this, I feel like there's a desire to add more logic to the class than a single component actually needs. Its all to easy to bloat a single component instead of breaking it out into smaller pieces.
+React's model of a single component drives to you really want to keep your components tiny, and import the rest. On average, my React components stay at less than 50 lines. Keeping components tiny really helps with composability.
+Angular uses a similar component model, but requires at least 10+ lines just to declare, along 2 accompanying files&mdash;a template file and a style file. Keeping the template separate has had an unforeseen consequence: templates get *huge* and end up more bloated than needed. Because of this, I feel like there's a desire to add more logic to the class than a single component actually needs. Its all to easy to bloat a single component instead of breaking it out into smaller pieces.
 
 ### Tools
 
@@ -95,11 +95,11 @@ Angular on the other hand feels very much like "corporate" or enterprise softare
 
 And this quote is somewhat old; these numbers have most likely increased. Angular ranks very high as a popular framework: 6th most loved, 4th most dreaded, and 2nd most wanted[&sup2;](#StackOverflowDeveloperSurvey2017) [&sup3;](#footnote2)</sup>.
 
-The Angular ecosystem is not quite as expansive, but has Google's weight behind the rest of their products to push out additional libraries that align with Angular. What that means is companion projects like [Angular Material](https://github.com/angular/material2), [AngularFire2](https://github.com/angular/angularfire2), and [Angular Universal](https://github.com/angular/universal) are kept up to date with the Angular core.
+The Angular ecosystem is not quite as expansive, but has Google's weight behind the rest of their products to push out additional libraries that align with Angular. What that means is companion projects like [Angular Material](https://github.com/angular/material2), [AngularFire2](https://github.com/angular/angularfire2), and [Angular Universal](https://github.com/angular/universal) are kept up to date with the Angular core. Aside from these projects there aren't as many thriving projects built for Angular as I'd like to see. Many of these have gotten out of date very fast.
 
-Additionally, TypeScript has seen some great progress and adoption in the JS community as a whole; its the 3rd most loved and 6th most wanted language of 2017[&sup2;](#StackOverflowDeveloperSurvey2017)! Furthermore, the success with TypeScript that I've experienced is that it makes backend developers a more comfortable writing JavaScript. It enables bringing in some concepts that can help make a webapp more robust, in addition to being an ES6 transpiler. Learning TypeScript's features and syntax was not difficult.
+TypeScript has seen some great progress and adoption in the JS community as a whole; its the 3rd most loved and 6th most wanted language of 2017[&sup2;](#StackOverflowDeveloperSurvey2017)! Furthermore, a success with TypeScript that I've experienced is that it makes backend developers a more comfortable writing JavaScript. It enables bringing in some concepts that can help make a webapp more robust, in addition to being an ES6 transpiler. Learning TypeScript's features and syntax was not difficult.
 
-The most difficult part of using TypeScript is finding the correct type definitions (typings) to go along with your dependent libs. Most are available via npm under the `@types` namespace but if that isn't the case, you lose the main benefit of TypeScript in the first place: type safety. At the same time, that's no reason not to use Angular! It would make the developer all that better by taking the initiative to contribute the types. Yay for open source software!
+The most difficult part of using TypeScript is finding the correct type definitions (typings) to go along with your dependent libs. Most are available via npm under the `@types` namespace but if that isn't the case, you lose the main benefit of TypeScript in the first place: type safety. At the same time, that's no reason not to use Angular! It would make the developer all that better by taking the initiative to contribute the types. Yay for open source software! But this is a challege that you may face with Angular.
 
 ### Conclusion
 
