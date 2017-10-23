@@ -19,6 +19,8 @@
   },
   "devDependencies": {
     "gh-pages": "~1.0.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.3.0",
     "prettier": "~1.7.2"
   },
   "keywords": [
@@ -33,7 +35,15 @@
     "preserve": "npm run build",
     "serve": "gatsby serve",
     "start": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\"",
+    "format": "npm run pretty -- 'src/**/*.js'",
+    "pretty": "prettier --no-semi --single-quote --write",
+    "precommit": "lint-staged",
     "test": "echo \"Should probably write some tests!\""
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run pretty",
+      "git add"
+    ]
   }
 }
