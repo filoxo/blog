@@ -34,10 +34,10 @@ export default class Template extends React.Component {
             style={{
               margin: `0 auto`,
               maxWidth: 960,
-              padding: isRoot ? `1.45rem 1.0875rem` : `1rem 0.75rem`
+              padding: `1rem 0.75rem`
             }}
           >
-            <h1 style={{ margin: 0, fontSize: isRoot ? `2.5rem` : `2rem` }}>
+            <h1 style={{ margin: 0, fontSize: `2rem` }}>
               <Link
                 to="/"
                 style={{
