@@ -19,6 +19,7 @@
   padding: 1rem 1.5rem;
 }
 .blog-post-preview .title a {
+  border: none;
   color: inherit;
   text-decoration: none;
   transition: color .15s ease-in;
@@ -38,6 +39,10 @@
   border-top: 1.5px solid rgba(160, 160, 160, 0.3);
   grid-area: prev;
   padding: 1rem 1.5rem;
+}
+.blog-post-preview .seeMore {
+  border: 1.5px solid rgba(160, 160, 160, 0.3);
+  transition: all .15s ease-in;
 }
 @media screen and (max-width: 615px) {
   .blog-post-preview {

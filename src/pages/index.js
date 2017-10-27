@@ -23,7 +23,9 @@ export default function Index({ data }) {
               <div className="date">{post.frontmatter.date}</div>
               <div className="prev">
                 <p>{post.excerpt}</p>
-                <Link to={post.frontmatter.path}>Read more</Link>
+                <Link className="link btn" to={post.frontmatter.path}>
+                  Read more
+                </Link>
               </div>
             </div>
           )
