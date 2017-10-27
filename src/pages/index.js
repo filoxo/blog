@@ -15,14 +15,16 @@ export default function Index({ data }) {
         .map(({ node: post }) => {
           return (
             <div className="blog-post-preview" key={post.id}>
-              <h1 className="title">
+              <h2 className="title">
                 <GatsbyLink to={post.frontmatter.path}>
                   {post.frontmatter.title}
                 </GatsbyLink>
-              </h1>
-              <h2 className="date">{post.frontmatter.date}</h2>
-              <p>{post.excerpt}</p>
-              <Link to={post.frontmatter.path}>Read more</Link>
+              </h2>
+              <div className="date">{post.frontmatter.date}</div>
+              <div className="prev">
+                <p>{post.excerpt}</p>
+                <Link to={post.frontmatter.path}>Read more</Link>
+              </div>
             </div>
           )
         })}
