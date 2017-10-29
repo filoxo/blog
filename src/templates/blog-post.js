@@ -21,7 +21,9 @@ export default function Template({ data, pathContext }) {
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <Tags list={post.frontmatter.tags || []} />
+        <div className="tags">
+          <Tags list={post.frontmatter.tags || []} />
+        </div>
         <div className="navigation">
           {prev && (
             <Link className="link prev" to={prev.frontmatter.path}>
