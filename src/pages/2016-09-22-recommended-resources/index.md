@@ -7,31 +7,29 @@ tags: ['javascript']
 
 There are lots of great resources out there for the front-end developer who wants to keep learning. I know that I've been able to glean much just from joining and listening to the right sources. Here's a list of my favorite people/blogs/podcasts to listen to. Get ready for a huge link list!
 
-<!-- more -->
-
 ## Twitter
 There are a ton of really smart people on Twitter, most of whom I don't get a chance to talk to on a regular basis (if ever, actually). But I can "listen in" on their public conversations and chime in when I have something to offer.
 
 I've grouped these people by the main topics they talk about.
 
 #### Javascript
+- <a href="https://twitter.com/Una" class="link">Una Kraveats</a> - UI eng, podcaster, artist
+- <a href="https://twitter.com/marcysutton" class="link">Marcy Sutton</a> - Sr A11Y engineer & guru
+- <a href="https://twitter.com/sarah_edo" class="link">Sarah Drasner</a> - Sr developer, speaker/writer
 - <a href="https://twitter.com/_ericelliott" class="link">Eric Elliott</a> - practical advice, smart writing
 - <a href="https://twitter.com/mpjme" class="link">Mattias Johansson</a> - also check out his Youtube channel, 'Fun Fun Function'
 
 #### React
-- <a href="https://twitter.com/dan_abramov" class="link">Dan Abramov</a> - main author of Redux
+- <a href="https://twitter.com/dan_abramov" class="link">Dan Abramov</a> - Redux author, wise OSS contributor
 - <a href="https://twitter.com/ryanflorence" class="link">Ryan Florence</a> - main contributor to React Router
 - <a href="https://twitter.com/mjackson" class="link">Michael Jackson</a> - main contributor to React Router
-- <a href="https://twitter.com/thejameskyle" class="link">James Kyle</a> - Facebook developer
+- <a href="https://twitter.com/thejameskyle" class="link">James Kyle</a> - Huge OSS contributor
 - <a href="https://twitter.com/kentcdodds" class="link">Kent Dodds</a> - all around savvy guy
+- <a href="https://twitter.com/ken_wheeler" class="link">Ken Wheeler</a> - OSS contributor, "drunk cool uncle" type
 
 #### Angular 2
 - <a href="https://twitter.com/victorsavkin" class="link">Victor Savkin</a> - main architect of Angular Router
 - <a href="https://twitter.com/gdi2290" class="link">Patrick Stapleton</a> - contributor to Angular Universal, Angular Class
-
-#### Other
-- <a href="https://twitter.com/marcysutton" class="link">Marcy Sutton</a> - A11Y guru
-- <a href="https://twitter.com/sarah_edo" class="link">Sarah Drasner</a> - CSS/web afficionada
 
 #### News
 - <a href="https://twitter.com/JavaScriptDaily" class="link">JS Daily</a>
