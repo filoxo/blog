@@ -1,4 +1,4 @@
-a, .link {
+.link {
   display: inline-block;
   color: inherit;
   border-bottom: 2px dashed rgba(160, 160, 160, 0.5);
@@ -7,7 +7,7 @@ a, .link {
   transition: all .15s ease-in;
   position: relative;
 }
-a:hover, .link:hover {
+.link:hover {
   border-bottom-color: teal;
   color: teal;
 }
