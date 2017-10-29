@@ -15,58 +15,58 @@ There are a ton of really smart people on Twitter, most of whom I don't get a ch
 I've grouped these people by the main topics they talk about.
 
 #### Javascript
-- [Eric Elliott](https://twitter.com/_ericelliott) -  practical advice, smart writing
-- [Mattias Johansson](https://twitter.com/mpjme) - also check out his Youtube channel, 'Fun Fun Function'
+- <a href="https://twitter.com/_ericelliott" class="link">Eric Elliott</a> - practical advice, smart writing
+- <a href="https://twitter.com/mpjme" class="link">Mattias Johansson</a> - also check out his Youtube channel, 'Fun Fun Function'
 
 #### React
-- [Dan Abramov](https://twitter.com/dan_abramov) - main author of Redux
-- [Ryan Florence](https://twitter.com/ryanflorence) - main contributor to React Router
-- [Michael Jackson](https://twitter.com/mjackson) - main contributor to React Router
-- [James Kyle](https://twitter.com/thejameskyle) - Facebook developer
-- [Kent Dodds](https://twitter.com/kentcdodds) - all around savvy guy
+- <a href="https://twitter.com/dan_abramov" class="link">Dan Abramov</a> - main author of Redux
+- <a href="https://twitter.com/ryanflorence" class="link">Ryan Florence</a> - main contributor to React Router
+- <a href="https://twitter.com/mjackson" class="link">Michael Jackson</a> - main contributor to React Router
+- <a href="https://twitter.com/thejameskyle" class="link">James Kyle</a> - Facebook developer
+- <a href="https://twitter.com/kentcdodds" class="link">Kent Dodds</a> - all around savvy guy
 
 #### Angular 2
-- [Victor Savkin](https://twitter.com/victorsavkin) - main architect of Angular Router
-- [Patrick Stapleton](https://twitter.com/gdi2290) - contributor to Angular Universal, Angular Class
+- <a href="https://twitter.com/victorsavkin" class="link">Victor Savkin</a> - main architect of Angular Router
+- <a href="https://twitter.com/gdi2290" class="link">Patrick Stapleton</a> - contributor to Angular Universal, Angular Class
 
 #### Other
-- [Marcy Sutton](https://twitter.com/marcysutton) - A11Y guru
-- [Sarah Drasner](https://twitter.com/sarah_edo) - CSS/web afficionada
+- <a href="https://twitter.com/marcysutton" class="link">Marcy Sutton</a> - A11Y guru
+- <a href="https://twitter.com/sarah_edo" class="link">Sarah Drasner</a> - CSS/web afficionada
 
 #### News
-- [JS Daily](https://twitter.com/JavaScriptDaily)
-- [Front-End Front](https://twitter.com/frontendfront)
+- <a href="https://twitter.com/JavaScriptDaily" class="link">JS Daily</a>
+- <a href="https://twitter.com/frontendfront" class="link">Front-End Front</a>
 
 #### Tools
-- [Chrome Developers](https://twitter.com/ChromiumDev)
-- [Egghead.io](https://twitter.com/eggheadio)
+- <a href="https://twitter.com/ChromiumDev" class="link">Chrome Developers</a>
+- <a href="https://twitter.com/eggheadio" class="link">Egghead.io</a>
 
 I'm sure I missed some people on this list. It can't be comprehensive. But hopefully its a start for you.
 
-Consider also following any of the accounts for meetups in your local area. For example, here in Utah where I live, [UtahJS](https://twitter.com/utjs), [ReactJS Utah](https://twitter.com/reactjsutah), [Ionic Utah](https://twitter.com/IonicUtah) are on my radar too.
+Consider also following any of the accounts for meetups in your local area. For example, here in Utah where I live, <a href="https://twitter.com/utjs" class="link">UtahJS</a>, <a href="https://twitter.com/reactjsutah" class="link">ReactJS Utah</a>, <a href="https://twitter.com/IonicUtah" class="link">Ionic Utah</a> are on my radar too.
 
 ## Blogs
 
 Blogs are great for laying out a lot of content/ideas so they take more time to consume. Time is of the essence and I generally won't read a blog post unless its very interesting to me. Here are the ones I watch.
 
-- [r/coolgithubprojects](https://www.reddit.com/r/coolgithubprojects/)
-- [r/SideProject](https://www.reddit.com/r/SideProject/)
-- [r/webdev](https://www.reddit.com/r/webdev/)
-- [r/angular2](https://www.reddit.com/r/Angular2/)
-- [r/reactjs](https://www.reddit.com/r/reactjs/)
-- [Front end Front](https://frontendfront.com/)
-- [CSS Tricks](https://css-tricks.com/)
-- [Smashing Magazine](https://www.smashingmagazine.com/)
-- [On Coding - Medium](https://medium.com/on-Coding)
+- <a href="https://www.reddit.com/r/coolgithubprojects" class="link">r/coolgithubprojects</a>)
+- <a href="https://www.reddit.com/r/SideProject/" class="link">r/SideProject</a>
+- <a href="https://www.reddit.com/r/webdev/" class="link">r/webdev</a>
+- <a href="https://www.reddit.com/r/Angular2/" class="link">r/angular2</a>
+- <a href="https://www.reddit.com/r/reactjs/" class="link">r/reactjs</a>
+- <a href="https://frontendfront.com/" class="link">Front end Front</a>
+- <a href="https://css-tricks.com/" class="link">CSS Tricks</a>
+- <a href="https://www.smashingmagazine.com/" class="link">Smashing Magazine</a>
+- <a href="https://medium.com/on-Coding" class="link">On Coding - Medium</a>
 
 #### News
 News outlets aren't blogs really, but its great to stay in the loop about technology in general. Oh Twitter is looking to sell? Microsoft has the most open-source contributors on Gihutb? What's Google's latest hardware project? It's a good idea to be generally informed on technology.
 
-- [JAXenter](https://jaxenter.com/)
-- [Naked Security](https://nakedsecurity.sophos.com)
-- [Phys.org - Technology News](phys.org/technology-news/)
-- [ArsTechnica](arstechnica.com/)
-- [Engadget](https://www.engadget.com/)
-- [Gizmodo](gizmodo.com/)
-- [Mashable](mashable.com/)
-- [TechCrunch](https://techcrunch.com/)
+- <a href="https://jaxenter.com/" class="link">JAXenter</a>
+- <a href="https://nakedsecurity.sophos.com" class="link">Naked Security</a>
+- <a href="https://phys.org/technology-news/" class="link">Phys.org - Technology News</a>
+- <a href="https://arstechnica.com/" class="link">ArsTechnica</a>
+- <a href="https://www.engadget.com/" class="link">Engadget</a>
+- <a href="https://gizmodo.com/" class="link">Gizmodo</a>
+- <a href="https://mashable.com/" class="link">Mashable</a>
+- <a href="https://techcrunch.com/" class="link">TechCrunch</a>
