@@ -1,5 +1,5 @@
 ---
-path: '/cross-platform-revisited'
+path: '/posts/cross-platform-revisited'
 title: 'Cross-platform Revisited'
 date: 2017-02-05
 tags: ['programming', 'javascript']

@@ -1,5 +1,5 @@
 ---
-path: '/recommended-resources'
+path: '/posts/recommended-resources'
 title: 'Recommended Resources'
 date: 2016-09-22
 tags: ['javascript']
