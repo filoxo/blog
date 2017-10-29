@@ -1,5 +1,5 @@
 ---
-path: '/posts/thoughts-on-angular-ng-content'
+path: '/posts/thoughts-on-angular-ngcontent'
 title: 'Thoughts on Angular: Ng-Content'
 date: 2017-04-05
 tags: ['angular']
