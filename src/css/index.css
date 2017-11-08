@@ -1,63 +1,100 @@
-.blog-post-preview {
+.blog-post {
   background-color: #fff;
-  border: 1.5px solid rgba(160, 160, 160, 0.3);
+  border: 2px solid rgba(160, 160, 160, 0.3);
   display: grid;
   grid-template-columns: 25%;
   grid-template-rows: auto;
   grid-template-areas:
     "title title title date"
-    "prev prev prev prev";
+    "prev prev prev prev"
+    "tags tags tags tags"
+    "nav nav nav nav";
 }
-.blog-post-preview:not(:last-child) {
+.blog-post:not(:last-child) {
   margin-bottom: 2em;
 }
-.blog-post-preview .title {
+.blog-post .title {
   align-self: center;
   border-right: 2px solid rgba(160, 160, 160, 0.3);
   grid-area: title;
   margin: 0;
   padding: 1rem 1.5rem;
 }
-.blog-post-preview .title a {
+.blog-post .title a {
   border: none;
   color: inherit;
   text-decoration: none;
   transition: color .15s ease-in;
 }
-.blog-post-preview .title a:hover {
+.blog-post .title a:hover {
   color: teal;
 }
-.blog-post-preview .date {
+.blog-post .date {
   align-self: center;
   color: #555;
   grid-area: date;
+  margin-bottom: 0;
   padding: .75rem;
   text-align: center;
 }
-.blog-post-preview .prev {
+.blog-post .prev {
   color: #555;
-  border-top: 1.5px solid rgba(160, 160, 160, 0.3);
+  border-top: 2px solid rgba(160, 160, 160, 0.3);
   grid-area: prev;
   padding: 1rem 1.5rem;
 }
-.blog-post-preview .seeMore {
-  border: 1.5px solid rgba(160, 160, 160, 0.3);
+.blog-post .seeMore {
+  border: 2px solid rgba(160, 160, 160, 0.3);
   transition: all .15s ease-in;
 }
+.blog-post .blog-post-content {
+  color: #555;
+  border-top: 2px solid rgba(160, 160, 160, 0.3);
+  grid-area: prev;
+  padding: 1rem 1.5rem;
+}
+.blog-post .tags {
+  border-top: 2px solid rgba(160, 160, 160, 0.3);
+  grid-area: tags;
+  padding: 1rem 1.5rem;
+}
+.blog-post .navigation {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid rgba(160, 160, 160, 0.3);
+  grid-area: nav;
+  min-height: 60px;
+  padding: 1rem 1.5rem;
+}
 @media screen and (max-width: 615px) {
-  .blog-post-preview {
+  .blog-post {
     grid-template-columns: 100%;
     grid-template-areas:
       "title"
       "date"
-      "prev";
+      "prev"
+      "tags"
+      "nav";
   }
-  .blog-post-preview .title {
+  .blog-post .title {
     border-right: 0;
     border-bottom: 2px solid rgba(160, 160, 160, 0.3);
     padding: .75rem;
   }
-  .blog-post-preview .prev {
+  .blog-post .blog-post-content {
     padding: .75rem;
+  }
+  .blog-post .prev {
+    padding: .75rem;
+  }
+}
+
+.imageFull {
+  margin: -1rem -1.5rem 0;
+  border-bottom: 2px solid rgba(160, 160, 160, 0.3);
+}
+@media screen and (max-width: 615px) {
+  .imageFull {
+    margin: -.75rem -.75rem 0;
   }
 }
