@@ -14,7 +14,7 @@ export default function Index({ data }) {
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
           return (
-            <div className="blog-post-preview" key={post.id}>
+            <div className="blog-post" key={post.id}>
               <h2 className="title">
                 <GatsbyLink to={post.frontmatter.path}>
                   {post.frontmatter.title}
