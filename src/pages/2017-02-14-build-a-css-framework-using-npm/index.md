@@ -2,7 +2,7 @@
 path: '/posts/build-a-css-framework-using-npm/'
 title: 'Building a CSS framework using npm'
 date: 2017-02-14
-tags: ['javascript']
+tags: ['javascript', 'npm']
 ---
 
 !["Leaves"](./leaves.jpg)

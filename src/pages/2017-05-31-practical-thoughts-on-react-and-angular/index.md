@@ -2,6 +2,7 @@
 path: '/posts/practical-thoughts-on-react-and-angular'
 title: 'Practical thoughts on React and Angular'
 date: 2017-05-31
+tags: ['angular', 'react']
 ---
 !['Oil in water'](./oil-in-water.jpg)
 
