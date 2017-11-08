@@ -1,6 +1,7 @@
 .link {
-  display: inline-block;
+  background: transparent;
   color: inherit;
+  display: inline-block;
   border-bottom: 2px dashed rgba(160, 160, 160, 0.5);
   line-height: 1.2;
   text-decoration: none;
