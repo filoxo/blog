@@ -11,7 +11,7 @@ export default function Tags({ pathContext }) {
   const { posts, post, tag } = pathContext
   if (tag) {
     return (
-      <div>
+      <div className="con">
         <h1>
           {post.length} post{post.length === 1 ? '' : 's'} tagged with {tag}
         </h1>
@@ -20,7 +20,7 @@ export default function Tags({ pathContext }) {
             return (
               <li key={id}>
                 <h1>
-                  <GatsbyLink to={frontmatter.path}>
+                  <GatsbyLink className="link" to={frontmatter.path}>
                     {frontmatter.title}
                   </GatsbyLink>
                 </h1>
@@ -36,14 +36,16 @@ export default function Tags({ pathContext }) {
     )
   }
   return (
-    <div>
+    <div className="con">
       <h1>Tags</h1>
       <ul className="tags">
         {Object.keys(posts).map(tagName => {
           const tags = posts[tagName]
           return (
             <li key={tagName}>
-              <GatsbyLink to={`/tags/${tagName}`}>{tagName}</GatsbyLink>
+              <GatsbyLink className="link" to={`/tags/${tagName}`}>
+                {tagName}
+              </GatsbyLink>
             </li>
           )
         })}

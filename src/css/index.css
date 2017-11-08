@@ -1,6 +1,11 @@
-.blog-post {
+.con, .blog-post {
   background-color: #fff;
   border: 2px solid rgba(160, 160, 160, 0.3);
+}
+.con {
+  padding: 1em;
+}
+.blog-post {
   display: grid;
   grid-template-columns: 25%;
   grid-template-rows: auto;
