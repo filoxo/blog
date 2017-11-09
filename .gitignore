@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+npm-debug.log*
 
 # Runtime data
 pids
@@ -31,3 +32,19 @@ public/
 .cache/
 .DS_Store
 
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# node / npm
+node_modules
+*.log
+
+# build
+dist
+
+# IDEs
+.vscode/
+.idea/
