@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import SVGInline from 'react-svg-inline'
 import GithubIcon from 'react-icons/lib/fa/github-alt'
 import LinkedinIcon from 'react-icons/lib/fa/linkedin'
 import TwitterIcon from 'react-icons/lib/fa/twitter'
