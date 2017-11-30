@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import site from '../site'
 import BackIcon from 'react-icons/lib/io/ios-arrow-back'
 import UpIcon from 'react-icons/lib/io/ios-arrow-up'
 
@@ -27,7 +28,7 @@ export default function Template({ data, pathContext }) {
   const { next, prev } = pathContext
   return (
     <div className="blog-post-container">
-      <Helmet title={`Gatsby Blog - ${post.frontmatter.title}`} />
+      <Helmet title={`${site.title} - ${post.frontmatter.title}`} />
       <div className="blog-post">
         <h2 className="title">{post.frontmatter.title}</h2>
         <div className="date">{post.frontmatter.date}</div>
