@@ -29,8 +29,8 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths",
-    "postdeploy": "gh-pages -d public",
+    "predeploy": "gatsby build --prefix-paths",
+    "deploy": "gh-pages -d public -b master -r https://github.com/filoxo/filoxo.github.io.git",
     "preserve": "npm run build",
     "serve": "gatsby serve",
     "start": "gatsby develop",
