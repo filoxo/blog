@@ -5,7 +5,7 @@
   "twitter": "c_filoteo",
   "github": "https://github.com/filoxo/",
   "linkedin": "https://www.linkedin.com/in/carlosfiloteo",
-  "repository": "https://github.com/filoxo/filoblog.git",
+  "repository": "https://github.com/filoxo/blog.git",
   "dependencies": {
     "gatsby": "~1.9.45",
     "gatsby-link": "~1.6.17",
