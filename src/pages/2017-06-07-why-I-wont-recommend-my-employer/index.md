@@ -7,7 +7,7 @@ tags: ['employment']
 
 ![Image of windows](./windows.jpg)
 
-I want to make it clear that these opinions are my own and reflect only my experience. My employer is a very place to work if you can get your foot in the door. This complaint is with the **hiring process** only. There are some major issues with the hiring process that have made me extremely frustrated, to the point where I want to gripe about it.
+I want to make it clear that these opinions are my own and reflect only my experience. My employer is an amazing place to work if you can get your foot in the door. This complaint is with the **hiring process** only. There are some major issues with the hiring process that have made me extremely frustrated, to the point where I want to gripe about it.
 
 ### Into the void
 

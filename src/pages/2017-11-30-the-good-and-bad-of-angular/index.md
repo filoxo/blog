@@ -11,7 +11,7 @@ I've yet to reach the point in my career where I'm attached to a single framewor
 
 - As a full framework, you'll experience less decision fatigue and won't have lib fragmentation. (eg. team A uses Axios, team B uses Superagent)
 - ‎TypeScript makes JavaScript feel familiar to backend/full-stack devs.
-- RxJs/‎Observables are so awesome! This reactive data flow also helps you keep your components focused on being UI-focused.
+- RxJs/‎Observables are so awesome! This reactive data flow also helps you keep your components UI-focused.
 - ‎The Angular CLI is fantastic! Its so good, in fact, that it hardly makes sense to use anything else.
 - ‎Predictable and periodical framework updates set a great rhythm. Of course, this is personal preference. I've read some other peoples' struggles with having gotten too far behind... but that hasn't been something I've dealt with.
 - The animations API is good when it works. React's TransitionGroup is the equivalent, but most React beginners don't know about it or how to find it to solve animations with components mounting/unmounting. The Angular animations work well for this same usage, but there have been quite a few bugs with it between versions. I had to revert to CSS animations. Hopefully they've been fixed and that has stablized.
