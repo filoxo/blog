@@ -32,4 +32,4 @@ I've yet to reach the point in my career where I'm attached to a single framewor
 
 ## Conclusion
 
-I've written approximately twice as many "bads" as "goods" for this article, but that doesn't mean I hate Angular. It is definitely a viable option, and still has the backing of Google despite sopm misteps. I just hope these issues are something you might analyze before using, or can use your voice and vote to help improve Angular.
+I've written approximately twice as many "bads" as "goods" for this article, but that doesn't mean I hate Angular. It is definitely a viable option, and still has the backing of Google despite some misteps with branding and architecture. I just hope these issues are something you might analyze before using, or can use your voice and vote to help improve Angular.
