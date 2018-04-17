@@ -1,9 +1,15 @@
 ---
 path: "/posts/anne-pro-mods"
 title: "Anne Pro mods"
-date: 2018-04-20
+date: 2018-04-17
 tags: ['keyboards']
 ---
+
+<style>
+.gatsby-resp-image-wrapper,
+.gatsby-resp-image-background-image, 
+.gatsby-resp-image-image { border-radius: 5px; }
+</style>
 
 I recently started a new job and was able to request a new keyboard. I got the Anne Pro with Gateron Red switches, and have mostly liked it. I still felt like there were some improvements to be made, so I took a stab at it.
 
