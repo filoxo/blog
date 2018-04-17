@@ -21,8 +21,16 @@ export default class Template extends React.Component {
         <Helmet
           title="Filoblog"
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' }
+            {
+              name: 'description',
+              content:
+                'Blog about programming, keyboards, and whatever seems to cross my mind.'
+            },
+            {
+              name: 'keywords',
+              content:
+                'coding, developer, programmer, front-end, frontend, web, webdev'
+            }
           ]}
         >
           <html lang="en-US" />
