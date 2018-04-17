@@ -1,11 +1,11 @@
 ---
 path: "/posts/anne-pro-mods"
 title: "Anne Pro mods"
-date: 2018-4-20
+date: 2018-04-20
 tags: ['keyboards']
 ---
 
-I recently started a new job and was able to request a new keyboard. I got the Anne Pro with red switches, and have been mostly in love with it. I still felt like there were some improvements to be made, so I took a stab at it.
+I recently started a new job and was able to request a new keyboard. I got the Anne Pro with Gateron Red switches, and have mostly liked it. I still felt like there were some improvements to be made, so I took a stab at it.
 
 ### Foam mod
 
