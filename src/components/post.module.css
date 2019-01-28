@@ -1,24 +1,19 @@
 .post {
   background-color: #fff;
   border: 2px solid rgba(160, 160, 160, 0.3);
-  display: grid;
-  grid-template-columns: 25%;
-  grid-template-rows: auto;
-  grid-template-areas:
-    'title title title date'
-    'prev prev prev prev'
-    'tags tags tags tags'
-    'nav nav nav nav';
 }
 .post:not(:last-child) {
   margin-bottom: 2em;
 }
+.heading {
+  display: flex;
+  align-items: center;
+}
 .title {
-  align-self: center;
   border-right: 2px solid rgba(160, 160, 160, 0.3);
-  grid-area: title;
+  flex: 1;
   margin: 0;
-  padding: 1rem 1.5rem;
+  padding: .5rem 1rem;
 }
 .title a {
   border: none;
@@ -30,12 +25,11 @@
   color: teal;
 }
 .date {
-  align-self: center;
   color: #555;
-  grid-area: date;
   margin-bottom: 0;
-  padding: 0.75rem;
+  padding: 0.5rem;
   text-align: center;
+  flex: 0 1 25%;
 }
 .prev {
   color: #555;
@@ -67,14 +61,8 @@
   padding: 1rem 1.5rem;
 }
 @media screen and (max-width: 615px) {
-  .post {
-    grid-template-columns: 100%;
-    grid-template-areas:
-      'title'
-      'date'
-      'prev'
-      'tags'
-      'nav';
+  .heading {
+    display: block;
   }
   .title {
     border-right: 0;
