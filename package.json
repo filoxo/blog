@@ -1,49 +1,44 @@
 {
-  "private": true,
   "name": "filoblog",
-  "homepage": "https://filoxo.github.io",
-  "twitter": "c_filoteo",
-  "github": "https://github.com/filoxo/",
-  "linkedin": "https://www.linkedin.com/in/carlosfiloteo",
-  "repository": "https://github.com/filoxo/blog.git",
+  "description": "My personal blog",
+  "version": "2.0.0",
+  "author": "Carlos Filoteo",
+  "private": true,
   "dependencies": {
-    "gatsby": "^1.9.251",
-    "gatsby-link": "^1.6.40",
-    "gatsby-plugin-catch-links": "~1.0.1",
-    "gatsby-plugin-react-helmet": "^2.0.10",
-    "gatsby-plugin-react-next": "~1.0.4",
-    "gatsby-plugin-sharp": "~1.6.8",
-    "gatsby-remark-images": "~1.5.13",
-    "gatsby-source-filesystem": "~1.5.1",
-    "gatsby-transformer-remark": "~1.7.12",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "gatsby": "^2.0.53",
+    "gatsby-image": "^2.0.20",
+    "gatsby-plugin-catch-links": "^2.0.9",
+    "gatsby-plugin-manifest": "^2.0.9",
+    "gatsby-plugin-offline": "^2.0.16",
+    "gatsby-plugin-react-helmet": "^3.0.4",
+    "gatsby-plugin-sharp": "^2.0.12",
+    "gatsby-remark-images": "^3.0.1",
+    "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-transformer-remark": "^2.1.15",
+    "gatsby-transformer-sharp": "^2.1.8",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
-    "react-icons": "~2.2.5"
+    "react-icons": "^3.3.0"
   },
-  "devDependencies": {
-    "gh-pages": "^1.1.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.0.4",
-    "prettier": "^1.12.1"
-  },
-  "main": "n/a",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "predeploy": "gatsby build --prefix-paths",
-    "deploy": "gh-pages -d public -b master -r https://github.com/filoxo/filoxo.github.io.git",
-    "preserve": "npm run build",
-    "serve": "gatsby serve",
-    "start": "gatsby develop",
-    "format": "npm run pretty -- 'src/**/*.js'",
-    "pretty": "prettier --no-semi --single-quote --write",
-    "precommit": "lint-staged",
-    "test": "echo \"Should probably write some tests!\""
+    "start": "gatsby develop -o",
+    "format": "prettier --write \"src/**/*.{js,css}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "lint-staged": {
-    "src/**/*.js": [
-      "npm run pretty",
-      "git add"
-    ]
+  "devDependencies": {
+    "prettier": "^1.15.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "arrowParens": "always"
   }
 }
