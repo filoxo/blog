@@ -1,38 +1,21 @@
 import React from 'react'
-import GatsbyLink from 'gatsby-link'
-import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 
-import Link from '../components/Link'
+import Layout from '../components/layout'
+import PostPreview from '../components/post-preview'
 
-import '../css/index.css'
-
-export default function Index({ data }) {
+const IndexPage = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
   return (
-    <div className="blog-posts">
+    <Layout>
       {posts
-        .filter(post => post.node.frontmatter.title.length > 0)
-        .map(({ node: post }) => {
-          return (
-            <div className="blog-post" key={post.id}>
-              <h2 className="title">
-                <GatsbyLink to={post.frontmatter.path}>
-                  {post.frontmatter.title}
-                </GatsbyLink>
-              </h2>
-              <div className="date">{post.frontmatter.date}</div>
-              <div className="prev">
-                <p>{post.excerpt}</p>
-                <Link className="link btn" to={post.frontmatter.path}>
-                  Read more
-                </Link>
-              </div>
-            </div>
-          )
-        })}
-    </div>
+        .filter((post) => post.node.frontmatter.title)
+        .map(({ node: post }) => <PostPreview post={post} key={post.id}/>)}
+    </Layout>
   )
 }
+
+export default IndexPage
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -43,8 +26,10 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
-            path
+            date(formatString: "MMM DD, YYYY")
+          }
+          fields {
+            slug
           }
         }
       }

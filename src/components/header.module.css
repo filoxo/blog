@@ -1,0 +1,45 @@
+.headerContainer {
+  background: #fff;
+  border-bottom: 2px solid rgba(160, 160, 160, 0.3);
+  margin-bottom: 1.45rem;
+}
+.headerContent {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0.5rem 1.45rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.headerTitle {
+  font-size: 1.5rem;
+  letter-spacing: 8px;
+  line-height: 2rem;
+  margin: 0;
+}
+.headerTitle a {
+  border: none;
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.menuIcons {
+  list-style: none;
+  margin: 0;
+}
+.menuIcons li {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 0.8rem 0;
+}
+.menuIcons li svg {
+  fill: rgba(0, 0, 0, 0.4);
+  transition: fill 0.3s ease-in;
+}
+.menuIcons li:hover svg {
+  fill: rgba(0, 0, 0, 0.8);
+}
+.menuIcons li:not(:last-child) {
+  border-right: 2px solid rgba(160, 160, 160, 0.3);
+}
