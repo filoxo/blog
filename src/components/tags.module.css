@@ -1,0 +1,12 @@
+.tagList {
+    list-style: none;
+    margin: 0;
+  }
+  .tagList li {
+    display: inline-block;
+    margin: 0;
+    padding: .1rem .8rem;
+  }
+  .tagList li:not(:last-child) {
+    border-right: 2px solid rgba(160, 160, 160, 0.3);
+  }

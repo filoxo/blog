@@ -1,93 +1,90 @@
-const path = require('path');
+const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const createTagPages = (createPage, edges) => {
-  const tagTemplate = path.resolve(`src/templates/tags.js`);
-  const posts = {};
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `posts` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
+}
 
-  edges
-    .forEach(({ node }) => {
-      if (node.frontmatter.tags) {
-        node.frontmatter.tags
-          .forEach(tag => {
-            if (!posts[tag]) {
-              posts[tag] = [];
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  const createPostPages = new Promise((resolve, reject) => {
+    graphql(`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            id
+            fields {
+              slug
             }
-            posts[tag].push(node);
-          });
-      }
-    });
-
-  createPage({
-    path: '/tags',
-    component: tagTemplate,
-    context: {
-      posts
-    }
-  });
-
-  Object.keys(posts)
-    .forEach(tagName => {
-      const post = posts[tagName];
-      createPage({
-        path: `/tags/${tagName}`,
-        component: tagTemplate,
-        context: {
-          posts,
-          post,
-          tag: tagName
-        }
-      })
-    });
-};
-
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
-
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
-  return graphql(`{
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          html
-          id
-          timeToRead
-          frontmatter {
-            date
-            path
-            tags
-            title
+            frontmatter {
+              title
+              tags
+            }
           }
         }
       }
     }
-  }`)
-  .then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
+    `).then((result) => {
+      const posts = {}
+      /* Post pages */
+      const postTemplate = path.resolve(`./src/templates/post.js`)
 
-    const posts = result.data.allMarkdownRemark.edges;
-
-    createTagPages(createPage, posts);
-
-    // Create pages for each markdown file.
-    posts.forEach(({ node }, index) => {
-      const prev = index === 0 ? false : posts[index - 1].node;
-      const next = index === posts.length - 1 ? false : posts[index + 1].node;
-      createPage({
-        path: node.frontmatter.path,
-        component: blogPostTemplate,
-        context: {
-          prev,
-          next
+      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        if (node.frontmatter.tags) {
+          node.frontmatter.tags.forEach((tag) => {
+            if (!posts[tag]) {
+              posts[tag] = []
+            }
+            posts[tag].push(node)
+          })
         }
-      });
-    });
 
-    return posts;
+        createPage({
+          path: node.fields.slug,
+          component: postTemplate,
+          context: {
+            // Data passed to context is available
+            // in page queries as GraphQL variables.
+            slug: node.fields.slug,
+          },
+        })
+      })
+
+      /* Tag pages */
+      const tagTemplate = path.resolve(`./src/templates/tags.js`)
+
+      createPage({
+        path: '/tags',
+        component: tagTemplate,
+        context: {
+          posts,
+        },
+      })
+
+      Object.keys(posts).forEach((tag) => {
+        const post = posts[tag]
+        createPage({
+          path: `/tags/${tag}`,
+          component: tagTemplate,
+          context: {
+            posts,
+            post,
+            tag,
+          },
+        })
+      })
+      resolve()
+    })
   })
-};
+  return Promise.all([createPostPages])
+}
