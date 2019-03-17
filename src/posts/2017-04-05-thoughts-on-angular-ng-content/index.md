@@ -4,7 +4,7 @@ date: 2017-04-05
 tags: ['angular']
 ---
 
-!["Image of building angles"](./bldg-angle.jpg)
+![Image of building angles](./bldg-angle.jpg)
 
 I recently came across some interesting behavior with Angular's `ng-content` that I wanted to jot down so I can search for some answers. NgContent isn't well documented.
 
@@ -42,7 +42,7 @@ One of the features of `ng-content` is that you can use the `select` attribute o
 </div>
 ```
 
-This is great for enforcing layout in a specific way. Except... it has a __major__ caveat, at least in my opinion. This select only seems to match _immediate children only_, nothing else.
+This is great for enforcing layout in a specific way. Except... it has a **major** caveat, at least in my opinion. This select only seems to match _immediate children only_, nothing else.
 
 So using the above `my-component`, this belwo works while placing the `title` above the `subtitle`:
 
@@ -64,4 +64,4 @@ but then this doesn't! Nothing is rendered.
 </my-component>
 ```
 
-It can't find these same elements  because they're wrapped in an extra div? I would have thought that it would match those elements as well, just like `querySelector` or CSS selectors would. If I only wanted immediate children I would have used something like `select="> .title"`. My assumption that it used standard selectors is wrong? ¯\\_(ツ)_/¯ That sucks.
+It can't find these same elements because they're wrapped in an extra div? I would have thought that it would match those elements as well, just like `querySelector` or CSS selectors would. If I only wanted immediate children I would have used something like `select="> .title"`. My assumption that it used standard selectors is wrong? 🤷‍♂️ That sucks.

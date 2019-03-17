@@ -3,6 +3,7 @@ title: 'Practical thoughts on React and Angular'
 date: 2017-05-31
 tags: ['angular', 'react']
 ---
+
 !['Oil in water'](./oil-in-water.jpg)
 
 I sometimes see developers ask "Should I use React, or Angular, or Vue.js, or _\[insert new framework here\]_?" and every time, I see fanatics immediately jump to recommending one without any real justification. Now, I'm no expert but I do have experience with both Angular and React. This post lists some of the differences between the actual usage of Angular (2+) and React. I hope to just shed some light on the practical differences between them to help you understand the decision a bit better.
@@ -33,7 +34,7 @@ A personal experience of this I had is choosing an HTTP library. There are so ma
 
 The company I work for is slowly coming around to adopting React but what's there to stop each team from choosing a different lib from of the above? Allowing this sort of fragmentation makes it that much harder to share code and contribute to other teams. Furthermore, making a decision to standardize one requires intimate knowledge of the features, benefits, and disadvantages of each.
 
-Now, *this evaluation process isn't bad*! It would GREAT to make a thorough and informed decision but not every developer or team is equipped to make this kind of analysis for every dependency. If this isn't something that you or your team can or want to do, then consider a full framework like Angular. Conversely, if developers are passionate about jumping in and learning each lib quickly then this isn't a problem.
+Now, _this evaluation process isn't bad_! It would GREAT to make a thorough and informed decision but not every developer or team is equipped to make this kind of analysis for every dependency. If this isn't something that you or your team can or want to do, then consider a full framework like Angular. Conversely, if developers are passionate about jumping in and learning each lib quickly then this isn't a problem.
 
 #### Complexity: Angular
 
@@ -56,12 +57,12 @@ There are some disadvantages:
     <li>Re-using the Angular namespace means that there's a lot of conflation between AngularJS (version 1) and Angular (2+)</li>
 </ul>
 
-<sup>*</sup>Both frameworks, if configured properly, discards unused dependencies from a production build (a process known as tree-shaking).
+<sup>\*</sup>Both frameworks, if configured properly, discards unused dependencies from a production build (a process known as tree-shaking).
 
 ### Framework
 
 React's model of a single component drives to you really want to keep your components tiny, and import the rest. On average, my React components stay at less than 50 lines. Keeping components tiny really helps with composability.
-Angular uses a similar component model, but requires at least 10+ lines just to declare, along 2 accompanying files&mdash;a template file and a style file. Keeping the template separate has had an unforeseen consequence: templates get *huge* and end up more bloated than needed. Because of this, I feel like there's a desire to add more logic to the class than a single component actually needs. Its all to easy to bloat a single component instead of breaking it out into smaller pieces.
+Angular uses a similar component model, but requires at least 10+ lines just to declare, along 2 accompanying files&mdash;a template file and a style file. Keeping the template separate has had an unforeseen consequence: templates get _huge_ and end up more bloated than needed. Because of this, I feel like there's a desire to add more logic to the class than a single component actually needs. Its all to easy to bloat a single component instead of breaking it out into smaller pieces.
 
 ### Tools
 
@@ -90,10 +91,10 @@ React's ecosystem is as prolyfic as one could hope for.
 
 Angular on the other hand feels very much like "corporate" or enterprise softare. The API very much feels like _This is how we solved this problem, and you get to use it that way_. Regardless, adoption of Angular 2 has not lagged behind at all.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">1.3 million people use Angular 1.<br>480k already use Angular 2.</p>&mdash; David East (@_davideast) <a href="https://twitter.com/_davideast/status/776244105261133824">September 15, 2016</a></blockquote>
-<script defer src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">1.3 million people use Angular 1.<br/>480k already use Angular 2.</p>&mdash; David East (@_davideast) <a href="https://twitter.com/_davideast/status/776244105261133824">September 15, 2016</a></blockquote>
+<script defer src="//platform.twitter.com/widgets.js" charSet="utf-8"></script>
 
-And this quote is somewhat old; these numbers have most likely increased. Angular ranks very high as a popular framework: 6th most loved, 4th most dreaded, and 2nd most wanted[&sup2;](#StackOverflowDeveloperSurvey2017) [&sup3;](#footnote2)</sup>.
+And this quote is somewhat old; these numbers have most likely increased. Angular ranks very high as a popular framework: 6th most loved, 4th most dreaded, and 2nd most wanted[&sup2;](#StackOverflowDeveloperSurvey2017) [&sup3;](#footnote2).
 
 The Angular ecosystem is not quite as expansive, but has Google's weight behind the rest of their products to push out additional libraries that align with Angular. What that means is companion projects like [Angular Material](https://github.com/angular/material2), [AngularFire2](https://github.com/angular/angularfire2), and [Angular Universal](https://github.com/angular/universal) are kept up to date with the Angular core. Aside from these projects there aren't as many thriving projects built for Angular as I'd like to see. Many of these have gotten out of date very fast.
 
