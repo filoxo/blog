@@ -5,8 +5,11 @@
   "author": "Carlos Filoteo",
   "private": true,
   "dependencies": {
+    "@mdx-js/mdx": "^0.16.8",
+    "@mdx-js/tag": "^0.16.8",
     "gatsby": "^2.0.53",
     "gatsby-image": "^2.0.20",
+    "gatsby-mdx": "^0.3.5",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-offline": "^2.0.16",
