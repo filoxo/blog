@@ -1,6 +1,7 @@
 .post {
   background-color: #fff;
-  border: 2px solid rgba(160, 160, 160, 0.3);
+  border: var(--grey-border);
+  border-radius: 3px;
 }
 .post:not(:last-child) {
   margin-bottom: 2em;
@@ -10,10 +11,10 @@
   align-items: center;
 }
 .title {
-  border-right: 2px solid rgba(160, 160, 160, 0.3);
+  border-right: var(--grey-border);
   flex: 1;
   margin: 0;
-  padding: .5rem 1rem;
+  padding: var(--content-padding);
 }
 .title a {
   border: none;
@@ -33,32 +34,32 @@
 }
 .prev {
   color: #555;
-  border-top: 2px solid rgba(160, 160, 160, 0.3);
+  border-top: var(--grey-border);
   grid-area: prev;
-  padding: 1rem 1.5rem;
+  padding: var(--content-padding);
 }
 .seeMore {
-  border: 2px solid rgba(160, 160, 160, 0.3);
+  border: var(--grey-border);
   transition: all 0.15s ease-in;
 }
 .content {
   color: #555;
-  border-top: 2px solid rgba(160, 160, 160, 0.3);
+  border-top: var(--grey-border);
   grid-area: prev;
-  padding: 1rem 1.5rem;
+  padding: var(--content-padding);
 }
 .tags {
-  border-top: 2px solid rgba(160, 160, 160, 0.3);
+  border-top: var(--grey-border);
   grid-area: tags;
-  padding: 1rem 1.5rem;
+  padding: var(--content-padding);
 }
 .navigation {
   display: flex;
   justify-content: space-between;
-  border-top: 2px solid rgba(160, 160, 160, 0.3);
+  border-top: var(--grey-border);
   grid-area: nav;
   min-height: 60px;
-  padding: 1rem 1.5rem;
+  padding: var(--content-padding);
 }
 @media screen and (max-width: 615px) {
   .heading {
@@ -66,13 +67,13 @@
   }
   .title {
     border-right: 0;
-    border-bottom: 2px solid rgba(160, 160, 160, 0.3);
-    padding: 0.75rem;
+    border-bottom: var(--grey-border);
+    padding: var(--content-padding-sm);
   }
   .content {
-    padding: 0.75rem;
+    padding: var(--content-padding-sm);
   }
   .prev {
-    padding: 0.75rem;
+    padding: var(--content-padding-sm);
   }
 }
