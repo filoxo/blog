@@ -603,22 +603,16 @@ code {
     'Liberation Mono', Menlo, Courier, monospace;
   padding: 0.1em 0.3em;
 }
+kbd {
+  box-shadow: 0px 1px 0 3px hsla(0, 0%, 0%, 0.1);
+  border-radius: 3px;
+  font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
+    'Liberation Mono', Menlo, Courier, monospace;
+  padding: 0.1em 0.3em;
+}
 pre code {
   background: none;
   line-height: 1.42;
-}
-code:before,
-code:after,
-tt:before,
-tt:after {
-  letter-spacing: -0.2em;
-  content: ' ';
-}
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: '';
 }
 @media only screen and (max-width: 480px) {
   html {
