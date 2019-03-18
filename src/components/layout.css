@@ -72,7 +72,12 @@ mark {
   color: #000;
 }
 small {
-  font-size: 80%;
+  border-left: var(--grey-border);
+  border-radius: 2px;
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-bottom: 1.45rem;
+  padding-left: 0.75rem;
 }
 sub,
 sup {
