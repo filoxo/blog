@@ -614,6 +614,11 @@ pre code {
   background: none;
   line-height: 1.42;
 }
+.highlight-line {
+  background-color: rgba(160, 160, 160, 0.1);
+  margin: 0 -0.75rem;
+  padding: 0 0.75rem;
+}
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
