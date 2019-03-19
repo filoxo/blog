@@ -1,3 +1,8 @@
+:root {
+  --grey-border: 2px solid rgba(160, 160, 160, 0.3);
+  --content-padding: 0.75rem 1rem;
+  --content-padding-sm: 0.5rem 0.75rem;
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -67,7 +72,12 @@ mark {
   color: #000;
 }
 small {
-  font-size: 80%;
+  border-left: var(--grey-border);
+  border-radius: 2px;
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-bottom: 1.45rem;
+  padding-left: 0.75rem;
 }
 sub,
 sup {
@@ -395,21 +405,16 @@ figure {
   margin-bottom: 1.45rem;
 }
 pre {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
+  margin: 0;
+  padding: 0;
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
+  background: hsla(0, 0%, 0%, 0.05);
   border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
-  padding: 1.45rem;
+  padding: var(--content-padding-sm);
 }
 table {
   margin-left: 0;
@@ -592,30 +597,27 @@ td:last-child {
 }
 tt,
 code {
-  background-color: hsla(0, 0%, 0%, 0.04);
+  background-color: hsla(0, 0%, 0%, 0.05);
   border-radius: 3px;
   font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
     'Liberation Mono', Menlo, Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding: 0.1em 0.3em;
+}
+kbd {
+  box-shadow: 0px 1px 0 3px hsla(0, 0%, 0%, 0.1);
+  border-radius: 3px;
+  font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
+    'Liberation Mono', Menlo, Courier, monospace;
+  padding: 0.1em 0.3em;
 }
 pre code {
   background: none;
   line-height: 1.42;
 }
-code:before,
-code:after,
-tt:before,
-tt:after {
-  letter-spacing: -0.2em;
-  content: ' ';
-}
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: '';
+.highlight-line {
+  background-color: rgba(160, 160, 160, 0.1);
+  margin: 0 -0.75rem;
+  padding: 0 0.75rem;
 }
 @media only screen and (max-width: 480px) {
   html {
@@ -625,7 +627,8 @@ pre tt:after {
 
 body {
   background-color: #f4f4f4;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   margin: 0;
 }
 

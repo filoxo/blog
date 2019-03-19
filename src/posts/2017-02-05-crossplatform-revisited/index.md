@@ -4,7 +4,7 @@ date: 2017-02-05
 tags: ['programming', 'javascript']
 ---
 
-!["Crossplatform"](./crossplatform.jpg)
+![Crossplatform](./crossplatform.jpg)
 
 Time has passed, technology has improved, and my preferences have also changed. In this post I'll revisit my choice of tooling.
 
@@ -38,7 +38,7 @@ I was unexpectedly pleased when I decided to try out [Hyper terminal](https://gi
 
 ### IDE
 
-I have long since been a fan of the JetBrains suite of IDEs. They do a great job of pulling together many tools into one application. But I've found that for small side projects & demos it is very heavy and a little distracting. SublimeText and Atom are great simple solutions but VS Code has taken their place for me. VS Code provides a balance between simplicity and functionality, so its not overly simplistic right out of the box. Built in Git tools, console window, and debugger are *really* useful for getting hacking quickly. And of course, because its also an Electron app, its plugin ecosystem has whatever you might ask for. Here are the ones I use:
+I have long since been a fan of the JetBrains suite of IDEs. They do a great job of pulling together many tools into one application. But I've found that for small side projects & demos it is very heavy and a little distracting. SublimeText and Atom are great simple solutions but VS Code has taken their place for me. VS Code provides a balance between simplicity and functionality, so its not overly simplistic right out of the box. Built in Git tools, console window, and debugger are _really_ useful for getting hacking quickly. And of course, because its also an Electron app, its plugin ecosystem has whatever you might ask for. Here are the ones I use:
 
 - Angular 2 TypeScript snippets
 - Auto-open Markdown Preview

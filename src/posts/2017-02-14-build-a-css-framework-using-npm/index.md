@@ -4,7 +4,7 @@ date: 2017-02-14
 tags: ['javascript', 'npm']
 ---
 
-!["Leaves"](./leaves.jpg)
+![Leaves](./leaves.jpg)
 
 This last weekend I wanted to create a simple CSS framework that I can reuse for my own little projects. The end result is [Simple Style](https://github.com/filoxo/simple-style) (which is still a WIP as requirements come up). Surprisingly, using [npm as a build tool](https://medium.com/@dabit3/introduction-to-using-npm-as-a-build-tool-b41076f488b0#.5w4loc8uy) made it extremely easy to set up a dev environment. I'll review everything about the setup in this post for my own documentation, but hopefully can also serve as a clean, straightforward example.
 

@@ -3,7 +3,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const slug = createFilePath({ node, getNode, basePath: `posts` })
     createNodeField({
       node,
@@ -18,28 +18,27 @@ exports.createPages = ({ graphql, actions }) => {
 
   const createPostPages = new Promise((resolve, reject) => {
     graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              tags
+      {
+        allMdx {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                tags
+              }
             }
           }
         }
       }
-    }
     `).then((result) => {
       const posts = {}
       /* Post pages */
       const postTemplate = path.resolve(`./src/templates/post.js`)
-
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      result.data.allMdx.edges.forEach(({ node }) => {
         if (node.frontmatter.tags) {
           node.frontmatter.tags.forEach((tag) => {
             if (!posts[tag]) {
