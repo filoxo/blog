@@ -4910,6 +4910,13 @@ gatsby-plugin-sharp@^2.0.12:
     sharp "^0.21.3"
     svgo "^0.7.2"
 
+gatsby-plugin-twitter@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-2.1.2.tgz#362fedaf295b6ccfb914d8f4381ef991a5992aa2"
+  integrity sha512-/9zuJcITmhALNtSOAw0QtZmx45qCd8AfqM+S+nlRX6PO2boUcE4AJwa9OK/hHOFrmrE5lFHchRC5exzt3gWTQw==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
 gatsby-react-router-scroll@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.0.6.tgz#b04a8fe6ee77db5ca8f804b7ef476fd205dc4a40"
