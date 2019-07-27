@@ -19,7 +19,10 @@ exports.createPages = ({ graphql, actions }) => {
   const createPostPages = new Promise((resolve, reject) => {
     graphql(`
       {
-        allMdx {
+        allMdx(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
           edges {
             node {
               id
@@ -28,8 +31,8 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
-                tags
               }
+              body
             }
           }
         }
@@ -38,6 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
       const posts = {}
       /* Post pages */
       const postTemplate = path.resolve(`./src/templates/post.js`)
+      console.log(result)
       result.data.allMdx.edges.forEach(({ node }) => {
         if (node.frontmatter.tags) {
           node.frontmatter.tags.forEach((tag) => {

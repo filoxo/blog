@@ -15,9 +15,7 @@ export default ({ data }) => {
 export const query = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      code {
-        body
-      }
+      body
       frontmatter {
         title
         date(formatString: "MMM DD, YYYY")
