@@ -1,6 +1,6 @@
 import React from 'react'
 import { IoIosArrowBack, IoIosArrowUp } from 'react-icons/io'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import Tags from '../components/tags'
 import styles from './post.module.css'
@@ -13,7 +13,7 @@ const Post = ({ post }) => (
       <div className={styles.date}>{post.frontmatter.date}</div>
     </div>
     <div className={styles.content}>
-      <MDXRenderer>{post.code.body}</MDXRenderer>
+      <MDXRenderer>{post.body}</MDXRenderer>
     </div>
     {post.frontmatter.tags && post.frontmatter.tags.length && (
       <div className={styles.tags}>

@@ -2,6 +2,8 @@
   --grey-border: 2px solid rgba(160, 160, 160, 0.3);
   --content-padding: 0.75rem 1rem;
   --content-padding-sm: 0.5rem 0.75rem;
+  --primary-color: teal;
+  --primary-color-rgb: 0, 128, 128;
 }
 html {
   font-family: sans-serif;
@@ -637,9 +639,37 @@ body {
   border: 2px solid rgba(160, 160, 160, 0.3);
   padding: 1rem 1.5rem;
 }
+
 .con:not(:last-child) {
   margin-bottom: 2em;
 }
+
+blockquote {
+  margin: 0 0.725rem 0.725rem;
+  border-left: 3px solid teal;
+  padding: 0.25rem 0 0.25rem 0.725rem;
+}
+
+a {
+  color: teal;
+}
+
+a:visited {
+  color: darkslategray;
+}
+
+twitter-widget {
+  margin: 0 auto;
+}
+
+aside {
+  background: rgba(var(--primary-color-rgb), 0.1);
+  border-left: 3px solid var(--primary-color);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  padding: var(--content-padding-sm);
+}
+
 @media screen and (max-width: 615px) {
   .content {
     padding: 0.75rem;
