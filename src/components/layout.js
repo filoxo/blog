@@ -22,8 +22,11 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            {
+              name: 'description',
+              content: 'My thoughts on development and other stuff.',
+            },
+            { name: 'keywords', content: 'javascript, development, blog' },
           ]}
         >
           <html lang="en" />
@@ -33,7 +36,7 @@ const Layout = ({ children }) => (
           style={{
             margin: '0 auto',
             maxWidth: 960,
-            padding: '0 .5rem 1.45rem'
+            padding: '0 .5rem 1.45rem',
           }}
         >
           {children}
