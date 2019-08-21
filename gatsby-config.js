@@ -24,6 +24,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        plugins: [`gatsby-remark-images`],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -32,6 +33,8 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 590,
+              linkImagesToOriginal: false,
+              tracedSVG: true,
             },
           },
         ],
