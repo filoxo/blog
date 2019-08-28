@@ -10,7 +10,9 @@ const Header = ({ siteTitle }) => (
   <div className={styles.headerContainer}>
     <div className={styles.headerContent}>
       <h1 className={styles.headerTitle}>
-        <Link to="/">{siteTitle}</Link>
+        <Link className={styles.headerLink} to="/">
+          {siteTitle}
+        </Link>
       </h1>
       <ul className={styles.menuIcons}>
         <li>

@@ -18,22 +18,19 @@
 }
 .title a {
   border: none;
-  color: inherit;
   text-decoration: none;
-  transition: color 0.15s ease-in;
+  transition: var(--fade-color-transition);
 }
 .title a:hover {
   color: teal;
 }
 .date {
-  color: #555;
   margin-bottom: 0;
   padding: 0.5rem;
   text-align: center;
   flex: 0 1 25%;
 }
 .prev {
-  color: #555;
   border-top: var(--grey-border);
   grid-area: prev;
   padding: var(--content-padding);
@@ -43,7 +40,6 @@
   transition: all 0.15s ease-in;
 }
 .content {
-  color: #555;
   border-top: var(--grey-border);
   grid-area: prev;
   padding: var(--content-padding);
