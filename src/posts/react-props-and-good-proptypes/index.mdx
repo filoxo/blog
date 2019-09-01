@@ -1,0 +1,19 @@
+---
+title: Good React PropTypes
+date: 2019-08-30
+tags: ['react']
+---
+
+## Care about the right things
+
+don't validate native html dom attributes unless absolutely necessary
+
+## Use the right PropTypes
+
+React.element vs React.node
+
+React.shapeOf
+
+## PropTypes don't protect your internal state
+
+Remember that PropTypes are only checked at the component props boundary. What this means is that while your data may come in as a specific type, your component may be changing that type unknowingly. 
