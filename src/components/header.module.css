@@ -18,11 +18,18 @@
   line-height: 2rem;
   margin: 0;
 }
-.headerTitle a {
+a.headerLink {
   border: none;
-  color: #333;
+  transition: var(--fade-color-transition);
   text-decoration: none;
   text-transform: uppercase;
+}
+a.headerLink,
+a.headerLink:visited {
+  color: inherit;
+}
+a.headerLink:hover {
+  color: var(--primary-color);
 }
 .menuIcons {
   list-style: none;
@@ -34,11 +41,11 @@
   padding: 5px 0.8rem 0;
 }
 .menuIcons li svg {
-  fill: rgba(0, 0, 0, 0.4);
+  fill: var(--text-color);
   transition: fill 0.3s ease-in;
 }
 .menuIcons li:hover svg {
-  fill: rgba(0, 0, 0, 0.8);
+  fill: var(--primary-color);
 }
 .menuIcons li:not(:last-child) {
   border-right: 2px solid rgba(160, 160, 160, 0.3);

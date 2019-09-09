@@ -2,9 +2,9 @@ import React from 'react'
 import { IoIosArrowBack, IoIosArrowUp } from 'react-icons/io'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
-import Tags from '../components/tags'
+import Tags from './tags'
 import styles from './post.module.css'
-import { linkBtn } from '../components/link.module.css'
+import { linkBtn } from './link.module.css'
 
 const Post = ({ post }) => (
   <div className={styles.post}>
