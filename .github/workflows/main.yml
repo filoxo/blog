@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install deps
-      run: npm install
+      run: npm ci
     - name: Configure git
       run: git config user.name "Carlos Filoteo" && git config user.email "c.filoteo12@gmail.com"
     - name: Deploy to Github pages
