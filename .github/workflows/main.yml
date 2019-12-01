@@ -24,6 +24,7 @@ jobs:
           
     - uses: actions/checkout@v1
     - name: Install deps
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn
       
     - name: Configure git
