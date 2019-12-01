@@ -5,6 +5,7 @@ import { FaGithubAlt, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 import SrText from './sr-text'
 import styles from './header.module.css'
+import ThemeToggle from './theme-toggle'
 
 const Header = ({ siteTitle }) => (
   <div className={styles.headerContainer}>
@@ -14,38 +15,41 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <ul className={styles.menuIcons}>
-        <li>
-          <a
-            href="https://twitter.com/cfiloteo12"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <FaTwitter size={20} />
-            <SrText>Follow me as @cfiloteo12 on Twitter</SrText>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/filoxo"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <FaGithubAlt size={20} />
-            <SrText>Checkout my Github profile (@filoxo)</SrText>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/carlosfiloteo/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <FaLinkedin size={20} />
-            <SrText>Let's connect on LinkedIn</SrText>
-          </a>
-        </li>
-      </ul>
+      <div className={styles.flexRow}>
+        <ul className={styles.menuIcons}>
+          <li>
+            <a
+              href="https://twitter.com/cfiloteo12"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <FaTwitter size={20} />
+              <SrText>Follow me as @cfiloteo12 on Twitter</SrText>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/filoxo"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <FaGithubAlt size={20} />
+              <SrText>Checkout my Github profile (@filoxo)</SrText>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/carlosfiloteo/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <FaLinkedin size={20} />
+              <SrText>Let's connect on LinkedIn</SrText>
+            </a>
+          </li>
+        </ul>
+        <ThemeToggle style={{ marginLeft: '1.5rem' }} />
+      </div>
     </div>
   </div>
 )
