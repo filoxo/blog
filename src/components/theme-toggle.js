@@ -4,9 +4,12 @@ import styles from './theme-toggle.module.css'
 const THEME = 'dark-theme-enabled'
 
 export default function ThemeToggle(props) {
-  const [darkModeEnabled, setDarkModeEnabled] = useState(() => {
-    return localStorage.getItem(THEME) === 'true'
-  })
+  const [darkModeEnabled, setDarkModeEnabled] = useState(false)
+
+  useEffect(() => {
+    // Have to do this here instead of useState because of Gatbsy ssr
+    setDarkModeEnabled(localStorage.getItem(THEME) === 'true')
+  }, [])
 
   useEffect(() => {
     localStorage.setItem(THEME, darkModeEnabled)
