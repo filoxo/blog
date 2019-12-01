@@ -1,23 +1,33 @@
 :root {
   /* Light theme */
   --text-color-light: #333;
-  --bg-color-light: #f4f4f4;
+  --bg-color-light: #eee;
   --fg-color-light: #fff;
+  --teal: teal;
+  --teal-rgb: 0, 128, 128;
+  --teal-light: #00a8a8;
+  --teal-light-rgb: 0, 168, 168;
+  --teal-dark: #206060;
+  --teal-dark-rgb: 32, 96, 96;
 
   /* Dark theme */
   --text-color-dark: #fefefe;
-  --bg-color-dark: #666;
+  --bg-color-dark: #222;
   --fg-color-dark: #333;
+  --primary-color-dark: teal;
+  --primary-color-rgb-dark: 0, 128, 128;
 
   --grey-border: 2px solid rgba(160, 160, 160, 0.3);
   --content-padding: 0.75rem 1rem;
   --content-padding-sm: 0.5rem 0.75rem;
-  --primary-color: teal;
-  --primary-color-rgb: 0, 128, 128;
   --fade-color-transition: color 0.15s ease-in;
 
+  --primary-color: var(--teal);
+  --primary-color-rgb: var(--teal-rgb);
+  --primary-color-dark: var(--teal-dark);
   --text-color: var(--text-color-light);
   --bg-color: var(--bg-color-light);
+  --fg-color: var(--fg-color-light);
 }
 html {
   font-family: sans-serif;
@@ -238,6 +248,10 @@ body {
   box-shadow: 0 0 0 2pt rgba(var(--primary-color-rgb), 0.8);
 }
 body.dark {
+  --primary-color: var(--teal-light);
+  --primary-color-rgb: var(--teal-light-rgb);
+  --primary-color-dark: var(--teal);
+
   --text-color: var(--text-color-dark);
   --bg-color: var(--bg-color-dark);
   --fg-color: var(--fg-color-dark);
@@ -655,17 +669,33 @@ pre code {
 }
 
 blockquote {
-  margin: 0 0.725rem 0.725rem;
-  border-left: 3px solid teal;
-  padding: 0.25rem 0 0.25rem 0.725rem;
+  background: rgba(var(--primary-color-rgb), 0.1);
+  /* border-left: 3px solid var(--primary-color); */
+  margin: 0 0 1.25rem 0;
+  padding: var(--content-padding-sm);
+  padding-left: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+blockquote::before {
+  color: var(--primary-color);
+  content: '“';
+  font-family: sans-serif;
+  font-size: 5rem;
+  line-height: 0.8;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
 
 a {
-  color: teal;
+  color: var(--primary-color);
 }
 
 a:visited {
-  color: darkslategray;
+  color: var(--primary-color-dark);
 }
 
 twitter-widget {

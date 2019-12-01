@@ -1,21 +1,24 @@
-.link, .linkBtn {
+.link,
+.linkBtn {
+  align-items: center;
   background: transparent;
   color: inherit;
-  display: inline-block;
+  display: inline-flex;
   border-bottom: 2px dashed rgba(160, 160, 160, 0.5);
   line-height: 1.2;
   text-decoration: none;
-  transition: all .15s ease-in;
+  transition: all 0.15s ease-in;
   position: relative;
 }
-.link:hover, .linkBtn:hover {
-  border-bottom-color: teal;
+.link:hover,
+.linkBtn:hover {
+  border-bottom-color: var(--primary-color);
   color: teal;
 }
 .linkBtn {
   border: 1.5px solid rgba(160, 160, 160, 0.3);
-  padding: .5rem .75rem;
+  padding: 0.5rem 0.75rem;
 }
 .linkBtn:hover {
-  border-color: teal;
+  border-color: var(--primary-color);
 }
