@@ -1,19 +1,28 @@
 :root {
+  /* Light theme */
+  --text-color-light: #333;
+  --bg-color-light: #f4f4f4;
+  --fg-color-light: #fff;
+
+  /* Dark theme */
+  --text-color-dark: #fefefe;
+  --bg-color-dark: #666;
+  --fg-color-dark: #333;
+
   --grey-border: 2px solid rgba(160, 160, 160, 0.3);
   --content-padding: 0.75rem 1rem;
   --content-padding-sm: 0.5rem 0.75rem;
   --primary-color: teal;
-  --text-color: #555;
   --primary-color-rgb: 0, 128, 128;
   --fade-color-transition: color 0.15s ease-in;
+
+  --text-color: var(--text-color-light);
+  --bg-color: var(--bg-color-light);
 }
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-}
-body {
-  margin: 0;
 }
 article,
 aside,
@@ -212,7 +221,10 @@ html {
 }
 body {
   color: var(--text-color);
-  font-family: georgia, serif;
+  background-color: var(--bg-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  margin: 0;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -224,6 +236,11 @@ body {
 *:focus {
   outline: 0;
   box-shadow: 0 0 0 2pt rgba(var(--primary-color-rgb), 0.8);
+}
+body.dark {
+  --text-color: var(--text-color-dark);
+  --bg-color: var(--bg-color-dark);
+  --fg-color: var(--fg-color-dark);
 }
 img {
   max-width: 100%;
@@ -625,13 +642,6 @@ pre code {
   html {
     font-size: 100%;
   }
-}
-
-body {
-  background-color: #f4f4f4;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  margin: 0;
 }
 
 .con {
