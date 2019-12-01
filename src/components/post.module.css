@@ -1,5 +1,5 @@
 .post {
-  background-color: #fff;
+  background-color: var(--fg-color);
   border: var(--grey-border);
   border-radius: 3px;
 }
@@ -22,7 +22,7 @@
   transition: var(--fade-color-transition);
 }
 .title a:hover {
-  color: teal;
+  color: var(--primary-color);
 }
 .date {
   margin-bottom: 0;

@@ -1,5 +1,5 @@
 .headerContainer {
-  background: #fff;
+  background: var(--fg-color);
   border-bottom: 2px solid rgba(160, 160, 160, 0.3);
   margin-bottom: 1.45rem;
 }
@@ -36,9 +36,9 @@ a.headerLink:hover {
   margin: 0;
 }
 .menuIcons li {
-  display: inline-block;
+  display: inline-flex;
   margin: 0;
-  padding: 5px 0.8rem 0;
+  padding: 5px 0.8rem;
 }
 .menuIcons li svg {
   fill: var(--text-color);
@@ -49,4 +49,14 @@ a.headerLink:hover {
 }
 .menuIcons li:not(:last-child) {
   border-right: 2px solid rgba(160, 160, 160, 0.3);
+}
+.menuIcons a {
+  line-height: 0;
+}
+.flexRow {
+  align-items: center;
+  display: flex;
+}
+.toggleSpacer {
+  margin-left: 2rem;
 }
