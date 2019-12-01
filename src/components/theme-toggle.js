@@ -17,7 +17,6 @@ export default function ThemeToggle(props) {
     <button
       {...props}
       type="button"
-      role="button"
       className={styles.themeToggle}
       aria-pressed={darkModeEnabled}
       aria-label="Toggle dark theme"
