@@ -7,7 +7,7 @@
   border-bottom: 2px dashed rgba(160, 160, 160, 0.5);
   line-height: 1.2;
   text-decoration: none;
-  transition: all 0.15s ease-in;
+  transition: color 0.15s ease-in;
   position: relative;
 }
 .link:hover,
