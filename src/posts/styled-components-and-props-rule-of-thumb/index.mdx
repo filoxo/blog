@@ -8,14 +8,18 @@ A while ago, I wrote about an [improvement to using props in styled-components](
 
 > Only use props that match a CSS property (eg. color, width, etc.), **not** DOM properties or HTML attributes.
 
-Making CSS properties dynamic makes sense where some components need sensible default styles, but can be overriden based on context and usage. DOM properties and HTML attributes are typically used to store the current document state, and not using those values in dynamic styles yields improved performance, accessibility, and semantics. 
+Making CSS properties dynamic makes sense where some components need sensible default styles, but can be overriden based on context and usage. DOM properties and HTML attributes are typically used to store the current document state, and not using those values in dynamic styles yields improved performance, accessibility, and semantics.
 
 ```js
 const MyButton = styled.button`
   background: lightgrey;
-  ${({width = 'auto'}) => `width: ${width};`}
-  :disabled { opacity: 0.6; }
-  &[aria-pressed] { background: darkgrey; }
+  ${({ width = 'auto' }) => `width: ${width};`}
+  :disabled {
+    opacity: 0.6;
+  }
+  &[aria-pressed] {
+    background: darkgrey;
+  }
 `
 ```
 

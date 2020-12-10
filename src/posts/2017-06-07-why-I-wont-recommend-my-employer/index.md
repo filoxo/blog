@@ -18,14 +18,14 @@ Because this is so easy with modern systems and common-place at other companies,
 
 ### Got Privilege? ✅
 
-Another seemingly arbitrary requirement is that applicants must have a college degree. Seriously. I recently heard some spew about "attempting to attract only the best" but this ignores the fact that this is a *very bad* policy for diversity & inclusion. The number of minorities (specifically hispanic and black) who graduate from college is far lower than white/Europeans.
+Another seemingly arbitrary requirement is that applicants must have a college degree. Seriously. I recently heard some spew about "attempting to attract only the best" but this ignores the fact that this is a _very bad_ policy for diversity & inclusion. The number of minorities (specifically hispanic and black) who graduate from college is far lower than white/Europeans.
 I'm not trying to fight for affirmative action here, but this can lead to a form of candidate suppression: many qualified people are immediately excluded from the pool. There are so many individuals who are very smart and higher education wasn't in the cards for them. Real world experience and a proven track record is equally valuable in my experience.
 
 Anectodally, I heard that an offer was **reneged** because the applicant didn't have a degree, regardless of their previous experience. WTF&nbsp;😞
 
 ### Woe, woe, woe
 
-I *think* the main reason for this is because we have too few recruiters for the number of applicants. Our HR team is ~10 people in a company of 1500+ employees—that's less than 1%. As a developer, I don't know how many applications are received per opening but the two that I've been a part of have received 200+. That's a lot of work for such a small team! The above mentioned practices really aren't helping anything either. Its a people problem and a process problem.
+I _think_ the main reason for this is because we have too few recruiters for the number of applicants. Our HR team is ~10 people in a company of 1500+ employees—that's less than 1%. As a developer, I don't know how many applications are received per opening but the two that I've been a part of have received 200+. That's a lot of work for such a small team! The above mentioned practices really aren't helping anything either. Its a people problem and a process problem.
 
 Even more frustrating with the issue here is that there's nothing I can really do. Sure, I could talk to someone higher up. I've complained somewhat openly to my coworkers. But honestly, there's probably no real change that I can make. At least, not as a developer.
 

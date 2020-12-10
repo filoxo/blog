@@ -1,5 +1,5 @@
 ---
-title: "The 👍 and 👎 parts of React"
+title: 'The 👍 and 👎 parts of React'
 date: 2017-11-30
 tags: ['react']
 ---
@@ -8,7 +8,7 @@ I've yet to reach the point in my career where I'm attached to a single framewor
 
 ### The Good
 
-- An extremely healthy ecosystem exists around React. This is honestly the biggest win that I love as a developer. Sharable components, alternative libs, build toolkits, and even React alternatives are 
+- An extremely healthy ecosystem exists around React. This is honestly the biggest win that I love as a developer. Sharable components, alternative libs, build toolkits, and even React alternatives are
 - Testing is amazingly easy, Enzyme's shallow render is awesome!
 - ‎small components
 - ‎Plays nicely with existing js libs, as well as modules

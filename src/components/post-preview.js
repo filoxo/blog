@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import styles from './post.module.css'
-import {linkBtn} from '../components/link.module.css'
+import { linkBtn } from '../components/link.module.css'
 
 export default function PostPreview({ post }) {
   return (

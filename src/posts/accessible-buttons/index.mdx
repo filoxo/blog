@@ -1,10 +1,10 @@
 ---
-title: "Accessible Buttons"
+title: 'Accessible Buttons'
 date: 2019-03-20
 tags: ['javascript', 'a11y']
 ---
 
-It's 2019 and I still see new code being written which uses non-interactive elements as buttons. Let's rehash why this is a problem. Take this example code of a `div` that has a click handler bound to it: 
+It's 2019 and I still see new code being written which uses non-interactive elements as buttons. Let's rehash why this is a problem. Take this example code of a `div` that has a click handler bound to it:
 
 ```html
 <div class="myBtn">Do the thing</div>
@@ -18,18 +18,20 @@ It's 2019 and I still see new code being written which uses non-interactive elem
 </script>
 ```
 
-<small>Don't get hung up on how the event is being bound; the principles would be the same if you were using jQuery, React, etc.</small>
-
+<small>
+  Don't get hung up on how the event is being bound; the principles would be the
+  same if you were using jQuery, React, etc.
+</small>
 
 ### Keyboard Accessibility pt 1: Focus
 
-One problem with this non-button is that it cannot receive focus, and therefore cannot be navigated to with a keyboard. This means that there is no way to trigger it without using a mouse and clicking on the element. This can be done with the `tabindex` attribute. Setting this attribute to `0` adds the element to the document tab order.  
+One problem with this non-button is that it cannot receive focus, and therefore cannot be navigated to with a keyboard. This means that there is no way to trigger it without using a mouse and clicking on the element. This can be done with the `tabindex` attribute. Setting this attribute to `0` adds the element to the document tab order.
 
 ```html
 <div class="myBtn" tabindex="0">Do the thing</div>
 ```
 
-Now you can tab to this element with your keyboard, and see the keyboard outline when focused on it. 
+Now you can tab to this element with your keyboard, and see the keyboard outline when focused on it.
 
 **HTML buttons are focusable by default.**
 
@@ -46,7 +48,7 @@ Focusing on an element is only half of the keyboard navigation story. The elemen
   }
   const handleKeyboardClick = (fn) => {
     return (e) => {
-      if(e.key === 'Enter' || e.key === ' ') {
+      if (e.key === 'Enter' || e.key === ' ') {
         return fn(e)
       }
     }
@@ -63,7 +65,7 @@ The `handleKeyboardClick` function above is a [curried function](https://www.sit
 
 ### Semantic HTML & ARIA
 
-Now that we can reach the element with a keyboard, let's switch to using another assistive device: a screenreader. A screenreader allows a non-visual user to be able to navigate and read the page content. So what happens when such a user navigates to this non-button? 
+Now that we can reach the element with a keyboard, let's switch to using another assistive device: a screenreader. A screenreader allows a non-visual user to be able to navigate and read the page content. So what happens when such a user navigates to this non-button?
 
 ![This screenshot shows that when focused on the non-button element, VoiceOver only identifies the inner text of 'Do the thing'.](dothething-div-sr.png)
 
@@ -75,26 +77,28 @@ It shouldn't be any surprise that a div semantically ["does not ... represent an
 
 We can fix this by adding the correct aria-role attribute. If you haven't yet read through the <a class="link" href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Authoring Practices</a> it is time you did. It outlines the following:
 
-- If this control is a *push button*, it needs a `role="button"` to designate it as an interactive button
-- if this control is a *toggle button*, it needs `role="button"` and `aria-pressed` attributes, and `aria-pressed` is updated to reflect the current state of the control
+- If this control is a _push button_, it needs a `role="button"` to designate it as an interactive button
+- if this control is a _toggle button_, it needs `role="button"` and `aria-pressed` attributes, and `aria-pressed` is updated to reflect the current state of the control
 
 ```html
 <div class="myBtn" tabindex="0" role="button">Do the thing</div>
 <!--- OR --->
-<div class="myBtn" tabindex="0" role="button" aria-pressed="false">Toggle the thing</div>
+<div class="myBtn" tabindex="0" role="button" aria-pressed="false">
+  Toggle the thing
+</div>
 
 <script>
   const handleClick = (e) => {
     console.log('myBtn clicked')
     // Update aria-pressed for toggle buttons
-    if(e.target.hasAttribute('aria-pressed')) {
+    if (e.target.hasAttribute('aria-pressed')) {
       const pressed = e.target.getAttribute('aria-pressed') === 'true'
       e.target.setAttribute('aria-pressed', pressed)
     }
   }
   const handleKeyboardClick = (fn) => {
     return (e) => {
-      if(e.key === 'Enter' || e.key === ' ') {
+      if (e.key === 'Enter' || e.key === ' ') {
         return fn(e)
       }
     }

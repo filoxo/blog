@@ -1,5 +1,5 @@
 ---
-title: "The 👍 and 👎 parts of Angular"
+title: 'The 👍 and 👎 parts of Angular'
 date: 2017-11-30
 tags: ['angular']
 ---
