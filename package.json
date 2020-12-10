@@ -33,7 +33,7 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop -o",
-    "format": "prettier --write",
+    "format": "prettier --write --ignore-unknown src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "gatsby build --prefix-paths",
     "deploy:local": "yarn predeploy && gh-pages -d public -b master -r git@github.com:filoxo/filoxo.github.io.git --git git",
