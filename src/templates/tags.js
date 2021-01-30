@@ -4,13 +4,17 @@ import { FaHome, FaTags } from 'react-icons/fa'
 
 import Layout from '../components/layout'
 import { link } from '../components/link.module.css'
+import styles from '../components/post.module.css'
 
 export default function Tags({ pageContext }) {
   const { posts, post, tag } = pageContext
   if (tag) {
     return (
       <Layout>
-        <div className="con">
+        <div
+          className={styles.post}
+          style={{ padding: 'var(--content-padding)' }}
+        >
           <h1>
             {post.length} post{post.length === 1 ? '' : 's'} tagged with {tag}
           </h1>
