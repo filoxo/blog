@@ -41,7 +41,10 @@ export default function Tags({ pageContext }) {
   }
   return (
     <Layout>
-      <div className="con">
+      <div
+        className={styles.post}
+        style={{ padding: 'var(--content-padding)' }}
+      >
         <h1>Tags</h1>
         <ul className="tags">
           {Object.keys(posts).map((tagName) => (
