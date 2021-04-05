@@ -14,13 +14,14 @@ jobs:
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
+      - name: Install deps
       - uses: actions/checkout@v2
       - uses: bahmutov/npm-install@v1
-      - name: Install deps
         env:
           NODE_ENV: production
         with:
           install-command: yarn --frozen-lockfile
+      - run: npm t
 
       - name: Configure git
         run: git config user.name "Carlos Filoteo" && git config user.email "c.filoteo12@gmail.com"
