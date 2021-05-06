@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Post from '../components/post'
 
-export default ({ data }) => {
+const PostLayout = ({ data }) => {
   const post = data.mdx
   return (
     <Layout>
@@ -11,6 +11,8 @@ export default ({ data }) => {
     </Layout>
   )
 }
+
+export default PostLayout
 
 export const query = graphql`
   query($slug: String!) {
