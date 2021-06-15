@@ -1,0 +1,23 @@
+{
+  "title": "filoblog",
+  "description": "My thoughts on development and other stuff.",
+  "keywords": "javascript, development, blog",
+  "navigation": {
+    "links": [
+      {
+        "text": "Follow me as @cfiloteo12 on Twitter",
+        "url": "https://twitter.com/cfiloteo12",
+        "img": "../static/twitter.svg"
+      },
+      {
+        "text": "Checkout my Github profile (@filoxo)",
+        "url": "https://github.com/filoxo",
+        "img": "../static/github.svg"
+      }, {
+        "text": "Let's connect on LinkedIn",
+        "url": "https://www.linkedin.com/in/carlosfiloteo/",
+        "img": "../static/linkedin.svg"
+      }
+    ]
+  }
+}

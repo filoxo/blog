@@ -1,0 +1,34 @@
+---
+layout: default.njk
+---
+
+<article class="">
+  <div class="">
+    <h2 class="">{post.frontmatter.title}</h2>
+    <div class="">{post.frontmatter.date}</div>
+  </div>
+  <div class="">
+    {{ content | safe }}
+  </div>
+  {% if tags and tags.length > 0 %}
+    <div class="">
+      <ul className={styles.tagList}>
+      {% for tag in tags %}
+        <li>
+          <a class="" href="{{ '/tags/{{tag}}' | url }}">
+            {{ tag }}
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  <div class="">
+    <a class="" href="/">
+      Back
+    </a>
+    <a class="" href="#">
+      Top
+    </a>
+  </div>
+</article>

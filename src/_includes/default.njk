@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="{{ site.description }}"/>
+    <meta name="keywords" content="{{ site.keywords }}"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | url }}">
+    <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
+    <title>{{ title or site.title }}</title>
+    <link rel="stylesheet" href="{{ '/site.css' | url }}">
+  </head>
+  <body class="font-sans leading-normal tracking-normal text-gray-100 bg-gray-900">
+    <div class="bg-gray-700 border-gray-500 border-b-2 mb-4">
+      <div class="max-w-screen-md m-auto flex justify-between align-center flex-wrap">
+        <h1 class="">
+          <a class="text-2xl font-bold tracking-widest" href="/">{{ title or site.title }}</a>
+        </h1>
+        <ul class="flex divide-x-2 divide-gray-500">
+          {% for link in site.navigation.links %}
+            <li class="py-2 px-3">
+              <a href="{{ link.url }}" rel="noopener noreferrer" target="_blank">
+                {% include link.img %}
+                <span class="sr-only">{{ link.text }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <main tabindex="-1">{{ content | safe }}</main>
+  </body>
+</html>
