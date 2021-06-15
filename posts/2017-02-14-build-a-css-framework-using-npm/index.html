@@ -1,0 +1,45 @@
+<p><img src="./leaves.jpg" alt="Leaves"></p><p>This last weekend I wanted to create a simple CSS framework that I can reuse for my own little projects. The end result is <a href="https://github.com/filoxo/simple-style">Simple Style</a> (which is still a WIP as requirements come up). Surprisingly, using <a href="https://medium.com/@dabit3/introduction-to-using-npm-as-a-build-tool-b41076f488b0#.5w4loc8uy">npm as a build tool</a> made it extremely easy to set up a dev environment. I'll review everything about the setup in this post for my own documentation, but hopefully can also serve as a clean, straightforward example.</p><p>I used <a href="https://yarnpkg.com/en/"><code>yarn</code></a> for this experiment instead of <code>npm</code> solely for the speed improvements. Fortunately, <code>yarn</code>'s commands all have their <code>npm</code> equivalents so don't get hung up on the differences.</p><p>This basic setup offers:</p><ul><li>Autoprefixing to support the 2 latest browsers</li><li>Future CSS syntax usable today</li><li>minification</li><li>optimizations</li><li>a quick and easy development setup to reflect changes on-the-fly</li></ul><h3>Dev dependencies</h3><p>Here are our initial development dependencies:</p><ul><li><a href="https://necolas.github.io/normalize.css/">normalize.css</a>: so that all elements render consistently</li><li><a href="https://github.com/postcss/postcss">PostCSS</a>'s CLI: to leverage its ecosystem of feature plugins</li><li><a href="http://cssnext.io/">CSSnext</a>: a PostCSS plugin that helps you to use the latest CSS syntax today. This way the code will be a little more future-proof. Additionally, CSSnext also includes <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> as a dependency.</li><li><code>postcss-import</code>: used to pull in a css file that wasn't being preprocessed</li><li><code>cssnano</code>: minify and optimize output</li></ul><p>Install using yarn (or the npm equivalent)</p><pre><code>yarn add -D normalize.css postcss-cli postcss-cssnext postcss-import cssnano
+</code></pre><h3>PostCSS config</h3><p>Create a json file that contains the config for PostCSS. The docs named it <strong>options.json</strong> but I choose <strong>postcss.json</strong> for better clarity. The comments below explain some keys.</p><pre><code>{
+    // Enable plugins in order
+    &quot;use&quot;: [
+        &quot;postcss-import&quot;,
+        &quot;postcss-cssnext&quot;,
+        &quot;cssnano&quot;
+    ],
+    &quot;input&quot;: &quot;main.css&quot;,
+    &quot;output&quot;: &quot;dist/main.css&quot;,
+    // use locally installed plugins (eg. in node_modules)
+    &quot;local-plugins&quot;: true,
+    // Enable sourcemaps
+    &quot;map&quot;: true,
+    // CSSnext and cssnano both use autoprefixer, but for different features/purposes
+    // see https://github.com/MoOx/postcss-cssnext/issues/323
+    &quot;postcss-cssnext&quot;: {
+        &quot;warnForDuplicates&quot;: false
+    }
+}
+</code></pre><h3>CSS time</h3><p>Go ahead and create <strong>main.css</strong> at the project root. The above config will output to <strong>dist/</strong>. Here's a quick sample to put into the file for now.</p><pre><code>@import('normalize.css');
+
+:root {
+    --color-primary: blue;
+    --color-secondary: red;
+}
+</code></pre><h3>Building</h3><p>Use the postcss-cli with the config file passed in as an arg and save it as an npm script.</p><pre><code>&quot;scripts&quot;: {
+    &quot;build&quot;: &quot;node_modules/postcss-cli/bin/postcss -c postcss.json&quot;
+}
+</code></pre><p>Now you can simply run <code>yarn run build</code> and your css will be processed and output to <strong>dist</strong>. But we can still do better.</p><h3>Watch for changes</h3><p>Enabling watch will auto-transform the css file on changes. Add another npm script, which is exactly the same as <code>build</code> but with the watch flag.</p><pre><code>&quot;build:dev&quot;: &quot;node_modules/postcss-cli/bin/postcss -c postcss.json -w&quot;
+</code></pre><h3>Livereload</h3><p>You wouldn't develop a CSS framework without seeing it rendered on a page so let's create a test page for development. Create <strong>index.html</strong> at the project root and populate it with some HTML, and add a link to your <strong>main.css</strong> file.</p><pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en-US&quot;&gt;
+    &lt;head&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/dist/main.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;main&gt;Hello world&lt;/main&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><a href="https://www.npmjs.com/package/lr-http-server"><code>lr-http-server</code></a> will reload on changes, as well as a functioning http server.</p><pre><code>yarn add -D lr-http-server
+</code></pre><p>And then register a new npm script for it</p><pre><code>&quot;reload&quot;: &quot;lr-http-server -p 3000&quot;
+</code></pre><h3>Composing scripts</h3><p>We want the two above scripts to run in parallel so that if either the css or the html file changes the livereload server will do its job. <a href="https://www.npmjs.com/package/npm-run-all"><code>npm-run-all</code></a> with the <code>-p</code> (parallel) flag does this exactly.</p><pre><code>yarn add -D npm-run-all
+</code></pre><p>Join the two tasks together into a single npm script</p><pre><code>&quot;start&quot;: &quot;npm-run-all -p build:dev reload&quot;
+</code></pre><p>And then run easily with</p><pre><code>yarn start
+</code></pre><h3>Done!</h3><p>You're ready to keep going developing your styles inside <strong>main.css</strong>. Feel free to improve upon this as needed!</p>

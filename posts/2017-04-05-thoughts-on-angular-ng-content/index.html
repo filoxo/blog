@@ -1,0 +1,24 @@
+<p><img src="./bldg-angle.jpg" alt="Image of building angles"></p><p>I recently came across some interesting behavior with Angular's <code>ng-content</code> that I wanted to jot down so I can search for some answers. NgContent isn't well documented.</p><h3>Why isn't <code>ng-content</code> self-closing?</h3><p><code>ng-content</code> is to be used like any other element. This is great, especially for rendering in default content. For example, a component that can transclude some content but if for some reason nothing is nested into it, it will show a default state.</p><pre><code>&lt;profile-card&gt;
+    &lt;ng-content&gt;
+        &lt;img src=&quot;/defaultProfile.jpg&quot;/&gt;
+        &lt;p&gt;Unknown&lt;/p&gt;
+    &lt;/ng-content&gt;
+&lt;/profile-card&gt;
+</code></pre><p>But what if you don't need anything within the opening and closing tags? You'd think that just <code>&lt;ng-content /&gt;</code> would be a nice and simple way to signal where to place the included content, but attempting to do so generates the following error:</p><pre><code>Template parse errors: Only void and foreign elements can be self closed &quot;ng-content&quot;
+[ERROR -&gt;]&lt;ng-content /&gt;
+</code></pre><p>Seems weird to me. This may be by design.</p><h3>Select is only able to find immediate children?</h3><p>One of the features of <code>ng-content</code> is that you can use the <code>select</code> attribute on it to pull transcluded content into a specific location.</p><pre><code>&lt;!-- my-component.html --&gt;
+&lt;div&gt;
+    &lt;ng-content select=&quot;.title&quot;&gt;&lt;/ng-content&gt;
+    &lt;ng-content select=&quot;.subtitle&quot;&gt;&lt;/ng-content&gt;
+&lt;/div&gt;
+</code></pre><p>This is great for enforcing layout in a specific way. Except... it has a <strong>major</strong> caveat, at least in my opinion. This select only seems to match <em>immediate children only</em>, nothing else.</p><p>So using the above <code>my-component</code>, this belwo works while placing the <code>title</code> above the <code>subtitle</code>:</p><pre><code>&lt;my-component&gt;
+    &lt;p class=&quot;subtitle&quot;&gt;world&lt;/p&gt;
+    &lt;h2 class=&quot;title&quot;&gt;Hello&lt;/h2&gt;
+&lt;/my-component&gt;
+</code></pre><p>but then this doesn't! Nothing is rendered.</p><pre><code>&lt;my-component&gt;
+    &lt;div&gt;
+        &lt;h2 class=&quot;title&quot;&gt;Hello&lt;/h2&gt;
+        &lt;p class=&quot;subtitle&quot;&gt;world&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/my-component&gt;
+</code></pre><p>It can't find these same elements because they're wrapped in an extra div? I would have thought that it would match those elements as well, just like <code>querySelector</code> or CSS selectors would. If I only wanted immediate children I would have used something like <code>select=&quot;&gt; .title&quot;</code>. My assumption that it used standard selectors is wrong? 🤷‍♂️ That sucks.</p>
