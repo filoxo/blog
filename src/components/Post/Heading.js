@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from '../Link'
 import { H1 } from '../Headings'
 
 export const PostHeading = (props) => {
@@ -7,10 +7,7 @@ export const PostHeading = (props) => {
   return (
     <H1 className="mb-4">
       {isLink ? (
-        <Link
-          {...props}
-          className="hover:text-red-600 visited:text-red-900 transition-colors duration-300 ease-in-out"
-        />
+        <Link {...props} />
       ) : (
         <span {...props} className="text-red-600" />
       )}
