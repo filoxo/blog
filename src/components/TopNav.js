@@ -10,7 +10,7 @@ const TopNav = ({ title }) => (
     <div className="my-0 mx-auto max-w-2xl py-2 px-6 flex justify-between items-center flex-wrap">
       <h1 className="text-2xl font-semibold tracking-wide">
         <Link
-          className="uppercase hover:text-red-700 transition-colors duration-300 ease-in-out"
+          className="uppercase hover:text-red-600 transition-colors duration-300 ease-in-out"
           to="/"
         >
           {title}
