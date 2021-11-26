@@ -3,24 +3,32 @@ import { IoIosArrowBack, IoIosArrowUp } from 'react-icons/io'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import Tags from './tags'
-import styles from './post.module.css'
+import {
+  post as postStyles,
+  heading,
+  title,
+  date,
+  content,
+  tags,
+  navigation,
+} from './post.module.css'
 import { linkBtn } from './link.module.css'
 
 const Post = ({ post }) => (
-  <div className={styles.post}>
-    <div className={styles.heading}>
-      <h2 className={styles.title}>{post.frontmatter.title}</h2>
-      <div className={styles.date}>{post.frontmatter.date}</div>
+  <div className={postStyles}>
+    <div className={heading}>
+      <h2 className={title}>{post.frontmatter.title}</h2>
+      <div className={date}>{post.frontmatter.date}</div>
     </div>
-    <div className={styles.content}>
+    <div className={content}>
       <MDXRenderer>{post.body}</MDXRenderer>
     </div>
     {post.frontmatter.tags && post.frontmatter.tags.length && (
-      <div className={styles.tags}>
+      <div className={tags}>
         <Tags list={post.frontmatter.tags} />
       </div>
     )}
-    <div className={styles.navigation}>
+    <div className={navigation}>
       <a className={linkBtn} href="/">
         <IoIosArrowBack />
         &nbsp;Back

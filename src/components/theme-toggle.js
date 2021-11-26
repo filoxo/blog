@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styles from './theme-toggle.module.css'
+import { themeToggle } from './theme-toggle.module.css'
 
 const THEME = 'dark-theme-enabled'
 
@@ -20,7 +20,7 @@ export default function ThemeToggle(props) {
     <button
       {...props}
       type="button"
-      className={styles.themeToggle}
+      className={themeToggle}
       aria-pressed={darkModeEnabled}
       aria-label="Toggle dark theme"
       onClick={() => setDarkModeEnabled(!darkModeEnabled)}
