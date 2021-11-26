@@ -4,19 +4,26 @@ import React from 'react'
 import { FaGithubAlt, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 import SrText from './sr-text'
-import styles from './header.module.css'
+import {
+  headerContainer,
+  headerContent,
+  headerTitle,
+  headerLink,
+  flexRow,
+  menuIcons,
+} from './header.module.css'
 import ThemeToggle from './theme-toggle'
 
 const Header = ({ siteTitle }) => (
-  <div className={styles.headerContainer}>
-    <div className={styles.headerContent}>
-      <h1 className={styles.headerTitle}>
-        <Link className={styles.headerLink} to="/">
+  <div className={headerContainer}>
+    <div className={headerContent}>
+      <h1 className={headerTitle}>
+        <Link className={headerLink} to="/">
           {siteTitle}
         </Link>
       </h1>
-      <div className={styles.flexRow}>
-        <ul className={styles.menuIcons}>
+      <div className={flexRow}>
+        <ul className={menuIcons}>
           <li>
             <a
               href="https://twitter.com/cfiloteo12"

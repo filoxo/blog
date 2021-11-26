@@ -4,7 +4,7 @@ import { FaHome, FaTags } from 'react-icons/fa'
 
 import Layout from '../components/layout'
 import { link } from '../components/link.module.css'
-import styles from '../components/post.module.css'
+import { post as postStyles } from '../components/post.module.css'
 
 export default function Tags({ pageContext }) {
   const { posts, post, tag } = pageContext
@@ -12,7 +12,7 @@ export default function Tags({ pageContext }) {
     return (
       <Layout>
         <div
-          className={styles.post}
+          className={postStyles}
           style={{ padding: 'var(--content-padding)' }}
         >
           <h1>
@@ -41,10 +41,7 @@ export default function Tags({ pageContext }) {
   }
   return (
     <Layout>
-      <div
-        className={styles.post}
-        style={{ padding: 'var(--content-padding)' }}
-      >
+      <div className={postStyles} style={{ padding: 'var(--content-padding)' }}>
         <h1>Tags</h1>
         <ul className="tags">
           {Object.keys(posts).map((tagName) => (
