@@ -1,46 +1,27 @@
 import React from 'react'
-import { IoIosArrowBack, IoIosArrowUp } from 'react-icons/io'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import Tags from './tags'
-import {
-  post as postStyles,
-  heading,
-  title,
-  date,
-  content,
-  tags,
-  navigation,
-} from './post.module.css'
-import { linkBtn } from './link.module.css'
+import { Link } from './Link'
+import { PostHeading } from './Post/Heading'
 
 const Post = ({ post }) => (
-  <div className={postStyles}>
-    <div className={heading}>
-      <h2 className={title}>{post.frontmatter.title}</h2>
-      <div className={date}>{post.frontmatter.date}</div>
-    </div>
-    <div className={content}>
+  <article className="mb-12">
+    <PostHeading>{post.frontmatter.title}</PostHeading>
+    <div className="text-red-600 mb-4">{post.frontmatter.date}</div>
+    <div className="space-y-6">
       <MDXRenderer>{post.body}</MDXRenderer>
-    </div>
-    {post.frontmatter.tags && post.frontmatter.tags.length && (
-      <div className={tags}>
+      <footer className="space-y-12">
         <Tags list={post.frontmatter.tags} />
-      </div>
-    )}
-    <div className={navigation}>
-      <a className={linkBtn} href="/">
-        <IoIosArrowBack />
-        &nbsp;Back
-      </a>
-      {/* "Scroll to top" is a valid use for an empty href */}
-      {/* eslint-disable-next-line */}
-      <a className={linkBtn} href="#">
-        Top&nbsp;
-        <IoIosArrowUp />
-      </a>
+        <div className="flex justify-between">
+          {/* "Scroll to top" is a valid use for an empty href */}
+          {/* eslint-disable-next-line */}
+          <Link to="#">Scroll to top&nbsp;&uarr;</Link>
+          <Link to="/">&larr; Back to home</Link>
+        </div>
+      </footer>
     </div>
-  </div>
+  </article>
 )
 
 export default Post
