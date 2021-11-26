@@ -15,12 +15,12 @@ const PostLayout = ({ data }) => {
 export default PostLayout
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {
         title
-        date(formatString: "MMM DD, YYYY")
+        date(formatString: "DD MMM YY")
         tags
       }
     }
