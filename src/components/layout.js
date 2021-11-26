@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
+import TopNav from './TopNav'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -31,8 +31,8 @@ const Layout = ({ children }) => {
         <html lang="en" />
         <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100" />
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div className="my-0 mx-auto max-w-xl py-2 px-6">{children}</div>
+      <TopNav title={data.site.siteMetadata.title} />
+      <div className="my-0 mx-auto max-w-2xl py-2 px-6">{children}</div>
     </>
   )
 }

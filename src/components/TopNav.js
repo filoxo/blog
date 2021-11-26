@@ -5,12 +5,15 @@ import { FaGithubAlt, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import SocialIcon from './SocialIcon'
 import ThemeToggle from './theme-toggle'
 
-const Header = ({ siteTitle }) => (
-  <div className="mb-6">
-    <div className="my-0 mx-auto max-w-xl py-2 px-6 flex justify-between items-center flex-wrap">
-      <h1 className="text-2xl m-0 font-light tracking-wide">
-        <Link className="border-0 no-underline uppercase" to="/">
-          {siteTitle}
+const TopNav = ({ title }) => (
+  <div className="mb-8">
+    <div className="my-0 mx-auto max-w-2xl py-2 px-6 flex justify-between items-center flex-wrap">
+      <h1 className="text-2xl font-semibold tracking-wide">
+        <Link
+          className="uppercase hover:text-red-700 transition-colors duration-300 ease-in-out"
+          to="/"
+        >
+          {title}
         </Link>
       </h1>
       <ul className="flex items-center m-0">
@@ -42,13 +45,8 @@ const Header = ({ siteTitle }) => (
     </div>
   </div>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+TopNav.propTypes = {
+  siteTitle: PropTypes.string.isRequired,
 }
 
-Header.defaultProps = {
-  siteTitle: '',
-}
-
-export default Header
+export default TopNav
