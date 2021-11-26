@@ -2,33 +2,33 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import PostPreview from '../components/post-preview'
+import { PostPreview } from '../components/Post/Preview'
 
-const IndexPage = ({ data }) => {
-  const { edges: posts } = data.allMdx
-  return (
-    <Layout>
-      {posts
-        .filter((post) => post.node.frontmatter.title)
-        .map(({ node: post }) => (
-          <PostPreview post={post} key={post.id} />
-        ))}
-    </Layout>
-  )
-}
+const IndexPage = ({ data }) => (
+  <Layout>
+    <div className="space-y-16">
+      {data.allMdx.edges.map(({ node: post }) => (
+        <PostPreview {...post} key={post.id} />
+      ))}
+    </div>
+  </Layout>
+)
 
 export default IndexPage
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMdx(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { title: { ne: null } } }
+    ) {
       edges {
         node {
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 200)
           id
           frontmatter {
             title
-            date(formatString: "MMM DD, YYYY")
+            date(formatString: "DD MMM YY")
           }
           fields {
             slug
