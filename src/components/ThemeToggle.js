@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 
+const isBrowser = typeof window !== 'undefined'
+
 // https://medium.com/front-end-weekly/build-a-css-only-toggle-switch-using-tailwindcss-d2739882934
 export default function ThemeToggle() {
-  const [darkModeEnabled, setDarkModeEnabled] = useState(window.theme.current)
+  const [darkModeEnabled, setDarkModeEnabled] = useState(() => {
+    if (!isBrowser) return false
+    else return window.theme.current()
+  })
 
   let handleThemeToggle = () => {
     window.theme.toggle()
