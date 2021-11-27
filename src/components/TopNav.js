@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { FaGithubAlt, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import SocialIcon from './SocialIcon'
-import ThemeToggle from './theme-toggle'
+import ThemeToggle from './ThemeToggle'
 
 const TopNav = ({ title }) => (
   <div className="mb-8">
-    <div className="my-0 mx-auto max-w-2xl py-2 px-6 flex justify-between items-center flex-wrap">
+    <div className="my-0 mx-auto max-w-2xl py-2 px-3 md:px-6 flex justify-between items-center flex-wrap">
       <h1 className="text-2xl font-semibold tracking-wide">
         <Link
           className="uppercase hover:text-red-600 transition-colors duration-300 ease-in-out"
