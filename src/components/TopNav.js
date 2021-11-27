@@ -46,7 +46,7 @@ const TopNav = ({ title }) => (
   </div>
 )
 TopNav.propTypes = {
-  siteTitle: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 }
 
 export default TopNav
