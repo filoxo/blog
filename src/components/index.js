@@ -4,7 +4,7 @@ import { Ol, Ul } from './Lists'
 import { Aside } from './Aside'
 import { InlineLink } from './Link'
 import { Blockquote } from './Blockquote'
-import { InlineCode } from './code'
+import { InlineCode } from './InlineCode'
 // These shortcodes are what end up being available to the mdx renderer
 // so custom components and default element overrides should be added here
 export const components = {
