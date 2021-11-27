@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { srText } from './sr-text.module.css'
+const SrText = (props) => <span {...props} className="sr-only" />
 
-export default function SrText({ children }) {
-  return <span className={srText}>{children}</span>
-}
+export default SrText

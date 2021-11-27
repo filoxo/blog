@@ -1,19 +1,19 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
-import { tagList } from './tags.module.css'
-import { link } from '../components/link.module.css'
+import { Link } from './Link'
 
 export default function Tags({ list = [] }) {
+  if (!list.length) return null
   return (
-    <ul className={tagList}>
-      {list.map((tag) => (
-        <li key={tag}>
-          <Link className={link} to={`/tags/${tag}`}>
-            {tag}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      <h3 className="inline-flex">Tags:&nbsp;</h3>
+      <ul className="inline-flex m-0 space-x-4">
+        {list.map((tag, index) => (
+          <li key={tag}>
+            <Link to={`/tags/${tag}`}>{tag}</Link>
+            {index !== list.length - 1 && ', '}
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }

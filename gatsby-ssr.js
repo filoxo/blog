@@ -1,10 +1,33 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React from 'react'
+export { wrapRootElement } from './wrap-root-element'
 
-// You can delete this file if you're not using it
-import { wrapRootElement as wrap } from './wrap-root-element'
+const THEME = 'theme:dark'
 
-export const wrapRootElement = wrap
+// https://www.joshwcomeau.com/react/dark-mode/
+const BlockingScript = () => {
+  const codeToRunOnClient = `
+  window.theme = {
+    init: function themeInit() {
+      window.theme.set(window.theme.current())
+    },
+    current: () => localStorage.getItem('${THEME}') === 'true',
+    set: function themeSet(to) {
+      document.documentElement.classList.toggle('dark', to);
+      const result = document.documentElement.classList.contains('dark');
+      localStorage.setItem('${THEME}', result);
+      return result
+    },
+    toggle: function themeToggle() {
+      this.set(!window.theme.current());
+    }
+  }    
+
+  window.theme.init();
+  `
+  // eslint-disable-next-line react/no-danger
+  return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />
+}
+
+export const onRenderBody = ({ setPreBodyComponents }) => {
+  setPreBodyComponents(<BlockingScript key="themeScript" />)
+}

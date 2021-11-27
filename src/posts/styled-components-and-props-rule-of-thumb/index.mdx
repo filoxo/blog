@@ -6,11 +6,15 @@ tags: ['javascript', 'css']
 
 A while ago, I wrote about an [improvement to using props in styled-components](/improve-your-styled-component-props-usage/). The TLDR; is "Avoid overusing props in styles and instead use proper DOM and ARIA states". I think this advice extends to all CSS-in-JS solutions. However, there are still cases where using props is unavoidable so I've landed on this rule-of-thumb:
 
-> Only use props that match a CSS property (eg. color, width, etc.), **not** DOM properties or HTML attributes.
+<Aside warn>
+
+Only use props that match a CSS property (eg. color, width, etc.), **not** DOM properties or HTML attributes.
+
+</Aside>
 
 Making CSS properties dynamic makes sense where some components need sensible default styles, but can be overriden based on context and usage. DOM properties and HTML attributes are typically used to store the current document state, and not using those values in dynamic styles yields improved performance, accessibility, and semantics.
 
-```js
+```jsx
 const MyButton = styled.button`
   background: lightgrey;
   ${({ width = 'auto' }) => `width: ${width};`}

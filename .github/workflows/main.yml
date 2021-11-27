@@ -10,13 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
       - uses: actions/checkout@v2
-
-      - uses: bahmutov/npm-install@v1
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'yarn'
+      - name: Install dependencies
         env:
           NODE_ENV: production
         with:

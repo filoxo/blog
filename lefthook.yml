@@ -2,5 +2,5 @@ pre-commit:
   parallel: true
   commands:
     format:
-      glob: 'src/*.{js,json,css,md}'
-      run: yarn prettier --write {staged_files} && git add {staged_files}
+      glob: './src/*.{js,md}'
+      run: git stash -k && yarn prettier --write {staged_files} && git stash pop && git add {staged_files}

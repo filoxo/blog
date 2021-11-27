@@ -1,6 +1,7 @@
 import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import theme from 'prism-react-renderer/themes/vsDark'
+import theme from './themes/redline'
+import { preToCodeBlock } from 'mdx-utils'
 
 const RE = /{([\d,-]+)}/
 
@@ -21,7 +22,7 @@ const calculateLinesToHighlight = (meta) => {
   }
 }
 
-export const Code = ({ codeString, language, metastring }) => {
+const Code = ({ codeString, language, metastring }) => {
   const shouldHighlightLine = calculateLinesToHighlight(metastring)
 
   return (
@@ -32,11 +33,14 @@ export const Code = ({ codeString, language, metastring }) => {
       theme={theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
+        <pre
+          className={`${className} px-3 py-2 rounded-lg overflow-auto`}
+          style={style}
+        >
           {tokens.map((line, i) => {
             const lineProps = getLineProps({ line, key: i })
             if (shouldHighlightLine(i)) {
-              lineProps.className = `${lineProps.className} highlight-line`
+              lineProps.className = `${lineProps.className} bg-white bg-opacity-20`
             }
             return (
               <div {...lineProps}>
@@ -50,4 +54,15 @@ export const Code = ({ codeString, language, metastring }) => {
       )}
     </Highlight>
   )
+}
+
+export function Pre(props) {
+  const codeBlockProps = preToCodeBlock(props)
+  // if there's a codeString and some props, we passed the test
+  if (codeBlockProps) {
+    return <Code {...codeBlockProps} />
+  } else {
+    // it's possible to have a pre without a code in it
+    return <pre {...props} />
+  }
 }

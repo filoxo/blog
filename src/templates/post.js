@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import Post from '../components/post'
+import { Post } from '../components/Post'
 
 const PostLayout = ({ data }) => {
   const post = data.mdx
   return (
     <Layout>
-      <Post post={post} />
+      <Post {...post} />
     </Layout>
   )
 }
@@ -15,12 +15,12 @@ const PostLayout = ({ data }) => {
 export default PostLayout
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {
         title
-        date(formatString: "MMM DD, YYYY")
+        date(formatString: "DD MMM YY")
         tags
       }
     }
