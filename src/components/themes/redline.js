@@ -10,13 +10,14 @@ const redline = {
     {
       types: ['comment', 'punctuation'],
       style: {
-        // Tailwind red-300
-        color: '#FCA5A5',
+        // Tailwind red-200
+        color: '#FECACA',
         fontStyle: 'italic',
       },
     },
     {
       types: [
+        'function',
         'variable',
         'constant',
         'tag',
@@ -32,7 +33,14 @@ const redline = {
       },
     },
     {
-      types: ['keyword', 'function', 'builtin', 'number', 'char', 'changed'],
+      types: ['keyword', 'operator'],
+      style: {
+        // Tailwind red-400
+        color: '#F87171',
+      },
+    },
+    {
+      types: ['builtin', 'number', 'char', 'changed'],
       style: {
         color: 'rgb(255, 255, 255)',
       },
