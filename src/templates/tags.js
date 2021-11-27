@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from '../components/Link'
 import { H1 } from '../components/Headings'
 import { Ol } from '../components/Lists'
+import { JumpToTop } from '../components/JumpToTop'
 
 import Layout from '../components/layout'
 
@@ -33,9 +34,7 @@ export default function Tags({ pageContext }) {
           </Ol>
           <div className="flex flex-row-reverse justify-between">
             <Link to="/tags">&larr; Back to all tags</Link>
-            {/* "Scroll to top" is a valid use for an empty href */}
-            {/* eslint-disable-next-line */}
-            <Link to="#">Scroll to top&nbsp;&uarr;</Link>
+            <JumpToTop />
           </div>
         </div>
       </Layout>
@@ -56,9 +55,7 @@ export default function Tags({ pageContext }) {
         </ul>
         <div className="flex flex-row-reverse justify-between">
           <Link to="/">&larr; Back to all posts</Link>
-          {/* "Scroll to top" is a valid use for an empty href */}
-          {/* eslint-disable-next-line */}
-          <Link to="#">Scroll to top&nbsp;&uarr;</Link>
+          <JumpToTop />
         </div>
       </div>
     </Layout>

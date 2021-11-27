@@ -4,6 +4,7 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import Tags from './tags'
 import { Link } from './Link'
 import { H1 } from './Headings'
+import { JumpToTop } from './JumpToTop'
 
 export const Post = ({ frontmatter, body }) => (
   <article className="mb-12">
@@ -15,9 +16,7 @@ export const Post = ({ frontmatter, body }) => (
         <Tags list={frontmatter.tags} />
         <div className="flex flex-row-reverse justify-between">
           <Link to="/">&larr; Back to home</Link>
-          {/* "Scroll to top" is a valid use for an empty href */}
-          {/* eslint-disable-next-line */}
-          <Link to="#">Scroll to top&nbsp;&uarr;</Link>
+          <JumpToTop />
         </div>
       </footer>
     </div>
