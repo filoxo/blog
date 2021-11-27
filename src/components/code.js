@@ -39,7 +39,7 @@ export const Code = ({ codeString, language, metastring }) => {
           {tokens.map((line, i) => {
             const lineProps = getLineProps({ line, key: i })
             if (shouldHighlightLine(i)) {
-              lineProps.className = `${lineProps.className} highlight-line`
+              lineProps.className = `${lineProps.className} bg-white bg-opacity-20`
             }
             return (
               <div {...lineProps}>
