@@ -3,13 +3,15 @@
 const redline = {
   plain: {
     color: '#ffffff',
-    backgroundColor: '#111111',
+    // Tailwind gray-800
+    backgroundColor: '#1F2937',
   },
   styles: [
     {
       types: ['comment', 'punctuation'],
       style: {
-        color: 'rgb(255, 173, 173)',
+        // Tailwind red-300
+        color: '#FCA5A5',
         fontStyle: 'italic',
       },
     },
@@ -25,7 +27,8 @@ const redline = {
         'attr-name',
       ],
       style: {
-        color: 'rgb(255, 0, 51)',
+        // Tailwind red-600
+        color: '#DC2626',
       },
     },
     {
