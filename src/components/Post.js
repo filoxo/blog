@@ -13,11 +13,11 @@ export const Post = ({ frontmatter, body }) => (
       <MDXRenderer>{body}</MDXRenderer>
       <footer className="space-y-12">
         <Tags list={frontmatter.tags} />
-        <div className="flex justify-between">
+        <div className="flex flex-row-reverse justify-between">
+          <Link to="/">&larr; Back to home</Link>
           {/* "Scroll to top" is a valid use for an empty href */}
           {/* eslint-disable-next-line */}
           <Link to="#">Scroll to top&nbsp;&uarr;</Link>
-          <Link to="/">&larr; Back to home</Link>
         </div>
       </footer>
     </div>
