@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -18,13 +17,10 @@ jobs:
       - name: Install dependencies
         env:
           NODE_ENV: production
-        with:
-          install-command: yarn --frozen-lockfile --silent
-
+        run: yarn --frozen-lockfile --silent
       - name: Configure git
         run: git config user.name "Carlos Filoteo" && git config user.email "c.filoteo12@gmail.com"
-
       - name: Deploy to Github pages
         run: yarn deploy
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
