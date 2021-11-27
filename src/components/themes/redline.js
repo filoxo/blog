@@ -1,3 +1,5 @@
+// Source https://github.com/cammarb/redline-theme/blob/master/themes/RedLine-theme-color-theme.json
+// Generated with https://github.com/FormidableLabs/prism-react-renderer/blob/master/tools/themeFromVsCode/README.md
 const redline = {
   plain: {
     color: '#ffffff',
