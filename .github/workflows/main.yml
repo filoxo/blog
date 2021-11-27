@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         env:
           NODE_ENV: production
-        run: yarn install --frozen-lockfile --silent
+        run: yarn install --frozen-lockfile --verbose
       - name: Configure git
         run: git config user.name "Carlos Filoteo" && git config user.email "c.filoteo12@gmail.com"
       - name: Deploy to Github pages
