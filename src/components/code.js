@@ -1,6 +1,6 @@
 import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import theme from 'prism-react-renderer/themes/vsDark'
+import theme from './themes/redline'
 
 const RE = /{([\d,-]+)}/
 
@@ -32,7 +32,10 @@ export const Code = ({ codeString, language, metastring }) => {
       theme={theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
+        <pre
+          className={`${className} px-3 py-2 rounded-lg overflow-auto`}
+          style={style}
+        >
           {tokens.map((line, i) => {
             const lineProps = getLineProps({ line, key: i })
             if (shouldHighlightLine(i)) {
