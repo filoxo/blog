@@ -1,6 +1,7 @@
 import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from './themes/redline'
+import { Base } from './Base'
 
 const RE = /{([\d,-]+)}/
 
@@ -52,5 +53,15 @@ export const Code = ({ codeString, language, metastring }) => {
         </pre>
       )}
     </Highlight>
+  )
+}
+
+export const InlineCode = (props) => {
+  return (
+    <Base
+      as="code"
+      forwardedProps={props}
+      className="bg-gray-200 text-black rounded-sm px-1"
+    />
   )
 }
