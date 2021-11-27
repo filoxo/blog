@@ -17,7 +17,7 @@ export default function ThemeToggle() {
         checked={darkModeEnabled}
         onChange={handleThemeToggle}
       />
-      <span className="w-8 h-5 flex items-center flex-shrink-0 ml-4 p-1 bg-gray-600 rounded-full duration-300 ease-in-out peer-checked:bg-red-600 after:w-4 after:h-4 after:bg-white peer-checked:after:bg-gray-900 after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-2"></span>
+      <span className="w-8 h-5 flex items-center flex-shrink-0 ml-8 p-1 bg-gray-900 rounded-full duration-300 ease-in-out peer-checked:bg-red-600 after:w-4 after:h-4 after:bg-white peer-checked:after:bg-gray-900 after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-2"></span>
     </label>
   )
 }

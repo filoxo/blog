@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
         <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100" />
       </Helmet>
       <TopNav title={data.site.siteMetadata.title} />
-      <div className="my-0 mx-auto max-w-2xl py-2 px-6">{children}</div>
+      <div className="my-0 mx-auto max-w-2xl px-3 md:px-6">{children}</div>
     </>
   )
 }
