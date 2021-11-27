@@ -3,11 +3,11 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import Tags from './tags'
 import { Link } from './Link'
-import { PostHeading } from './Post/Heading'
+import { H1 } from './Headings'
 
-const Post = ({ post }) => (
+export const Post = ({ post }) => (
   <article className="mb-12">
-    <PostHeading>{post.frontmatter.title}</PostHeading>
+    <H1 className="mb-4 text-red-600">{post.frontmatter.title}</H1>
     <div className="text-red-600 mb-4">{post.frontmatter.date}</div>
     <div className="space-y-6">
       <MDXRenderer>{post.body}</MDXRenderer>
@@ -24,4 +24,14 @@ const Post = ({ post }) => (
   </article>
 )
 
-export default Post
+export const PostPreview = ({ post }) => (
+  <div>
+    <H1 className="mb-4">
+      <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+    </H1>
+    <div className="text-red-600 mb-4">{post.frontmatter.date}</div>
+    <p>
+      {post.excerpt} <Link to={post.fields.slug}>Read more</Link>
+    </p>
+  </div>
+)

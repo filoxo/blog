@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import { PostPreview } from '../components/Post/Preview'
+import { PostPreview } from '../components/Post'
 
 const IndexPage = ({ data }) => (
   <Layout>
