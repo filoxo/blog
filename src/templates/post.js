@@ -7,7 +7,7 @@ const PostLayout = ({ data }) => {
   const post = data.mdx
   return (
     <Layout>
-      <Post post={post} />
+      <Post {...post} />
     </Layout>
   )
 }
