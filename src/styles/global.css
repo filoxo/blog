@@ -8,6 +8,7 @@
   font-family: 'Source Code Pro', monospace;
 }
 
-twitter-widget {
+/* Twitter keeps changing this damn selector */
+.twitter-tweet {
   margin: 0 auto;
 }
