@@ -17,6 +17,6 @@ jobs:
       - name: Deploy with gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/filoxo/filoxo.github.io.git
-          yarn deploy -u "github-actions-bot <support+actions@github.com>"
+          yarn deploy -u "Carlos Filoteo <c.filoteo12@gmail.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
