@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from './Link'
+import './TagList.css'
 
-export default function Tags({ list = [] }) {
+export const TagList = ({ list = [] }) => {
   if (!list.length) return null
   return (
-    <>
-      <h3 className="inline-flex">Tags:&nbsp;</h3>
-      <ul className="inline-flex m-0 space-x-4">
+    <span className="inline-flex flex-wrap">
+      <ul
+        aria-label="Tags:"
+        className="tag-list inline-flex flex-wrap m-0 space-x-2"
+      >
         {list.map((tag, index) => (
           <li key={tag}>
             <Link to={`/tags/${tag}`}>{tag}</Link>
@@ -14,6 +17,6 @@ export default function Tags({ list = [] }) {
           </li>
         ))}
       </ul>
-    </>
+    </span>
   )
 }

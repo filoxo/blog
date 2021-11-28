@@ -1,7 +1,7 @@
 import React from 'react'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
-import Tags from './tags'
+import { TagList } from './TagList'
 import { Link } from './Link'
 import { H1 } from './Headings'
 import { JumpToTop } from './JumpToTop'
@@ -13,7 +13,7 @@ export const Post = ({ frontmatter, body }) => (
     <div className="space-y-6">
       <MDXRenderer>{body}</MDXRenderer>
       <footer className="space-y-12">
-        <Tags list={frontmatter.tags} />
+        <TagList list={frontmatter.tags} />
         <div className="flex flex-row-reverse justify-between">
           <Link to="/">&larr; Back to home</Link>
           <JumpToTop />

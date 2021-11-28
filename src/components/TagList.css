@@ -1,0 +1,5 @@
+ul.tag-list:before {
+  content: attr(aria-label);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
