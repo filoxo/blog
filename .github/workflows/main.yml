@@ -14,9 +14,9 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn --frozen-lockfile --silent
-      - name: Configure git
-        run: git config user.name "Carlos Filoteo" && git config user.email "c.filoteo12@gmail.com"
-      - name: Deploy to Github pages
-        run: yarn deploy
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/filoxo/filoxo.github.io.git
+          yarn deploy -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

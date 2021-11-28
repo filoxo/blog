@@ -41,8 +41,8 @@
     "start": "gatsby develop -o",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "gatsby build --prefix-paths",
-    "deploy:local": "yarn predeploy && gh-pages -d public -b master -r git@github.com:filoxo/filoxo.github.io.git --git git",
-    "deploy": "gh-pages -d public -b master -r https://$GITHUB_TOKEN@github.com/filoxo/filoxo.github.io.git --git git",
+    "deploy:local": "yarn predeploy && yarn deploy -b master -r git@github.com:filoxo/filoxo.github.io.git --git git",
+    "deploy": "gh-pages -d public",
     "clean": "gatsby clean",
     "post": "run(){ mkdir -p ./src/posts/$1 && touch ./src/posts/$1/index.mdx && echo \"---\ntitle: $1\ndate: 2020-MM-DD\ntags: []\n---\n\" >> ./src/posts/$1/index.mdx; }; run"
   },
