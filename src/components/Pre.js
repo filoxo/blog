@@ -3,13 +3,13 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from './themes/redline'
 import { preToCodeBlock } from 'mdx-utils'
 
-const RE = /{([\d,-]+)}/
+const HIGHLIGHT_RANGES = /{([\d,-]+)}/
 
 const calculateLinesToHighlight = (meta) => {
-  if (!RE.test(meta)) {
+  if (!HIGHLIGHT_RANGES.test(meta)) {
     return () => false
   } else {
-    const lineNumbers = RE.exec(meta)[1]
+    const lineNumbers = HIGHLIGHT_RANGES.exec(meta)[1]
       .split(',')
       .map((v) => v.split('-').map((v) => parseInt(v, 10)))
     return (index) => {
