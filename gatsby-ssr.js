@@ -7,20 +7,18 @@ const THEME = 'theme:dark'
 const BlockingScript = () => {
   const codeToRunOnClient = `
   window.theme = {
-    init: function themeInit() {
+    init: () => {
       window.theme.set(window.theme.current())
     },
     current: () => localStorage.getItem('${THEME}') === 'true',
-    set: function themeSet(to) {
+    set: (to) => {
       document.documentElement.classList.toggle('dark', to);
       const result = document.documentElement.classList.contains('dark');
       localStorage.setItem('${THEME}', result);
       return result
     },
-    toggle: function themeToggle() {
-      this.set(!window.theme.current());
-    }
-  }    
+    toggle: () => window.theme.set(!window.theme.current())
+  }
 
   window.theme.init();
   `
