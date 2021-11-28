@@ -6,7 +6,7 @@ import { PostPreview } from '../components/Post'
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <div className="space-y-16">
+    <div className="space-y-16 mb-12">
       {data.allMdx.edges.map(({ node: post }) => (
         <PostPreview {...post} key={post.id} />
       ))}
