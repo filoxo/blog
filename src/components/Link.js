@@ -22,6 +22,7 @@ export const InlineLink = ({ href, ...props }) => {
   return isLocalLink ? (
     <GatsbyLink to={href} {...props} className={className} />
   ) : (
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
     <a href={href} {...props} className={className} />
   )
 }
