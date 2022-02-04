@@ -1,0 +1,54 @@
+---
+title: Deploy an AWS Lambda using Terraform
+date: 2021-12-16
+tags: ['aws', 'lambda', 'terraform', 'javascript']
+---
+
+There isn't really a good direction for this post. Mostly just creating a post around my experience, and writing this down so I remember how/why I accomplished this.
+
+## Prereqs
+
+1. [Install AWS cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and get signed in
+1. [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+
+## Setup AWS
+
+1. `terraform init`
+1. `terraform plan`
+
+## Create a Lambda function
+
+1. `yarn add aws-lambda-fastify fastify`
+
+## ?
+
+<!-- 
+ 3786  17.11.2021 15:10  cd dev
+ 3787  17.11.2021 15:10  take import-map-deployer-lambda
+ 3792  17.11.2021 15:54  terraform init
+ 3793  17.11.2021 15:54  terraform plan
+ 3796  17.11.2021 15:57  aws configure --profile personal
+ 3797  17.11.2021 16:03  aws 
+ 3798  17.11.2021 16:03  aws current
+ 3799  17.11.2021 16:03  terraform plan
+ 3800  17.11.2021 16:03  terraform plan --profile personal
+ 3801  17.11.2021 16:03  terraform plan -profile personal
+ 3802  17.11.2021 16:03  terraform plan
+ 3803  17.11.2021 16:04  aws help
+ 3804  17.11.2021 16:04  aws show 
+ 3805  17.11.2021 16:04  aws show profiles
+ 3806  17.11.2021 16:04  aws profiles
+ 3807  17.11.2021 16:04  aws list profiles
+ 3808  17.11.2021 16:07  terraform init
+ 3809  17.11.2021 16:07  terraform plan
+ 3810  17.11.2021 16:08  echo $AWS_PROFILE
+ 3811  17.11.2021 16:08  AWS_PROFILE=personal terraform plan
+ 3812  17.11.2021 16:09  terraform apply 
+ 3813  17.11.2021 16:09  AWS_PROFILE=personal terraform apply 
+ 3814  17.11.2021 16:15  git status
+ 3815  17.11.2021 16:15  git add . 
+ 3816  17.11.2021 16:15  git status
+ 3817  17.11.2021 16:15  touch .gitignore
+ 3818  17.11.2021 16:22  yarn add aws-lambda-fastify fastify
+ 3819  17.11.2021 16:22  AWS_PROFILE=personal terraform apply
+ -->
