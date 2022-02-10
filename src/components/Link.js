@@ -2,20 +2,18 @@ import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import cls from 'classnames'
 
+const commonClasses =
+  'text-red-500 hover:text-red-600 no-underline transition-colors duration-300 ease-in-out'
+
 export const Link = (props) => (
-  <GatsbyLink
-    {...props}
-    className={cls(
-      'text-red-600 hover:text-red-700 no-underline transition-colors duration-300 ease-in-out',
-      props.className
-    )}
-  />
+  <GatsbyLink {...props} className={cls(commonClasses, props.className)} />
 )
 
 export const InlineLink = ({ href, ...props }) => {
   const isLocalLink = Boolean(href) && href.startsWith('/')
   const className = cls(
-    'text-red-600 hover:text-red-700 no-underline transition-colors duration-300 ease-in-out border-b	border-dashed border-current visited:border-red-900',
+    commonClasses,
+    'border-b	border-dashed border-current visited:border-red-900',
     props.className
   )
 
