@@ -16,7 +16,7 @@ if (args.length < 1) {
 const kebabCase = (str) =>
   str
     .replace(/([a-z])([A-Z])/g, '$1-$2') // replace "camelCase" to "camel-case"
-    .replace(/[\s_]+/g, '-') // Replace spaces with -
+    .replace(/[\s_\/]+/g, '-') // Replace spaces, underscore, and slash with - (dash)
     .toLowerCase()
 
 const title = args[0]
