@@ -30,7 +30,7 @@ date: ${todaysDate}
 tags: []
 ---
 
-`
+` // looks weird but its not a mistake
 
 // Create post
 const dir = path.join(__dirname, 'src/posts', titleSlug)
