@@ -35,4 +35,7 @@ tags: []
 // Create post
 const dir = path.join(__dirname, 'src/posts', titleSlug)
 fs.mkdirSync(dir)
-fs.writeFileSync(path.join(dir, 'index.mdx'), content)
+const index = path.resolve(dir, 'index.mdx')
+fs.writeFileSync(index, content)
+
+console.log(`Created post "${title}" in ${index}`)
