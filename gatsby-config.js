@@ -3,6 +3,7 @@ module.exports = {
     title: 'Filoblog',
   },
   plugins: [
+    `gatsby-plugin-pnpm`,
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-twitter`,

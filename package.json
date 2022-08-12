@@ -48,6 +48,7 @@
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.7",
     "autoprefixer": "^10.4.0",
+    "gatsby-plugin-pnpm": "^1.2.10",
     "gatsby-plugin-postcss": "^5.2.0",
     "postcss": "^8.4.1",
     "prettier": "^2.5.0",
