@@ -4,7 +4,7 @@ date: 2022-08-12
 tags: ['react', 'typescript', 'testing']
 ---
 
-This is an attempt at a proposal for organizing a React component file structure based on the needs and current patterns at my current place of employment. I'm sharing this first on my blog to get some external feedback, but I also think its a good discussion point in general. For context, our tech stack uses the following: TypeScript, React, Jest, and Storybook. The idea is that this code will be generated as part of a code generator.
+This is an attempt at a proposal for organizing a React component file structure based on the needs and current patterns at my current place of employment. I'm sharing this first on my blog to get some external feedback, but I also think its a good discussion point in general. For context, our tech stack uses the following: TypeScript, React, Jest, and Storybook. The idea is that this code will be generated as part of a code generator (such as [yeoman](https://yeoman.io/)).
 
 The pattern has the following file structure and naming:
 
@@ -47,7 +47,7 @@ export const CompName = withHookHoc(CompNameComponent, useCompNameLogic)
 
 ### use{CompName}Logic.ts
 
-This file should only contain business logicl. Its return value will be passed as props to the component.
+This file should only contain business logic. Its return value will be passed as props to the component. The extra "Logic" suffix can serve as a constant reminder, but may not actually be necessary as React hooks are intended to be thought of as containing component logic. TBD perhaps.
 
 ```ts
 import React from 'react'
@@ -91,6 +91,8 @@ Additional ideas:
 - optionally allow generating react-router MemoryRouter code & wrapper
 
 ### {CompName}Component.tsx
+
+The extra "Component" suffix helps remind the developer that only the component code should be here, though it does look a bit awkward at first glance. Alternative ways to think about this is that this is "headless component" that contains next-to-no logic (though not always avoidable).
 
 ```tsx
 import React from 'react'
