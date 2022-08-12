@@ -1,0 +1,214 @@
+---
+title: React component file structure proposal
+date: 2022-08-12
+tags: ['react', 'typescript', 'testing']
+---
+
+This is an attempt at a proposal for organizing a React component file structure based on the needs and current patterns at my current place of employment. I'm sharing this first on my blog to get some external feedback, but I also think its a good discussion point in general. For context, our tech stack uses the following: TypeScript, React, Jest, and Storybook. The idea is that this code will be generated as part of a code generator.
+
+The pattern has the following file structure and naming:
+
+```sh
+{CompName}/
+├──index.tsx
+├──use{CompName}Logic.ts
+├──use{CompName}Logic.test.tsx
+├──{CompName}Component.tsx
+└──{CompName}Component.stories.tsx
+```
+
+## Reasoning
+
+- index.tsx helps make importing simple, eg. `import { CompName } from './CompName'`
+- _'use{CompName}Logic'_ encourages colocating business logic with its unit test (Jest)
+- _'{CompName}Component'_ encourages colocating UI-related code with its corresponding story (Storybook)
+- Generating a component as part of developer onboarding experience would be a great primer for how these should work and establish best practices
+
+## File contents
+
+To better illustrate the need for such a pattern, I've filled in the contents of the files below.
+
+### index.tsx
+
+All this file does is export the hooked component, and creates a type for props.
+
+```tsx
+import { CompNameComponent } from './CompNameComponent'
+import { useCompNameLogic } from './useCompNameLogic'
+
+// NOTE: having this into index.ts creates a circular dependency.
+// I'm unsure whether this is okay given that this is just a Type, which is not included in compiled code...
+// but makes for a better match for condensed file structure (see below). Alternatively this could be
+// colocated in use{CompName}Logic file.
+export type CompNameProps = ReturnType<typeof useCompNameLogic>
+
+export const CompName = withHookHoc(CompNameComponent, useCompNameLogic)
+```
+
+### use{CompName}Logic.ts
+
+This file should only contain business logicl. Its return value will be passed as props to the component.
+
+```ts
+import React from 'react'
+
+export const useCompNameLogic = () => {
+  return {}
+}
+```
+
+### use{CompName}Logic.test.ts
+
+```ts
+import React from 'react'
+import { renderHook } from '@testing-library/react-hooks'
+import { useCompNameLogic } from './useCompNameLogic'
+import type { CompNameProps } from '.'
+
+describe(useCompNameLogic, () => {
+  const mockProps: CompNameProps = {}
+
+  const render = (testProps: Partial<CompNameProps> = {}) => {
+    return renderHook(useCompNameLogic, {
+      initialProps: {
+        ...mockProps,
+        ...testProps,
+      },
+    })
+  }
+
+  it('returns valid default props', async () => {
+    const { result } = render()
+
+    expect(result.current).toBeDefined() // TODO: have a better default test...
+  })
+})
+```
+
+Additional ideas:
+
+- optionally allow generating Apollo MockedProvider code & wrapper
+- optionally allow generating react-router MemoryRouter code & wrapper
+
+### {CompName}Component.tsx
+
+```tsx
+import React from 'react'
+import { withHookHoc } from '@jupiterone/web-apps-core'
+import { makeUseStyles } from '@jupiterone/web-juno'
+import type { CompNameProps } from '.'
+
+const useStyles = makeUseStyles((theme) => {
+  return {}
+})
+
+export const CompNameComponent = (props: CompNameProps) => {
+  const styles = useStyles()
+  return <></>
+}
+```
+
+### {CompName}Component.stories.tsx
+
+```tsx
+import React from 'react'
+import { storybookTemplate } from '@jupiterone/web-apps-core'
+import { CompNameComponent } from './CompNameComponent'
+import type { CompNameProps } from '.'
+
+// TODO: update storybookTemplate to accept typings
+const { template, meta } = storybookTemplate<CompNameProps>({
+  title: 'CompName',
+  component: CompNameComponent,
+})
+
+export default meta
+export const Default = template({})
+```
+
+## Extra credit: condensed file structure
+
+If, say, you have a very simple component that doesn't need 5 files... just reduce it down to the one index file but retaining the file names for tests.
+
+```sh
+{CompName}/
+├──index.tsx
+├──use{CompName}Logic.test.tsx
+└──{CompName}Component.stories.tsx
+```
+
+### index.tsx
+
+```tsx
+import React from 'react'
+import React from 'react'
+import { withHookHoc } from '@jupiterone/web-apps-core'
+import { makeUseStyles } from '@jupiterone/web-juno'
+
+/* --- Logic --- */
+export const useCompNameLogic = () => {
+  return {}
+}
+
+export type CompNameProps = ReturnType<typeof useCompNameLogic>
+
+/* --- Component --- */
+const useStyles = makeUseStyles((theme) => {
+  return {}
+})
+
+export const CompNameComponent = (props: CompNameProps) => {
+  const styles = useStyles()
+  return <></>
+}
+
+export const CompName = withHookHoc(CompNameComponent, useCompNameLogic)
+```
+
+### use{CompName}Logic.test.ts
+
+```ts
+import React from 'react'
+import { renderHook } from '@testing-library/react-hooks'
+import { useCompNameLogic } from '.'
+import type { CompNameProps } from '.'
+
+describe(useCompNameLogic, () => {
+  const mockProps: CompNameProps = {}
+
+  const render = (testProps: Partial<CompNameProps> = {}) => {
+    return renderHook(useCompNameLogic, {
+      initialProps: {
+        ...mockProps,
+        ...testProps,
+      },
+    })
+  }
+
+  it('returns valid default props', async () => {
+    const { result } = render()
+
+    expect(result.current).toBeDefined()
+  })
+})
+```
+
+### {CompName}Component.stories.tsx
+
+```tsx
+import React from 'react'
+import { storybookTemplate } from '@jupiterone/web-apps-core'
+import { CompNameComponent } from '.'
+import type { CompNameProps } from '.'
+
+// TODO: update storybookTemplate to accept typings
+const { template, meta } = storybookTemplate<CompNameProps>({
+  title: 'CompName',
+  component: CompNameComponent,
+})
+
+export default meta
+export const Default = template({})
+```
+
+What do you think? Would you use a codebase structured like this?
