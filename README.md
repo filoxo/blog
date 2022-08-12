@@ -6,4 +6,4 @@ Theme inspired by: https://dribbble.com/shots/6004451/attachments/6004451-Develo
 
 ## New post
 
-`yarn post "Name of post"`
+`pnpx post "Name of post"`
