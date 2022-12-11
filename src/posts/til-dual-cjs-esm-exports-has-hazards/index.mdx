@@ -1,0 +1,45 @@
+---
+title: TIL dual cjs/esm exports has hazards
+date: 2022-04-29
+tags: []
+---
+
+Longer title: TIL that exporting both cjs and esm has some hazards. Learned from [facebook/react#11503](https://github.com/facebook/react/issues/11503#issuecomment-724753419), copied here:
+
+> providing a full exports map as you have shown in your previous post is not an option from what I believe. What node implements regarding cjs interop and stuff doesn't really play well with the existing ecosystem. Dual package hazard is real - especially for packages like Reac that requires a single copy of them.
+>
+> An exports map with commonjs only files could potentially be added without breaking anything but would also have to be done extra carefully and with appropriate e2e tests for this (given how complex things are to get right)
+
+Elborate:
+
+<Aside info>
+
+I try articulate what this means in a more concrete way for myself. Maybe you'll learn something too.
+
+</Aside>
+
+If in your package, you export both an esm and commonjs version of your package. In theory this would be good because it would a consumer could do this when building for the web (aka pre-bundler code):
+
+```ts
+import esto from 'aqui'
+```
+
+as well as this in a Node environment:
+
+```ts
+const esto = require('aqui')
+```
+
+For reference, the "full exports map" is in reference to Node's [Subpath exports](https://nodejs.org/api/packages.html#subpath-exports). This allows commonjs code to be able to use the `import` syntax and get the right file. So given this configuration
+
+```js
+{
+  "main": "./main.js",
+  "exports": {
+    ".": "./main.js",
+    "./submodule": "./src/submodule.js"
+  }
+}
+```
+
+`import submodule from 'es-module-package/submodule';` loads `es-module-package/src/submodule.js` from node_modules

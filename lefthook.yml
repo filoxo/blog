@@ -1,6 +1,0 @@
-pre-commit:
-  parallel: true
-  commands:
-    format:
-      glob: './src/*.{js,md}'
-      run: git stash -k && pnpm prettier --write {staged_files} && git stash pop && git add {staged_files}
