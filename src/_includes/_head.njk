@@ -1,0 +1,78 @@
+{% set page_title = title + ' - ' + site.name %}
+{% if site.name == title %}
+  {% set page_title = title %}
+{% endif %}
+{% set site_title = site.name %}
+{% set current_url = site.url + page.url %}
+{% if social_image %}
+  {% set social_image = site.url + '/images/social-share.png' %}
+{% endif %}
+{% if meta.title %}
+  {% set page_title = meta.title %}
+{% endif %}
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<title>{{ page_title }}</title>
+<link rel="canonical" href="{{ current_url }}"/>
+<meta property="og:site_name" content="{{ site_title }}"/>
+<meta property="og:title" content="{{ page_title }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ current_url }}"/>
+{% if social_image %}
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta property="og:image" content="{{ social_image }}"/>
+  <meta name="twitter:image" content="{{ social_image }}"/>
+  <meta property="og:image:alt" content="Page image for {{ site.name }}"/>
+  <meta name="twitter:image:alt" content="Page image for {{ site.name }}"/>
+{% endif %}
+{% if meta.desc %}
+  <meta name="description" content="{{ meta.desc }}"/>
+  <meta name="twitter:description" content="{{ meta.desc }}"/>
+  <meta property="og:description" content="{{ meta.desc }}"/>
+{% endif %}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="48x48"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="192x192"/>
+<link rel="mask-icon" href="/favicon.svg" color="#4a5568"/>
+<meta
+name="theme-color" content="#4a5568"/> <!-- https://www.filamentgroup.com/lab/load-css-simpler/ -->
+<link
+  crossorigin="anonymous"
+  rel="stylesheet"
+  href="/@root/styles/main.css"
+  media="print"
+  onload="this.media='all'; this.onload=null;"/>
+<link
+  crossorigin="anonymous"
+  rel="stylesheet"
+  href="/@root/styles/code.css"
+  media="print"
+  onload="this.media='all'; this.onload=null;"/>
+<script type="module">
+window.addEventListener('DOMContentLoaded', (_e) => {
+  window.theme = {
+    init: () => window.theme.set(window.theme.current()),
+    current: () => localStorage.getItem(THEME) === 'true',
+    set: (to) => {
+      document
+        .documentElement
+        .classList
+        .toggle('dark', to);
+      const toggledState = document
+        .documentElement
+        .classList
+        .contains('dark');
+      localStorage.setItem(THEME, toggledState);
+      return toggledState
+    },
+    toggle: () => window.theme.set(!window.theme.current())
+  }
+  const THEME = 'theme:dark'
+  const toggle = document.getElementById('theme-toggle')
+  toggle.addEventListener('click', () => {
+    window.theme.toggle();
+  })
+  toggle.checked = window.theme.init();
+});
+</script>
