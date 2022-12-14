@@ -16,10 +16,11 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v3
-      - name: install
-        uses: bahmutov/npm-install@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: install
+        uses: bahmutov/npm-install@v1
         env:
           NODE_ENV: production
       - run: npm run build
