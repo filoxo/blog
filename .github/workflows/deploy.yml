@@ -5,7 +5,6 @@ on:
     branches:
       - main
       - feat/migrate-to-slinkity # todo: remove once deploy to remote main is verified and before merging to repo main
-  pull_request:
 
 jobs:
   deploy:
@@ -26,10 +25,8 @@ jobs:
       - run: npm run build
       - name: deploy to github pages
         uses: peaceiris/actions-gh-pages@v3
-        # If you're changing the branch from main,
-        # also change the `main` in `refs/heads/main`
-        # below accordingly.
-        if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: filoxo/filoxo.github.io
           publish_dir: ./_site
+          publish_branch: main
