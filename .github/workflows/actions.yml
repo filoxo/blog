@@ -1,10 +1,9 @@
-name: deploy
+name: actions
 
 on:
   push:
     branches:
       - main
-      - feat/migrate-to-slinkity # todo: remove once deploy to remote main is verified and before merging to repo main
 
 jobs:
   deploy:
