@@ -10,13 +10,13 @@
     </div>
     <footer class="space-y-12">
       <p>Tagged with:{% set comma = joiner() %}
-      {%- for tag in tags  -%}
+      {%- for tag in tags  -%}{% if tag !== "posts" %}
           {{- comma() -}}&nbsp;<a
             href="/tags/{{ tag }}"
             class="border-b border-current text-red-500 no-underline transition-colors duration-300 ease-in-out visited:border-red-900 hover:text-red-600">
             {{- tag -}}
           </a>
-      {%- endfor -%}
+      {% endif %}{%- endfor -%}
       </p>
       <div class="flex flex-row-reverse justify-between">
         <a
