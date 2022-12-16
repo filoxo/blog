@@ -11,10 +11,10 @@ It's 2019 and I still see new code being written which uses non-interactive elem
 
 <script>
   const handleClick = (e) => {
-    console.log('myBtn clicked');
-  };
-  const myBtn = document.querySelector('.myBtn');
-  myBtn.addEventListener('click', handleClick);
+    console.log('myBtn clicked')
+  }
+  const myBtn = document.querySelector('.myBtn')
+  myBtn.addEventListener('click', handleClick)
 </script>
 ```
 
@@ -44,18 +44,18 @@ Focusing on an element is only half of the keyboard navigation story. The elemen
 
 <script>
   const handleClick = (e) => {
-    console.log('myBtn clicked');
-  };
+    console.log('myBtn clicked')
+  }
   const handleKeyboardClick = (fn) => {
     return (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
-        return fn(e);
+        return fn(e)
       }
-    };
-  };
-  const myBtn = document.querySelector('.myBtn');
-  myBtn.addEventListener('click', handleClick);
-  myBtn.addEventListener('keydown', handleKeyboardClick(handleClick));
+    }
+  }
+  const myBtn = document.querySelector('.myBtn')
+  myBtn.addEventListener('click', handleClick)
+  myBtn.addEventListener('keydown', handleKeyboardClick(handleClick))
 </script>
 ```
 
@@ -89,23 +89,23 @@ We can fix this by adding the correct aria-role attribute. If you haven't yet re
 
 <script>
   const handleClick = (e) => {
-    console.log('myBtn clicked');
+    console.log('myBtn clicked')
     // Update aria-pressed for toggle buttons
     if (e.target.hasAttribute('aria-pressed')) {
-      const pressed = e.target.getAttribute('aria-pressed') === 'true';
-      e.target.setAttribute('aria-pressed', pressed);
+      const pressed = e.target.getAttribute('aria-pressed') === 'true'
+      e.target.setAttribute('aria-pressed', pressed)
     }
-  };
+  }
   const handleKeyboardClick = (fn) => {
     return (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
-        return fn(e);
+        return fn(e)
       }
-    };
-  };
-  const myBtn = document.querySelector('.myBtn');
-  myBtn.addEventListener('click', handleClick);
-  myBtn.addEventListener('keydown', handleKeyboardClick(handleClick));
+    }
+  }
+  const myBtn = document.querySelector('.myBtn')
+  myBtn.addEventListener('click', handleClick)
+  myBtn.addEventListener('keydown', handleKeyboardClick(handleClick))
 </script>
 ```
 
