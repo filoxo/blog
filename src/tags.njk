@@ -1,22 +1,38 @@
 ---
-title: Posts by tag
+eleventyComputed:
+  meta:
+    title: Posts tagged with “{{ tag }}”
 pagination:
   data: collections
   size: 1
   alias: tag
+  filter:
+    - posts # prevents /tags/posts/index.html
 permalink: /tags/{{ tag }}/
 ---
 
 {% extends 'base.njk' %}
 
+{# TODO: this page is exactly the same as index.njk. I should create a shared template for it. #}
+
 {%- block content -%}
 {%- set taglist = collections[ tag ] -%}
-<h1>{{ taglist.length }} post{% if taglist.length > 1 %}s{% endif %} tagged with “{{ tag }}”</h1>
-<ol>
-  {% for post in taglist | reverse %}
-    <li>
+{%- set plural = taglist.length > 1 %}
+<h1 class="mb-12 text-3xl">{{ taglist.length }} post{% if plural %}s{% endif %} tagged with “{{ tag }}”</h1>
+<div class="space-y-16 mb-12">
+  {%- for post in taglist | reverse -%}
+  <section>
+    <h1 class="mb-4 text-2xl text-red-600">
       <a href="{{ post.url }}">{{ post.data.title }}</a>
-    </li>
-  {% endfor %}
-</ol>
+    </h1>
+    <div class="text-red-600 mb-4">{{ post.date | date }}</div>
+    <div>
+      <p class="prose dark:prose-invert">
+        {{- post.data.page.excerpt or post.data.excerpt | striptags }}
+        <a class="text-red-600" href="{{ post.url }}">Read more</a>
+      </p>
+    </div>
+  </section>
+  {%- endfor -%}
+</div>
 {%- endblock -%}
