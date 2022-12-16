@@ -35,7 +35,7 @@ tags: []
 // Create post
 const dir = path.join(__dirname, 'src/posts', titleSlug)
 fs.mkdirSync(dir)
-const index = path.resolve(dir, 'index.mdx')
+const index = path.resolve(dir, 'index.md')
 fs.writeFileSync(index, content)
 
 console.log(`Created post "${title}" in ${index}`)
