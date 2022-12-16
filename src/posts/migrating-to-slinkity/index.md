@@ -1,5 +1,5 @@
 ---
-title: migrating to 11ty
+title: migrating to slinkity
 tags: javascript
 ---
 
@@ -30,7 +30,7 @@ at this point i ran tests to get an idea where things were performance-wise. i r
 ## migrating the rest of the posts
 
 i've migrated the remaining posts but am now finding that the sort order of the posts collection isn't reversing as expected. this turned out to be due to a subtle nuance in the liquid templating... using the [`reverse` filter](https://shopify.github.io/liquid/filters/reverse/) eg. `\{\% for post in collections.posts | reverse %}` _did not work_ but [reversed](https://shopify.github.io/liquid/tags/iteration/#reversed) did eg. `\{\% for post in collections.posts reversed %}`. not sure i understand why still. also at one point i'd been misled by an error that i thought was invalid liquid syntax. a different error was because i hadn't escaped the characters in the example code in this paragraph.
-at this point i struggled between 11ty's liquid syntax, nunjucks syntax that slinkity recommends, plain html examples that turned out to be processed using liquid instead of nunjucks despite being configured, and fixing a bunch of the slight syntax errors between flavors of markdown. along the way i also fixed some minor styling/layout issues, refined some missing classes, improved some layout items, and studied `@tailwind/typography`'s [prose API with element modifiers](https://tailwindcss.com/docs/typography-plugin#element-modifiers]) to style the blog contents. this took me a few hours, but i tackled these in chunks.
+at this point i struggled between 11ty's liquid syntax, nunjucks syntax that slinkity recommends, plain html examples that turned out to be processed using liquid instead of nunjucks despite being configured, and fixing a bunch of the slight syntax errors between flavors of markdown. along the way i also fixed some minor styling/layout issues, refined some missing classes, improved some layout items, and studied `@tailwind/typography`'s [prose API with element modifiers](https://tailwindcss.com/docs/typography-plugin#element-modifiers) to style the blog contents. this took me a few hours, but i tackled these in chunks.
 
 ## vite plugin is not quite ready for my usecase
 
