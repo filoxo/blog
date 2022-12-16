@@ -1,0 +1,29 @@
+{% extends "base.njk" %}
+
+{% block content -%}
+<article class="mb-12">
+  <h1 class="mb-4 text-2xl text-red-600">{{ title }}</h1>
+  <p class="mb-4 text-red-600">{{ page.date | date }}</p>
+  <div class="space-y-6">
+    <div class="prose prose-headings:text-2xl prose-headings:font-normal prose-a:text-red-500 prose-code:rounded-sm prose-code:bg-gray-200 prose-code:px-1 prose-code:text-black prose-img:rounded-xl dark:prose-invert">
+      {{ content | safe }}
+    </div>
+    <footer class="space-y-12">
+      <p>Tagged with:{% set comma = joiner() %}
+      {%- for tag in tags  -%}{% if tag !== "posts" %}
+          {{- comma() -}}&nbsp;<a
+            href="/tags/{{ tag }}"
+            class="border-b border-current text-red-500 no-underline transition-colors duration-300 ease-in-out visited:border-red-900 hover:text-red-600">
+            {{- tag -}}
+          </a>
+      {% endif %}{%- endfor -%}
+      </p>
+      <div class="flex flex-row-reverse justify-between">
+        <a
+          class="border-b border-current text-red-500 no-underline transition-colors duration-300 ease-in-out hover:text-red-600"
+          href="/">&larr; Back to home</a>
+      </div>
+    </footer>
+  </div>
+</article>
+{%- endblock %}

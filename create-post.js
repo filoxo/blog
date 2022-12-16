@@ -16,7 +16,7 @@ if (args.length < 1) {
 const kebabCase = (str) =>
   str
     .replace(/([a-z])([A-Z])/g, '$1-$2') // replace "camelCase" to "camel-case"
-    .replace(/[\s_]+/g, '-') // Replace spaces with -
+    .replace(/[\s_\/]+/g, '-') // Replace spaces, underscore, and slash with - (dash)
     .toLowerCase()
 
 const title = args[0]
@@ -30,9 +30,12 @@ date: ${todaysDate}
 tags: []
 ---
 
-`
+` // looks weird but its not a mistake
 
 // Create post
 const dir = path.join(__dirname, 'src/posts', titleSlug)
 fs.mkdirSync(dir)
-fs.writeFileSync(path.join(dir, 'index.mdx'), content)
+const index = path.resolve(dir, 'index.md')
+fs.writeFileSync(index, content)
+
+console.log(`Created post "${title}" in ${index}`)

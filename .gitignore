@@ -48,3 +48,6 @@ dist
 # IDEs
 .vscode/
 .idea/
+
+# updated cache dir?
+_site/

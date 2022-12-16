@@ -1,0 +1,31 @@
+name: actions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: install
+        uses: bahmutov/npm-install@v1
+        env:
+          NODE_ENV: production
+      - run: npm run build
+      - name: deploy to github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: filoxo/filoxo.github.io
+          publish_dir: ./_site
+          publish_branch: main
