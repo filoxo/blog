@@ -13,7 +13,8 @@ title: 'Latest posts'
     </h1>
     <div class="text-red-600 mb-4">{{ post.date | date }}</div>
     <div>
-      <p>{{ post.data.page.excerpt or post.data.excerpt | striptags }}
+      <p class="prose dark:prose-invert">
+        {{- post.data.page.excerpt or post.data.excerpt | striptags -}}
         <a class="text-red-600" href="{{ post.url }}">Read more</a>
       </p>
     </div>
