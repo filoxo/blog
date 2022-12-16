@@ -19,3 +19,15 @@ ul.tag-list:before {
   margin-right: 0.5rem;
 }
 
+.permalink {
+  float: left;
+  font-size: 0.75em;
+  margin-left: -28px;
+  opacity: 0;
+}
+*:hover > .permalink,
+.permalink:hover,
+.permalink:focus {
+  opacity: 1;
+}
+
