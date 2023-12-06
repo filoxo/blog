@@ -1,5 +1,6 @@
 ---
 title: migrating to slinkity
+date: 2023-02-15
 tags: javascript
 ---
 
