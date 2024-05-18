@@ -16,7 +16,7 @@
     "@tailwindcss/typography": "^0.5.8",
     "autoprefixer": "^10.4.13",
     "date-fns": "^2.29.3",
-    "gh-pages": "^3.2.3",
+    "gh-pages": "^5.0.0",
     "markdown-it-anchor": "^8.6.5",
     "markdown-it-emoji": "^2.0.2",
     "postcss": "^8.4.20",
