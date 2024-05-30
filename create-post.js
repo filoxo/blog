@@ -30,6 +30,11 @@ date: ${todaysDate}
 tags: []
 ---
 
+intro...
+
+<!-- excerpt-end -->
+
+contents
 ` // looks weird but its not a mistake
 
 // Create post
