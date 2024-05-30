@@ -4,6 +4,10 @@ date: 2024-03-08
 tags: ["other"]
 ---
 
+🍂
+
+<!-- excerpt-end -->
+
 <!-- 
 if you, like me, are learning how to haiku here are the rules
 
