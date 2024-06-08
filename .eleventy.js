@@ -29,9 +29,8 @@ module.exports = function (config) {
     excerpt_separator: '<!-- excerpt-end -->',
   })
 
-  config.addPassthroughCopy('src/**/*.{js}')
-  // images
-  config.addPassthroughCopy('src/**/*.{jpg,jpeg,png,gif}')
+  // assets
+  config.addPassthroughCopy('src/**/*.{jpg,jpeg,png,gif,js}')
 
   /* Nunjucks config */
   // note: had to choose nunjucks filter specifically because universal filters don't yet seem to support filter arguments,
