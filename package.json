@@ -6,25 +6,28 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "start": "eleventy --serve --quiet",
+    "start": "eleventy --serve --quiet --incremental",
     "build": "eleventy",
     "post": "node create-post.js"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-    "@tailwindcss/typography": "^0.5.8",
-    "autoprefixer": "^10.4.13",
-    "date-fns": "^2.29.3",
-    "gh-pages": "^3.2.3",
-    "markdown-it-anchor": "^8.6.5",
-    "markdown-it-emoji": "^2.0.2",
-    "postcss": "^8.4.20",
-    "slinkity": "^0.8.3",
-    "tailwindcss": "^3.2.4"
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@tailwindcss/typography": "^0.5.13",
+    "@unocss/postcss": "^0.60.4",
+    "@unocss/reset": "^0.60.4",
+    "autoprefixer": "^10.4.19",
+    "date-fns": "^3.6.0",
+    "eleventy-plugin-postcss": "^1.0.4",
+    "gh-pages": "^6.1.1",
+    "markdown-it-anchor": "^9.0.1",
+    "postcss": "^8.4.38",
+    "postcss-csso": "^6.0.1",
+    "postcss-import": "^16.1.0",
+    "unocss": "^0.60.4"
   },
   "devDependencies": {
-    "prettier": "^2.5.0"
+    "prettier": "^3.3.1"
   },
   "prettier": {
     "trailingComma": "es5",

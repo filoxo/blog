@@ -1,66 +1,37 @@
-const slinkity = require('slinkity')
+const postcss = require('eleventy-plugin-postcss')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const slugify = require('slugify')
-const md = require('markdown-it')
-const emoji = require('markdown-it-emoji')
-const anchor = require('markdown-it-anchor')
+const mdAnchor = require('markdown-it-anchor')
 const { format } = require('date-fns')
 
 module.exports = function (config) {
-  config.addPlugin(
-    slinkity.plugin,
-    slinkity.defineConfig({
-      // optional: use slinkity.defineConfig
-      // for some handy autocomplete in your editor
-    })
-  )
-
-  const markdownLibrary = md({
-    html: true,
-  })
-    .use(emoji)
-    .use(anchor, {
-      level: [1, 2, 3],
-      slugify: (str) =>
-        slugify(str, {
-          lower: true,
-          strict: true,
-          remove: /["]/g,
-        }),
-      tabIndex: false,
-      permalink: anchor.permalink.linkInsideHeader({
-        ariaHidden: true,
-        class: 'permalink',
-        symbol: '🔗',
-        placement: 'before',
-      }),
-    })
-
-  config.setLibrary('md', markdownLibrary)
-
+  config.addPlugin(postcss)
   config.addPlugin(syntaxHighlight, {
     preAttributes: {
       class: 'px-4 py-2 rounded-lg overflow-auto not-prose',
     },
   })
 
+  config.amendLibrary('md', (mdLib) =>
+    mdLib.use(mdAnchor, {
+      level: [1, 2, 3],
+      tabIndex: false,
+      permalink: mdAnchor.permalink.linkInsideHeader({
+        ariaHidden: true,
+        class: 'permalink',
+        symbol: '🔗',
+        placement: 'before',
+      }),
+    })
+  )
+
   config.setFrontMatterParsingOptions({
     excerpt: true,
     excerpt_separator: '<!-- excerpt-end -->',
   })
 
+  config.addPassthroughCopy('src/**/*.{js}')
+  // images
   config.addPassthroughCopy('src/**/*.{jpg,jpeg,png,gif}')
-
-  config.addFilter(
-    'slug',
-    (str) =>
-      str &&
-      slugify(str, {
-        lower: true,
-        strict: true,
-        remove: /["]/g,
-      })
-  )
 
   /* Nunjucks config */
   // note: had to choose nunjucks filter specifically because universal filters don't yet seem to support filter arguments,
@@ -79,8 +50,6 @@ module.exports = function (config) {
   })
 
   return {
-    markdownTemplateEngine: 'njk',
-    htmlTemplateEngine: 'njk',
     dir: {
       input: './src',
     },
