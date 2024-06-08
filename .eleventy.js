@@ -7,7 +7,7 @@ module.exports = function (config) {
   config.addPlugin(postcss)
   config.addPlugin(syntaxHighlight, {
     preAttributes: {
-      class: 'px-4 py-2 rounded-lg overflow-auto not-prose',
+      class: 'not-prose',
     },
   })
 
