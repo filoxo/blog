@@ -11,7 +11,18 @@ module.exports = function (config) {
     },
   })
 
-  config.amendLibrary('md', (mdLib) => mdLib.use(mdAnchor))
+  config.amendLibrary('md', (mdLib) =>
+    mdLib.use(mdAnchor, {
+      level: [1, 2, 3],
+      tabIndex: false,
+      permalink: mdAnchor.permalink.linkInsideHeader({
+        ariaHidden: true,
+        class: 'permalink',
+        symbol: '🔗',
+        placement: 'before',
+      }),
+    })
+  )
 
   config.setFrontMatterParsingOptions({
     excerpt: true,

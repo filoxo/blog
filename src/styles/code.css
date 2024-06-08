@@ -5,6 +5,10 @@ pre[class*="language-"] {
   color: #ffffff;
 }
 
+pre.not-prose {
+  @apply bg-gray-800;
+}
+
 /* Properties specific to code blocks */
 pre[class*="language-"] {
   padding: 1em; /* this is standard */

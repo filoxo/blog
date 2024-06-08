@@ -1,8 +1,8 @@
-import { defineConfig, presetUno } from 'unocss'
+import { defineConfig, presetUno, presetTypography } from 'unocss'
 
 export default defineConfig({
   content: {
-    filesystem: ['src/**/*.{html,js,ts,jsx,tsx,vue,svelte,astro,njk}'],
+    filesystem: ['src/**/*.{njk,md,html}', '_site/**/*.html'],
   },
-  presets: [presetUno()],
+  presets: [presetUno(), presetTypography()],
 })
