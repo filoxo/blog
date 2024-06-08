@@ -4,7 +4,7 @@ date: 2024-05-06
 tags: [javascript, architecture]
 ---
 
-before leaving for the weekend, my coworker Luca posed an excellent question that i think is worth sharing and expanding on. shout out to Luca for this inspired question! 
+before leaving for the weekend, my coworker Luca posed an excellent question that i think is worth sharing and expanding on. shout out to [Luca](https://github.com/lucafrederice/) for this inspired question! 
 
 <!-- excerpt-end -->
 

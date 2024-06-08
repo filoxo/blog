@@ -49,21 +49,23 @@ export const zIndexRule = [
 ]
 ```
 
-i found inspiration for this solution after reading:
+i found inspiration for this solution after reading the below articles. be sure to read them!
 
-- https://dev.to/mimafogeus2/a-better-way-to-manage-z-indexes-1nf
-- https://www.smashingmagazine.com/2021/02/css-z-index-large-projects/
+- [https://dev.to/mimafogeus2/a-better-way-to-manage-z-indexes-1nf]()
+- [https://www.smashingmagazine.com/2021/02/css-z-index-large-projects/]()
 
-ultimately though the best way to avoid z-index wars is to never join them. most elements that position over top of others get rendered as React Portals, and are outside of the application's dom root. this means that in theory, an `<App />` that renders a `<Modal />` which contains a `<Dropdown />` render ordered accordingly. i'd expect something like this represented in the dom:
+### last tip: isolate
+
+the absolutely best way to avoid z-index wars is to _never join them_. most elements that position over top of others get rendered as React Portals, and are outside of the application's dom root. this means that in theory, an `<App />` that renders a `<Dialog />` which contains a `<Popover />` render in the correct order. something like this in the dom:
 
 ```html
-<div id="root"></div>
+<div id="app-root"></div>
 <react-portal>
-  <div role="dialog">...</div>
+  <dialog>...</dialog>
 </react-portal>
 <react-portal>
-  <ul role="listbox">...</ul>
+  <div popover>...</div>
 </react-portal>
 ```
 
-then also [ensure that app root is styled with `isolate`](https://www.joshwcomeau.com/css/stacking-contexts/) and then you're <span class="font-bold dark:text-yellow-400">golden</span> 🏆
+if youre in the same boat, [ensure that app root is styled with `isolate`](https://www.joshwcomeau.com/css/stacking-contexts/) and then you're <span class="font-bold dark:text-yellow-400">golden</span> 🏆
