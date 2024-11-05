@@ -20,33 +20,29 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="{{ current_url }}"/>
 {% if social_image -%}
-<meta name="twitter:card" content="summary_large_image"/>
-<meta property="og:image" content="{{ social_image }}"/>
-<meta name="twitter:image" content="{{ social_image }}"/>
-<meta property="og:image:alt" content="Page image for {{ site.name }}"/>
-<meta name="twitter:image:alt" content="Page image for {{ site.name }}"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta property="og:image" content="{{ social_image }}"/>
+  <meta name="twitter:image" content="{{ social_image }}"/>
+  <meta property="og:image:alt" content="Page image for {{ site.name }}"/>
+  <meta name="twitter:image:alt" content="Page image for {{ site.name }}"/>
 {%- endif %}
 {% if meta.desc -%}
-<meta name="description" content="{{ meta.desc }}"/>
-<meta name="twitter:description" content="{{ meta.desc }}"/>
-<meta property="og:description" content="{{ meta.desc }}"/>
+  <meta name="description" content="{{ meta.desc }}"/>
+  <meta name="twitter:description" content="{{ meta.desc }}"/>
+  <meta property="og:description" content="{{ meta.desc }}"/>
 {%- endif %}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="48x48"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="192x192"/>
 <link rel="mask-icon" href="/favicon.svg" color="#4a5568"/>
 <meta name="theme-color" content="#4a5568"/>
-<!-- https://www.filamentgroup.com/lab/load-css-simpler/ -->
+<link crossorigin="anonymous" rel="preload" rel="stylesheet" href="/styles/style.css"/>
 <link
   crossorigin="anonymous"
   rel="stylesheet"
-  href="/styles/style.css"
-  media="print"
-  onload="this.media='all'; this.onload=null;"/>
-<link
-  crossorigin="anonymous"
-  rel="stylesheet"
+  rel="preload"
   href="/styles/code.css"
   media="print"
   onload="this.media='all'; this.onload=null;"/>
 <script type="module" src="/static/main.js" defer></script>
+<!-- https://www.filamentgroup.com/lab/load-css-simpler/ -->
