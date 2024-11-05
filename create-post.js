@@ -15,6 +15,7 @@ if (args.length < 1) {
 // https://www.geeksforgeeks.org/how-to-convert-a-string-into-kebab-case-using-javascript/
 const kebabCase = (str) =>
   str
+    .trim()
     .replace(/([a-z])([A-Z])/g, '$1-$2') // replace "camelCase" to "camel-case"
     .replace(/[\s_\/]+/g, '-') // Replace spaces, underscore, and slash with - (dash)
     .toLowerCase()
