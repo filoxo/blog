@@ -13,21 +13,21 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@tailwindcss/typography": "^0.5.13",
+    "@tailwindcss/typography": "^0.5.15",
     "@unocss/postcss": "^0.60.4",
     "@unocss/reset": "^0.60.4",
-    "autoprefixer": "^10.4.19",
-    "date-fns": "^3.6.0",
+    "autoprefixer": "^10.4.20",
+    "date-fns": "^4.1.0",
     "eleventy-plugin-postcss": "^1.0.4",
-    "gh-pages": "^6.1.1",
-    "markdown-it-anchor": "^9.0.1",
-    "postcss": "^8.4.38",
+    "gh-pages": "^6.2.0",
+    "markdown-it-anchor": "^9.2.0",
+    "postcss": "^8.4.47",
     "postcss-csso": "^6.0.1",
     "postcss-import": "^16.1.0",
-    "unocss": "^0.60.4"
+    "unocss": "^0.64.0"
   },
   "devDependencies": {
-    "prettier": "^3.3.1"
+    "prettier": "^3.3.3"
   },
   "prettier": {
     "trailingComma": "es5",
