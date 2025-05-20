@@ -186,22 +186,31 @@ the prompt was very simple and i was really happy with the output. i then took t
       Math.sqrt(camera.position.x * camera.position.x + camera.position.z * camera.position.z),
       camera.position.y - 5
   );
+  
+  // Variables to store starting angles when drag begins
+  let startAngleHorizontal = angleHorizontal;
+  let startAngleVertical = angleVertical;
 
-  // Interaction event listeners
-  document.addEventListener('mousedown', onMouseDown);
-  document.addEventListener('mouseup', onMouseUp);
-  document.addEventListener('mousemove', onMouseMove);
-  document.addEventListener('touchstart', onTouchStart, { passive: false });
-  document.addEventListener('touchend', onTouchEnd);
-  document.addEventListener('touchmove', onTouchMove, { passive: false });
+  // Interaction event listeners - attach only to the container
+  container.addEventListener('mousedown', onMouseDown);
+  container.addEventListener('mouseup', onMouseUp);
+  container.addEventListener('mousemove', onMouseMove);
+  container.addEventListener('touchstart', onTouchStart, { passive: false });
+  container.addEventListener('touchend', onTouchEnd);
+  container.addEventListener('touchmove', onTouchMove, { passive: false });
   window.addEventListener('resize', onWindowResize);
 
   function onMouseDown(event) {
       isDragging = true;
+      // Get coordinates relative to the container
       previousMousePosition = {
-          x: event.clientX,
-          y: event.clientY
+          x: event.offsetX,
+          y: event.offsetY
       };
+      
+      // Store the starting angles when drag begins
+      startAngleHorizontal = angleHorizontal;
+      startAngleVertical = angleVertical;
   }
 
   function onMouseUp() {
@@ -211,13 +220,16 @@ the prompt was very simple and i was really happy with the output. i then took t
 
   function onTouchStart(event) {
       event.preventDefault();
-      if (event.touches.length === 1) {
-          isDragging = true;
-          previousMousePosition = {
-              x: event.touches[0].clientX,
-              y: event.touches[0].clientY
-          };
-      }
+      isDragging = true;
+      const rect = container.getBoundingClientRect();
+      previousMousePosition = {
+          x: event.touches[0].clientX - rect.left,
+          y: event.touches[0].clientY - rect.top
+      };
+      
+      // Store the starting angles when touch begins
+      startAngleHorizontal = angleHorizontal;
+      startAngleVertical = angleVertical;
   }
 
   function onTouchEnd() {
@@ -265,49 +277,74 @@ the prompt was very simple and i was really happy with the output. i then took t
       if (!isDragging) return;
       
       const deltaMove = {
-          x: event.clientX - previousMousePosition.x,
-          y: event.clientY - previousMousePosition.y
+          x: event.offsetX - previousMousePosition.x,
+          y: event.offsetY - previousMousePosition.y
       };
       
       handleCameraMovement(deltaMove);
       
       previousMousePosition = {
-          x: event.clientX,
-          y: event.clientY
+          x: event.offsetX,
+          y: event.offsetY
       };
   }
 
   function onTouchMove(event) {
       event.preventDefault();
-      if (!isDragging || event.touches.length !== 1) return;
+      if (!isDragging) return;
+
+      const rect = container.getBoundingClientRect();
+      const touchX = event.touches[0].clientX - rect.left;
+      const touchY = event.touches[0].clientY - rect.top;
       
       const deltaMove = {
-          x: event.touches[0].clientX - previousMousePosition.x,
-          y: event.touches[0].clientY - previousMousePosition.y
+          x: touchX - previousMousePosition.x,
+          y: touchY - previousMousePosition.y
       };
       
       handleCameraMovement(deltaMove);
       
       previousMousePosition = {
-          x: event.touches[0].clientX,
-          y: event.touches[0].clientY
+          x: touchX,
+          y: touchY
       };
   }
 
   function handleCameraMovement(deltaMove) {
-      // Adjust rotation speeds
-      const rotationSpeed = 0.005;
+      // Adjust rotation speeds (reduced for more control)
+      const rotationSpeed = 0.003;
       
-      // Update angles based on mouse movement
+      // Define angle limits (15 degrees = π/12 radians)
+      const maxAngle = Math.PI / 12; // 15 degrees limit in any direction
+      
+      // Update angles based on mouse movement with reduced sensitivity
       angleHorizontal -= deltaMove.x * rotationSpeed;
-      angleVertical = Math.max(0.1, Math.min(Math.PI - 0.1, angleVertical + deltaMove.y * rotationSpeed));
+      angleVertical += deltaMove.y * rotationSpeed;
       
-      // Calculate new camera position
-      camera.position.x = orbitRadius * Math.cos(angleHorizontal) * Math.sin(angleVertical);
-      camera.position.z = orbitRadius * Math.sin(angleHorizontal) * Math.sin(angleVertical);
-      camera.position.y = orbitRadius * Math.cos(angleVertical) + 5; // +5 to focus on temple center
+      // Apply limits relative to where the drag started
+      // Limit horizontal movement to ±15 degrees from where drag started
+      angleHorizontal = Math.max(startAngleHorizontal - maxAngle, 
+                              Math.min(startAngleHorizontal + maxAngle, angleHorizontal));
       
-      // Look at the temple
+      // Limit vertical movement to ±15 degrees from where drag started
+      // Also add absolute limits to prevent extreme angles
+      const absoluteMinVertical = Math.PI / 4;      // 45 degrees (prevent looking too far up)
+      const absoluteMaxVertical = 3 * Math.PI / 4;  // 135 degrees (prevent looking too far down)
+      
+      angleVertical = Math.max(
+          Math.max(startAngleVertical - maxAngle, absoluteMinVertical),
+          Math.min(Math.min(startAngleVertical + maxAngle, absoluteMaxVertical), angleVertical)
+      );
+      
+      // Fixed orbit radius - prevent zooming in/out
+      const fixedOrbitRadius = 20;
+      
+      // Calculate new camera position with constraints
+      camera.position.x = fixedOrbitRadius * Math.cos(angleHorizontal) * Math.sin(angleVertical);
+      camera.position.z = fixedOrbitRadius * Math.sin(angleHorizontal) * Math.sin(angleVertical);
+      camera.position.y = fixedOrbitRadius * Math.cos(angleVertical) + 5; // +5 to focus on temple center
+      
+      // Always look at the temple center
       camera.lookAt(0, 5, 0);
   }
 
