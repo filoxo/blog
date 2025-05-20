@@ -80,14 +80,14 @@ the prompt was very simple and i was really happy with the output. [here is the 
               
               // Front stairs
               const frontStairs = new THREE.Mesh(stairGeometry, stairMaterial);
-              frontStairs.position.set(0, i * currentHeight + currentHeight / 2, currentWidth / 2 - stairDepth / 2);
+              frontStairs.position.set(0, i * currentHeight + currentHeight / 2, currentWidth / 2 - stairDepth / 1.75);
               frontStairs.castShadow = true;
               frontStairs.receiveShadow = true;
               temple.add(frontStairs);
               
               // Back stairs
               const backStairs = new THREE.Mesh(stairGeometry, stairMaterial);
-              backStairs.position.set(0, i * currentHeight + currentHeight / 2, -currentWidth / 2 + stairDepth / 2);
+              backStairs.position.set(0, i * currentHeight + currentHeight / 2, -currentWidth / 2 + stairDepth / 1.75);
               backStairs.castShadow = true;
               backStairs.receiveShadow = true;
               temple.add(backStairs);
@@ -95,14 +95,14 @@ the prompt was very simple and i was really happy with the output. [here is the 
               // Left stairs
               const leftStairsGeometry = new THREE.BoxGeometry(stairDepth, currentHeight, stairWidth);
               const leftStairs = new THREE.Mesh(leftStairsGeometry, stairMaterial);
-              leftStairs.position.set(-currentWidth / 2 + stairDepth / 2, i * currentHeight + currentHeight / 2, 0);
+              leftStairs.position.set(-currentWidth / 2 + stairDepth / 1.75, i * currentHeight + currentHeight / 2, 0);
               leftStairs.castShadow = true;
               leftStairs.receiveShadow = true;
               temple.add(leftStairs);
               
               // Right stairs
               const rightStairs = new THREE.Mesh(leftStairsGeometry, stairMaterial);
-              rightStairs.position.set(currentWidth / 2 - stairDepth / 2, i * currentHeight + currentHeight / 2, 0);
+              rightStairs.position.set(currentWidth / 2 - stairDepth / 1.75, i * currentHeight + currentHeight / 2, 0);
               rightStairs.castShadow = true;
               rightStairs.receiveShadow = true;
               temple.add(rightStairs);
