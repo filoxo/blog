@@ -4,11 +4,11 @@ date: 2025-05-20
 tags: [javascript, gen-ai]
 ---
 
-been playing with gen ai tools, such as Claude and Windsurf. i've had a decent amount of success with this model and i finally came up with something i would like to make with it - a spline scene that you can interact with. 
+been playing with gen ai tools, such as Claude and Windsurf. i've had a decent amount of success with this model and i finally came up with something i would like to make with it - a spline scene that you can interact with.
 
 <!-- excerpt-end -->
 
-the prompt was very simple and i was really happy with the output. i then took that and placed it in my site below with minimal changes to the code.
+the prompt was very simple and i was really happy with the output. [here is the result from Claude](https://claude.ai/share/99ab0ce9-bf31-4f3b-baac-0b11578ee362), which i then copied into this post, adapted a little bit, and then used Windsurf locally to update some of the issues. vibe coded while watching Murderbot with friends 🙀
 
 <div id="scene"></div>
 
