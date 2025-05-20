@@ -6,9 +6,9 @@
   <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
     {%- include "_nav.njk" -%}
     <div class="my-0 mx-auto max-w-2xl px-3 md:px-6">
-      <div>{%- block content -%}
-      {%- endblock -%}
+      <div>{% block content %}{% endblock %}</div>
     </div>
-  </div>
-  {%- include "_footer.njk" -%}
-</body></html>
+    {%- include "_footer.njk" -%}
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
