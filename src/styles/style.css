@@ -30,3 +30,6 @@ ul.tag-list:before {
   opacity: 1;
 }
 
+hr {
+  @apply prose-hr:border-red-600;
+}
