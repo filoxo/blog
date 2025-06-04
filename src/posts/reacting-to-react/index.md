@@ -12,7 +12,7 @@ for context, i'm just a React developer whose been using React since 2017-ish. i
 
 ---
 
-the gist of react's current trend today in 2025 is that it is becoming a server-side framework, compiler and all, with Next.js being the bastion of endeavor.
+the gist of react's current trend today in 2025 is that it is becoming a server-side framework, compiler and all, with Next.js being the bastion of this endeavor.
 
 ## OKAY but still why do i need React on the server to render HTML?
 
