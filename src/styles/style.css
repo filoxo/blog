@@ -24,12 +24,9 @@ ul.tag-list:before {
   margin-left: -28px;
   opacity: 0;
 }
+
 *:hover > .permalink,
 .permalink:hover,
 .permalink:focus {
   opacity: 1;
-}
-
-hr {
-  @apply prose-hr:border-red-600;
 }
