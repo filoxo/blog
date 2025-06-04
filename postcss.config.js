@@ -1,4 +1,5 @@
-module.exports = ({ env }) => ({
+/** @type {import('postcss-load-config').Config} */
+const config = ({ env }) => ({
   plugins: {
     'postcss-import': {},
     autoprefixer: {},
@@ -6,3 +7,5 @@ module.exports = ({ env }) => ({
     'postcss-csso': env === 'production' ? {} : false,
   },
 })
+
+export default config

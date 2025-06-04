@@ -1,9 +1,9 @@
-const postcss = require('eleventy-plugin-postcss')
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const mdAnchor = require('markdown-it-anchor')
-const { format } = require('date-fns')
+import postcss from 'eleventy-plugin-postcss'
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import mdAnchor from 'markdown-it-anchor'
+import { format } from 'date-fns'
 
-module.exports = function (config) {
+export default function (config) {
   config.addPlugin(postcss)
   config.addPlugin(syntaxHighlight, {
     preAttributes: {
