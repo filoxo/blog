@@ -1,10 +1,9 @@
-import postcss from 'eleventy-plugin-postcss'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import mdAnchor from 'markdown-it-anchor'
 import { format } from 'date-fns'
+import { execSync } from 'node:child_process'
 
 export default function (config) {
-  config.addPlugin(postcss)
   config.addPlugin(syntaxHighlight, {
     preAttributes: {
       class: 'not-prose',
@@ -32,6 +31,15 @@ export default function (config) {
   // assets
   config.addPassthroughCopy('src/**/*.{jpg,jpeg,png,gif,js}')
 
+  config.addWatchTarget('src/styles/style.css')
+  config.addWatchTarget('src/styles/code.css')
+
+  config.on('eleventy.after', () => {
+    execSync(
+      `npx @tailwindcss/cli -i ./src/styles/style.css -o ./src/styles/style.build.css`
+    )
+  })
+
   /* Nunjucks config */
   // note: had to choose nunjucks filter specifically because universal filters don't yet seem to support filter arguments,
   // but nunjucks does and that's the configured engine
@@ -49,6 +57,7 @@ export default function (config) {
   })
 
   return {
+    // markdownTemplateEngine: 'njk',
     dir: {
       input: './src',
     },
