@@ -37,3 +37,7 @@ here's something else for you to consider... does the CTO of your company really
 your org now needs "full stack devs" to manage new the [Backend for Frontend](https://remix.run/docs/en/main/guides/bff) who are well versed in what Nodejs or edge runtimes that serve this part of the app.
 
 it could require standing up a new server stack to manage OR integrating your infra with Vercel's. your devs will have to understand how to make everything SSR-able (which i still find non-trivial) as well as how to triage perf bottlenecks and SSR incompatible libraries and re-hydration errors... only to have react re-render everything again 🙃
+
+---
+
+maybe i'm just not the target audience for modern react anymore, but i foresee still being a react user for the next years. i am curious how others are adapting and what they're choosing if they are also no longer on board with the current headwinds of modern react.
