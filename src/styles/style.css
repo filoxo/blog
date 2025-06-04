@@ -1,32 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;1,300;1,500&display=swap');
-@import '@unocss/reset/tailwind-compat.css';
+@import "tailwindcss";
 
-@unocss;
-
-:root {
-  font-family: 'Source Code Pro', monospace;
+@theme {
+  --font-sourcecodepro: "Source Code Pro", monospace;
 }
 
-/* Twitter keeps changing this damn selector */
-.twitter-tweet {
-  margin: 0 auto;
+@layer base {
+  *:hover > .permalink,
+  .permalink:hover,
+  .permalink:focus {
+    opacity: 1;
+  }
 }
 
-ul.tag-list:before {
-  content: attr(aria-label);
-  font-weight: bold;
-  margin-right: 0.5rem;
-}
 
-.permalink {
-  float: left;
-  font-size: 0.75em;
-  margin-left: -28px;
-  opacity: 0;
-}
+@layer components {
+  /* Twitter keeps changing this damn selector */
+  .twitter-tweet {
+    margin: 0 auto;
+  }
 
-*:hover > .permalink,
-.permalink:hover,
-.permalink:focus {
-  opacity: 1;
+  ul.tag-list:before {
+    content: attr(aria-label);
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+
+  .permalink {
+    float: left;
+    font-size: 0.75em;
+    margin-left: -28px;
+    opacity: 0;
+  }
+
+  .site-link {
+    @apply border-b border-current text-red-500 no-underline transition-colors duration-300 ease-in-out hover:text-red-600;
+  }
 }

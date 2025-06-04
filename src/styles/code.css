@@ -1,3 +1,5 @@
+@reference "./style.css";
+
 /* redline theme */
 code[class*="language-"],
 pre[class*="language-"] {
