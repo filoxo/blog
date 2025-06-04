@@ -26,9 +26,9 @@ except its not. unless 'opting out' means remaining on React 18 and... not ever 
 
 ## nextjs is good, not great
 
-i hesitate to take too much time to describe these issues because i'm not a heavy nextjs user. i've read up on issues like how difficult it is to upgrade between versions since features seem rushed/incomplete, [how difficult it is to deploy to non-Vercel environments](https://x.com/thdxr/status/1718308244383228124), and [how diffcult it is to performance tune](https://www.reddit.com/r/nextjs/comments/1iuv3g1/big_rant_about_how_much_nextjs_sucks_at_any_type/). 
+i hesitate to take too much time to describe these issues because i'm not a heavy nextjs user. i've read up on issues like how difficult it is to upgrade between versions since features seem rushed/incomplete, [how difficult it is to deploy to non-Vercel environments](https://x.com/thdxr/status/1718308244383228124), and [how hard it seems to performance tune](https://www.reddit.com/r/nextjs/comments/1iuv3g1/big_rant_about_how_much_nextjs_sucks_at_any_type/).
 
-so dear reader, i can only speak from my own experience now. if nextjs is how the majority of react apps will be built... i kinda want to just walk away now. its fine i guess - but its also not the best. i've not had great experiences with Page router, App router is slightly better for me to understand. ultimately it doesn't feel magical like other frameworks seem to.
+so dear reader, i can only speak from my own experience now. if nextjs is how the majority of react apps will be built... i kinda want to just walk away now. its fine i guess - but its also not the best. i've not had great experiences with Page router, App router is slightly better for me to understand. ultimately it doesn't feel magical like other frameworks seem to.Remix did - and now its dead.
 
 ## react dev === fullstack dev
 
