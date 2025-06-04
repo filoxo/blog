@@ -16,7 +16,7 @@ i also really enjoyed the murderbot's uberpragmatic personality and dry anger. b
 
 ## _Legion_, Brandon Sanderson
 
-i wasn't really sure what to expect from this book as i solely picked it up because it was a Brandon Henderson story. it was really cool how this version of "legion" incoporated the aspect of 'many personalities/one mind' and made it a superpower. very Sherlock Holmes-like. the latter half of the book hit me with an emotional weight that i didn't expect, and loved strulgging through it.
+i wasn't really sure what to expect from this book as i solely picked it up because it was a Brandon Sanderson story. it was really cool how this version of "legion" incoporated the aspect of 'many personalities/one mind' and made it a superpower. very Sherlock Holmes-like. the latter half of the book hit me with an emotional weight that i didn't expect, and loved strulgging through it.
 
 ## _Binti_ series, Nnedi Okorafor
 
