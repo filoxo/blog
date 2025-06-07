@@ -1,5 +1,6 @@
 ---
 title: 'Latest posts'
+layout: 'base.njk'
 pagination:
   data: collections.posts
   size: 7
@@ -7,9 +8,6 @@ pagination:
   alias: posts
 ---
 
-{% extends 'base.njk' %}
-
-{%- block content -%}
 <div class="space-y-16 mb-12">
   {%- for post in posts -%}
   <section>
@@ -28,6 +26,7 @@ pagination:
 </div>
 
 {% if pagination.href.previous or pagination.href.next %}
+
 <nav class="flex justify-between mt-8 mb-12">
   <div>
     {% if pagination.href.previous %}
@@ -41,4 +40,3 @@ pagination:
   </div>
 </nav>
 {% endif %}
-{%- endblock -%}
