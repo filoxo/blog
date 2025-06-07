@@ -2,7 +2,7 @@ import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import mdAnchor from 'markdown-it-anchor'
 import mdAttrs from 'markdown-it-attrs'
 import { format } from 'date-fns'
-import { execSync } from 'node:child_process'
+import { exec } from 'node:child_process'
 
 export default function (config) {
   config.addPlugin(syntaxHighlight, {
@@ -31,19 +31,22 @@ export default function (config) {
     excerpt_separator: '<!-- excerpt-end -->',
   })
 
-  config.addWatchTarget('src/styles/style.css')
-  config.addWatchTarget('src/styles/code.css')
+  config.addWatchTarget('src/styles/*.css')
 
   // assets
-  config.addPassthroughCopy('src/**/*.{jpg,jpeg,png,gif,js,css}')
+  config.addPassthroughCopy('src/**/*.{jpg,jpeg,png,gif,js}')
 
-  config.on('eleventy.before', () => {
-    execSync(
-      `npx @tailwindcss/cli -i ./src/styles/style.css -o ./_site/styles/style.build.css`
-    )
-    execSync(
-      `npx @tailwindcss/cli -i ./src/styles/code.css -o ./_site/styles/code.build.css`
-    )
+  config.on('eleventy.after', async ({ runMode }) => {
+    const extraArgs = runMode === 'build' ? '--minify' : ''
+    // rebuild styles after every change
+    await Promise.allSettled([
+      exec(
+        `npx @tailwindcss/cli -i ./src/styles/style.css -o ./_site/styles/style.build.css ${extraArgs}`
+      ),
+      exec(
+        `npx @tailwindcss/cli -i ./src/styles/code.css -o ./_site/styles/code.build.css ${extraArgs}`
+      ),
+    ])
   })
 
   /* Nunjucks config */
