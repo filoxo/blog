@@ -108,4 +108,16 @@ _Apr 2015 – Mar 2018_ {.text-sm}
 
 --- {.h-px .my-8 .bg-red-600 .border-0}
 
+## Education {.text-lg .font-semibold .text-red-500}
+
+<div class="space-y-2">
+
+### Masters of Information Systems {.font-semibold}
+
+Brigham Young University
+
+_Class of Apr 2016_ {.text-sm}
+
+</div>
+
 </div>
