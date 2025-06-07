@@ -2,20 +2,13 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+
 /* https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* https://tailwindcss.com/docs/font-family#customizing-your-theme */
 @theme {
   --font-sourcecodepro: 'Source Code Pro', monospace;
-}
-
-@layer base {
-  *:hover > .permalink,
-  .permalink:hover,
-  .permalink:focus {
-    opacity: 1;
-  }
 }
 
 @layer components {
@@ -35,6 +28,11 @@
     font-size: 0.75em;
     margin-left: -28px;
     opacity: 0;
+  }
+  *:hover > .permalink,
+  .permalink:hover,
+  .permalink:focus {
+    opacity: 1;
   }
 
   .site-link {
