@@ -37,7 +37,7 @@ export default function (config) {
   config.addWatchTarget('src/styles/style.css')
   config.addWatchTarget('src/styles/code.css')
 
-  config.on('eleventy.after', () => {
+  config.on('eleventy.before', () => {
     execSync(
       `npx @tailwindcss/cli -i ./src/styles/style.css -o ./src/styles/style.build.css`
     )
