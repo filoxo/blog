@@ -10,7 +10,7 @@ i've been bothered by the direction the React framework has been trending, and i
 
 for context, i'm just a React developer whose been using React since ~2017. i really liked React's client-side rendering model, pioneering dom diffing, and its "not a framework" stance that made it seem lean.
 
----
+--- {.h-px .my-8 .bg-red-600 .border-0}
 
 the gist of react's current trend today in 2025 is that it is becoming a server-side framework, compiler and all, with Next.js being the bastion of this endeavor.
 
@@ -38,6 +38,6 @@ your org now needs "full stack devs" to manage new the [Backend for Frontend](ht
 
 it could require standing up a new server stack to manage OR integrating your infra with Vercel's. your devs will have to understand how to make everything SSR-able (which i still find non-trivial) as well as how to triage perf bottlenecks and SSR incompatible libraries and re-hydration errors... only to have react re-render everything again 🙃
 
----
+--- {.h-px .my-8 .bg-red-600 .border-0}
 
 maybe i'm just not the target audience for modern react anymore, but i foresee still being a react user for the next years. i am curious how others are adapting and what they're choosing if they are also no longer on board with the current headwinds of modern react.
