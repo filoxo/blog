@@ -26,7 +26,7 @@ except... its not. unless 'opting out' means remaining on React 18 and never upd
 
 ## nextjs is good, not great
 
-i hesitate to go deep into this section since i'm not a heavy nextjs user. but i've read up on some popular issues, like how difficult it is to upgrade between versions since features seem rushed/incomplete, [how difficult it is to deploy outside of Vercel](https://x.com/thdxr/status/1718308244383228124), and [how difficult performance tuning can be](https://www.reddit.com/r/nextjs/comments/1iuv3g1/big_rant_about_how_much_nextjs_sucks_at_any_type/).
+i hesitate to go deep into this section since i'm not a heavy nextjs user. but i've read up on some popular issues, like how painful it is to upgrade between versions since features seem rushed/incomplete, [how difficult it is to deploy outside of Vercel](https://x.com/thdxr/status/1718308244383228124), and [how frustrating performance tuning can be](https://www.reddit.com/r/nextjs/comments/1iuv3g1/big_rant_about_how_much_nextjs_sucks_at_any_type/).
 
 so dear reader, i can only speak from my own experience now. if nextjs is how the majority of react apps will be built... i kinda want to just walk away now. its fine i guess. i've not had great experiences with Page router, App router is slightly better for me to understand. ultimately it doesn't feel magical like other frameworks seem to. Remix did - and now its dead.
 
