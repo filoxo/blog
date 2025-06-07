@@ -65,7 +65,7 @@ _Jul 2021 – Nov 2022_ {.text-sm}
 
 _Apr 2020 – Jul 2021_ {.text-sm}
 
-- Helped convert frontend monolith into microfrontends
+- Architected and implemented disaggregation efforts to convert frontend monolith into a distributed, microfrontends system
   {.list-disc .list-inside}
 
 </div>
@@ -75,9 +75,9 @@ _Apr 2020 – Jul 2021_ {.text-sm}
 
 _Oct 2018 – Apr 2020_ {.text-sm}
 
-- Built Automations product
-- Led accessibility audit and modernization
-- Founded and led Frontend Guild
+- Developed and released Automations product, integrating external system feeds into Podium interactions and modernizing legacy workflows
+- Lead modernization and accessibility refactoring of internal design system
+- Started and directed Frontend Guild to teach, train, and share learning about frontend patterns and technologies.
   {.list-disc .list-inside}
 
 </div>
@@ -87,8 +87,8 @@ _Oct 2018 – Apr 2020_ {.text-sm}
 
 _Apr 2018 – Oct 2018_ {.text-sm}
 
-- Released Canopy eSign
-- Led accessibility planning
+- Developed and released Canopy eSign product, the most anticipated feature of the year
+- Lead accessibility initiative to identify and plan for resolving common a11y issues
   {.list-disc .list-inside}
 
 </div>
@@ -98,8 +98,10 @@ _Apr 2018 – Oct 2018_ {.text-sm}
 
 _Apr 2015 – Mar 2018_ {.text-sm}
 
-- Built Genetic Communities™ with Angular
-- Rewrote DNA Activation in React
+- Developed marketing pages using company best practices and standards
+- Implemented pixel-perfect, responsive, and accessible designs from Creative mockups in Photoshop
+- Built and released Genetic Communities™, an extended genetic profile to millions of customers, using Angular 2+
+- Rearchitected the DNA Activation flow using React
   {.list-disc .list-inside}
 
 </div>
