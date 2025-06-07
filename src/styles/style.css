@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;1,300;1,500&display=swap');
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-sourcecodepro: "Source Code Pro", monospace;
@@ -35,5 +36,9 @@
 
   .site-link {
     @apply border-b border-current text-red-500 no-underline transition-colors duration-300 ease-in-out hover:text-red-600;
+  }
+
+  .prose hr {
+    @apply h-2 my-8 prose-hr:border-red-600;
   }
 }
