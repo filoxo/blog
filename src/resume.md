@@ -120,4 +120,40 @@ _Class of Apr 2016_ {.text-sm}
 
 </div>
 
+--- {.h-px .my-8 .bg-red-600 .border-0}
+
+## Open Source projects {.text-lg .font-semibold .text-red-500}
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+<div>
+  <a class="flex items-center gap-2 font-bold" href="https://github.com/filoxo/scale-ui">
+    <svg stroke="currentColor" fill="currentColor" viewBox="0 0 480 512" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+      <use href="#icon-github" />
+    </svg>
+    filoxo/scale-ui
+  </a>
+  My personal, standards-first React component library
+</div>
+
+<div>
+  <a class="flex items-center gap-2 font-bold" href="https://github.com/filoxo/scale-icons">
+    <svg stroke="currentColor" fill="currentColor" viewBox="0 0 480 512" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+      <use href="#icon-github" />
+    </svg>
+    filoxo/scale-icons
+  </a>
+  Scalable and performant SVG icon sprite sheet generator
+</div>
+
+<div>
+  <a class="flex items-center gap-2 font-bold" href="https://github.com/filoxo/11tree">
+    <svg stroke="currentColor" fill="currentColor" viewBox="0 0 480 512" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+      <use href="#icon-github" />
+    </svg>
+    filoxo/11tree
+  </a>
+  Linktree clone, built with 11ty, Web Components & Tailwind
+</div>  
+
 </div>
