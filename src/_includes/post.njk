@@ -1,6 +1,7 @@
-{% extends "base.njk" %}
+---
+layout: 'base.njk'
+---
 
-{% block content -%}
 <article class="mb-12">
   <h1 class="mb-4 text-2xl text-red-600">{{ title }}</h1>
   <p class="mb-4 text-red-600">{{ page.date | date }}</p>
@@ -26,4 +27,3 @@
     </footer>
   </div>
 </article>
-{%- endblock %}
