@@ -1,5 +1,6 @@
 ---
 layout: 'base.njk'
+title: 'Online resume for Carlos Filoteo'
 ---
 
 <div class="space-y-6">
@@ -154,6 +155,6 @@ _Class of Apr 2016_ {.text-sm}
     filoxo/11tree
   </a>
   Linktree clone, built with 11ty, Web Components & Tailwind
-</div>  
+</div>
 
 </div>
