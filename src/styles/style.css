@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;1,300;1,500&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+/* https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* https://tailwindcss.com/docs/font-family#customizing-your-theme */
 @theme {
-  --font-sourcecodepro: "Source Code Pro", monospace;
+  --font-sourcecodepro: 'Source Code Pro', monospace;
 }
 
 @layer base {
@@ -13,7 +17,6 @@
     opacity: 1;
   }
 }
-
 
 @layer components {
   /* Twitter keeps changing this damn selector */
