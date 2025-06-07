@@ -31,15 +31,18 @@ export default function (config) {
     excerpt_separator: '<!-- excerpt-end -->',
   })
 
-  // assets
-  config.addPassthroughCopy('src/**/*.{jpg,jpeg,png,gif,js,css}')
-
   config.addWatchTarget('src/styles/style.css')
   config.addWatchTarget('src/styles/code.css')
 
+  // assets
+  config.addPassthroughCopy('src/**/*.{jpg,jpeg,png,gif,js,css}')
+
   config.on('eleventy.before', () => {
     execSync(
-      `npx @tailwindcss/cli -i ./src/styles/style.css -o ./src/styles/style.build.css`
+      `npx @tailwindcss/cli -i ./src/styles/style.css -o ./_site/styles/style.build.css`
+    )
+    execSync(
+      `npx @tailwindcss/cli -i ./src/styles/code.css -o ./_site/styles/code.build.css`
     )
   })
 
