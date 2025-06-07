@@ -1,5 +1,6 @@
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import mdAnchor from 'markdown-it-anchor'
+import mdAttrs from 'markdown-it-attrs'
 import { format } from 'date-fns'
 import { execSync } from 'node:child_process'
 
@@ -11,16 +12,18 @@ export default function (config) {
   })
 
   config.amendLibrary('md', (mdLib) =>
-    mdLib.use(mdAnchor, {
-      level: [1, 2, 3],
-      tabIndex: false,
-      permalink: mdAnchor.permalink.linkInsideHeader({
-        ariaHidden: true,
-        class: 'permalink',
-        symbol: '🔗',
-        placement: 'before',
-      }),
-    })
+    mdLib
+      .use(mdAnchor, {
+        level: [1, 2, 3],
+        tabIndex: false,
+        permalink: mdAnchor.permalink.linkInsideHeader({
+          ariaHidden: true,
+          class: 'permalink',
+          symbol: '🔗',
+          placement: 'before',
+        }),
+      })
+      .use(mdAttrs)
   )
 
   config.setFrontMatterParsingOptions({
@@ -29,7 +32,7 @@ export default function (config) {
   })
 
   // assets
-  config.addPassthroughCopy('src/**/*.{jpg,jpeg,png,gif,js}')
+  config.addPassthroughCopy('src/**/*.{jpg,jpeg,png,gif,js,css}')
 
   config.addWatchTarget('src/styles/style.css')
   config.addWatchTarget('src/styles/code.css')
@@ -57,7 +60,7 @@ export default function (config) {
   })
 
   return {
-    // markdownTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
     dir: {
       input: './src',
     },
