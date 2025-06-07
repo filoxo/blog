@@ -41,4 +41,8 @@
   .prose hr {
     @apply h-2 my-8 prose-hr:border-red-600;
   }
+
+  ul ul {
+    @apply ml-6;
+  }
 }
