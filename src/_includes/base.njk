@@ -7,7 +7,7 @@
     <div class="absolute z-[-1] inset-0 h-full min-h-screen w-full min-w-screen bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#efefef22_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
     {%- include "_nav.njk" -%}
     <div class="my-0 mx-auto max-w-2xl px-3 md:px-6">
-      <div>{% block content %}{% endblock %}</div>
+      <div>{{ content | safe }}</div>
     </div>
     {%- include "_footer.njk" -%}
     {% block scripts %}{% endblock %}
