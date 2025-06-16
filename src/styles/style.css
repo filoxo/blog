@@ -12,6 +12,14 @@
 }
 
 @layer components {
+  [data-hover-type] {
+    
+    @apply rounded px-1 mx-[-.25rem] transition-colors duration-300 ease-in-out not-italic;
+  }
+  [data-hover-type].data-hover-type {
+    @apply bg-red-600 text-white ;
+  }
+
   /* Twitter keeps changing this damn selector */
   .twitter-tweet {
     margin: 0 auto;
