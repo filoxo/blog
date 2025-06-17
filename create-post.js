@@ -3,8 +3,10 @@ For posterity: this was the original npm script I used but eventually got annoye
 "post": "run(){ mkdir -p ./src/posts/$1 && touch ./src/posts/$1/index.mdx && echo \"---\ntitle: $1\ndate: 2020-MM-DD\ntags: []\n---\n\" >> ./src/posts/$1/index.mdx; }; run"
 */
 
-const fs = require('fs')
-const path = require('path')
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'url'
+
 const args = process.argv.slice(2)
 
 if (args.length < 1) {
@@ -18,6 +20,7 @@ const kebabCase = (str) =>
     .trim()
     .replace(/([a-z])([A-Z])/g, '$1-$2') // replace "camelCase" to "camel-case"
     .replace(/[\s_\/]+/g, '-') // Replace spaces, underscore, and slash with - (dash)
+    .replace(/\?/g, '') // Remove question mark
     .toLowerCase()
 
 const title = args[0]
@@ -39,6 +42,8 @@ contents
 ` // looks weird but its not a mistake
 
 // Create post
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const dir = path.join(__dirname, 'src/posts', titleSlug)
 fs.mkdirSync(dir)
 const index = path.resolve(dir, 'index.md')
