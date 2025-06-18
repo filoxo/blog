@@ -51,6 +51,7 @@ _Jul 2021 – Nov 2022_ {.text-sm}
 - Implemented and scaled _microfrontends_{data-hover-type="microfrontends"} architecture to enhance product delivery speed while maintaining a high quality developer experience while on Web Platform team
 - Headed or contributed to engineering-wide initiatives
   - sunsetting legacy 'kitchen sink' repo using static analysis for tracking/planning, freeing applications from tech debt, improving bundle sizes, and improving code organization
+  - successfully shipped new design system (Juno) [using land & expand strategy](https://www.unknownarts.co/i/164876075/the-land-and-expand-strategy-and-why-it-worked)
   - import-map deployments, reducing frontend deployment & rollback time from 50+ mins to ~4
   - automated deployments of shared dependencies & utility modules, with versioning and distributed dependency graph
   - experimented and implemented distributed type checking for shared code across _microfrontends_{data-hover-type="microfrontends"}
