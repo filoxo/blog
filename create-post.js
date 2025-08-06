@@ -15,16 +15,19 @@ if (args.length < 1) {
 }
 
 // https://www.geeksforgeeks.org/how-to-convert-a-string-into-kebab-case-using-javascript/
-const kebabCase = (str) =>
+const slugify = (str) =>
   str
     .trim()
-    .replace(/([a-z])([A-Z])/g, '$1-$2') // replace "camelCase" to "camel-case"
+    .replace(/([a-z])([A-Z])/g, '$1-$2') // "camelCase" to "kebab-case"
     .replace(/[\s_\/]+/g, '-') // Replace spaces, underscore, and slash with - (dash)
-    .replace(/\?/g, '') // Remove question mark
+    .replace(/[^\w-]+/g, '') // Remove all non-word chars
+    .replace(/--+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, '') // Trim - from end of text
     .toLowerCase()
 
 const title = args[0]
-const titleSlug = kebabCase(title)
+const titleSlug = slugify(title)
 const todaysDate = new Date().toISOString().split('T')[0]
 
 // Create content
