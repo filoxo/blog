@@ -1,4 +1,5 @@
 ---
+layout: base.njk
 eleventyComputed:
   meta:
     title: Posts tagged with “{{ tag }}”
@@ -10,8 +11,6 @@ pagination:
     - posts # prevents /tags/posts/index.html
 permalink: /tags/{{ tag }}/
 ---
-
-{% extends 'base.njk' %}
 
 {# TODO: this page is exactly the same as index.njk. I should create a shared template for it. #}
 
