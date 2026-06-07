@@ -23,9 +23,9 @@ title: 'Online resume for Carlos Filoteo'
 
 _Sep 2024 – Present_ {.text-sm}
 
-- Built and maintained web-based monitoring software for battery systems
-- _React_{data-hover-type="react"} 19 migration, MUI adoption, Mapbox integration, _@tanstack/query_{data-hover-type="tanstack-query"}
-- Configured MCP server and team-wide rules
+- Built and maintained web-based monitoring software for residential and commercial battery management systems
+- Collaborated on major initiatives such as _React_{data-hover-type="react"} 19 migration, MUI adoption, Mapbox integration, _@tanstack/query_{data-hover-type="tanstack-query"}, and new DaisyUI-based design system 
+- Established team-wide rules and Skills to enhance team productivity
   {.list-inside .list-disc}
 
 </div>
